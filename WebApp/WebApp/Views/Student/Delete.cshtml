@@ -1,0 +1,19 @@
+﻿@model WebApp.Models.Student
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["DeleteStudent"];
+}
+
+<h2>@Localizer["DeleteStudentQuestion"]</h2>
+
+<div>
+    <p><strong>@Localizer["ID"]:</strong> @Model.Id</p>
+    <p><strong>@Localizer["Name"]:</strong> @Model.FirstName @Model.LastName</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">@Localizer["Delete"]</button>
+    <a href="@Url.Action("Index", "Student")" class="btn btn-secondary">@Localizer["Cancel"]</a>
+</form>

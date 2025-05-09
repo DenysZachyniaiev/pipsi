@@ -1,0 +1,47 @@
+﻿@model WebApp.ViewModels.ClassDetailsViewModel
+@using Microsoft.AspNetCore.Identity
+@using WebApp.Models
+@inject UserManager<AppUser> UserManager
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Classes"];
+}
+
+<h2>@Localizer["Classes"]</h2>
+
+<form asp-action="AddClass" method="post" class="mb-4">
+    <div class="input-group">
+        <input name="className" class="form-control" placeholder="@Localizer["EnterNewClassName"]" required />
+        <button type="submit" class="btn btn-success">@Localizer["AddClass"]</button>
+    </div>
+</form>
+
+<div class="list-group mb-4">
+    @foreach (var cls in Model.Classes)
+    {
+        <button type="button"
+                class="list-group-item list-group-item-action"
+                data-class="@cls.Name"
+                onclick="loadClassDetails('@cls.Name')">
+            @cls.Name
+        </button>
+    }
+</div>
+
+<div id="classDetailsContainer">
+    <p>@Localizer["SelectClassToViewDetails"]</p>
+</div>
+
+@section Scripts {
+    <script>
+        function loadClassDetails(className) {
+            fetch(`/Student/GetClassDetails?className=${encodeURIComponent(className)}`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('classDetailsContainer').innerHTML = html;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+}

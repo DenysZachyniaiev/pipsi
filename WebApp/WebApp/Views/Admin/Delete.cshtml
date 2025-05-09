@@ -1,0 +1,12 @@
+﻿@model WebApp.Models.AppUser
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<h2>@Localizer["DeleteUser"]</h2>
+
+<p>@Localizer["AreYouSureDelete"] <strong>@Model.FullName</strong>?</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">@Localizer["Delete"]</button>
+    <a asp-action="Index" class="btn btn-secondary">@Localizer["Cancel"]</a>
+</form>

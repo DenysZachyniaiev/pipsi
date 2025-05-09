@@ -1,0 +1,20 @@
+﻿@model WebApp.ViewModels.RegisterViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<h2>@Localizer["RegisterConfirmation"]</h2>
+<p>@Localizer["CodeWasSentTo"] <strong>@Model.Email</strong></p>
+
+<form asp-action="ConfirmCode" method="post">
+    <input type="hidden" asp-for="Email" />
+    <input type="hidden" asp-for="Password" />
+    <input type="hidden" asp-for="ConfirmPassword" />
+    <input type="hidden" asp-for="FullName" />
+
+    <div class="form-group">
+        <label asp-for="VerificationCode">@Localizer["VerificationCode"]</label>
+        <input asp-for="VerificationCode" class="form-control" />
+        <span asp-validation-for="VerificationCode" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">@Localizer["Register"]</button>
+</form>

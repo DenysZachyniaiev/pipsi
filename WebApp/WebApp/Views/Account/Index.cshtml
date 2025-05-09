@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model WebApp.Models.AppUser
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Account"];
+}
+
+<h2>@Localizer["Account"]</h2>
+
+@if (User.Identity?.IsAuthenticated ?? false)
+{
+    <p><strong>@Localizer["FullName"]:</strong> @Model.FullName</p>
+    <form method="post" asp-action="Logout">
+        <button type="submit" class="btn btn-danger">@Localizer["Logout"]</button>
+    </form>
+}
+else
+{
+    <p>@Localizer["YouAreNotLoggedIn"]</p>
+    <a class="btn btn-primary" asp-action="Login">@Localizer["LoginHere"]</a>
+    <a class="btn btn-secondary" asp-action="Register">@Localizer["RegisterANewAccount"]</a>
+}

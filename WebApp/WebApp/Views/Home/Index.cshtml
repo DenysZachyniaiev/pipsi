@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject UserManager<AppUser> UserManager
+
+@{
+    string fullName = "Guest";
+
+    if (User.Identity?.IsAuthenticated ?? false)
+    {
+        var user = await UserManager.GetUserAsync(User);
+        fullName = string.IsNullOrEmpty(user?.FullName) ? "Guest" : user.FullName;
+    }
+}
+
+<h2>@Localizer["WelcomeMessage", fullName]</h2>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Public Holidays";
+}
+
+<h2>Public Holidays</h2>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Holiday Name</th>
+                <th>Local Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var holiday in Model)
+            {
+                <tr>
+                    <td>@holiday.Date</td>
+                    <td>@holiday.Name</td>
+                    <td>@holiday.LocalName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

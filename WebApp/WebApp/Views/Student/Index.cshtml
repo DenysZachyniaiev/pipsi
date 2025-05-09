@@ -1,0 +1,59 @@
+﻿@model List<WebApp.Models.Student>
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+<div class="tab-content mt-3" id="tabsContent">
+    <div class="tab-pane fade show active" id="all" role="tabpanel">
+        <h4>@Localizer["AllStudents"]</h4>
+        <input type="text" class="form-control mb-3" placeholder="@Localizer["SearchPlaceholder"]" />
+
+        <div class="table-responsive">
+            <table class="table table-bordered sortable-table">
+                <thead>
+                    <tr>
+                        <th>@Localizer["ID"] <span class="sort-icon">↕</span></th>
+                        <th>@Localizer["FirstName"] <span class="sort-icon">↕</span></th>
+                        <th>@Localizer["LastName"] <span class="sort-icon">↕</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in Model)
+                    {
+                        <tr>
+                            <td>@student.Id</td>
+                            <td>@student.FirstName</td>
+                            <td>@student.LastName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5">
+    <h4>@Localizer["ManageStudent"]</h4>
+
+    <form asp-controller="Student" asp-action="Edit" method="get" class="row g-2 mb-2">
+        <div class="col-sm-8 col-12">
+            <input type="number" name="id" min="1" class="form-control" placeholder="@Localizer["EditPlaceholder"]" required />
+        </div>
+        <div class="col-sm-4 col-12">
+            <button type="submit" class="btn btn-primary w-100">@Localizer["Edit"]</button>
+        </div>
+    </form>
+
+    <form asp-controller="Student" asp-action="Delete" method="get" class="row g-2 mb-2">
+        <div class="col-sm-8 col-12">
+            <input type="number" name="id" min="1" class="form-control" placeholder="@Localizer["DeletePlaceholder"]" required />
+        </div>
+        <div class="col-sm-4 col-12">
+            <button type="submit" class="btn btn-danger w-100">@Localizer["Delete"]</button>
+        </div>
+    </form>
+
+    <a asp-controller="Student" asp-action="Add" class="btn btn-success w-100 w-sm-auto">@Localizer["AddNewStudent"]</a>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Classes" class="btn btn-secondary w-100 w-sm-auto">@Localizer["ManageClasses"]</a>
+</div>
