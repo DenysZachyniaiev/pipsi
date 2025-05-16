@@ -1,8 +1,6 @@
 ﻿@model WebApp.ViewModels.ClassDetailsViewModel
-@using Microsoft.AspNetCore.Identity
-@using WebApp.Models
-@inject UserManager<AppUser> UserManager
-@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 @{
     ViewData["Title"] = Localizer["Classes"];
@@ -37,11 +35,17 @@
     <script>
         function loadClassDetails(className) {
             fetch(`/Student/GetClassDetails?className=${encodeURIComponent(className)}`)
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) throw new Error("Class not found");
+                    return response.text();
+                })
                 .then(html => {
                     document.getElementById('classDetailsContainer').innerHTML = html;
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => {
+                    console.error(error);
+                    document.getElementById('classDetailsContainer').innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+                });
         }
     </script>
 }

@@ -1,53 +1,106 @@
 ﻿@model WebApp.ViewModels.ClassDetailsViewModel
-@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
-<h3>@Model.ClassName</h3>
-
-<form asp-action="DeleteClass" method="post" class="mb-2">
-    <input type="hidden" name="className" value="@Model.ClassName" />
-    <button type="submit" class="btn btn-danger btn-sm">@Localizer["DeleteClass"]</button>
-</form>
-
-<form asp-action="AssignTeacher" method="post" class="mb-3">
-    <input type="hidden" name="className" value="@Model.ClassName" />
-    <div class="input-group">
-        <select class="form-select" name="teacherId">
-            @foreach (var teacher in Model.AllTeachers)
-            {
-                <option value="@teacher.Id" selected="@(teacher.Id == Model.TeacherId)">
-                    @teacher.UserName
-                </option>
-            }
-        </select>
-        <button type="submit" class="btn btn-primary">@Localizer["AssignTeacher"]</button>
+<div class="card mb-3">
+    <div class="card-header">
+        <h4>@Localizer["ClassDetailsFor"] @Model.ClassName</h4>
     </div>
-</form>
+    <div class="card-body">
+        <form asp-action="AssignTeacher" method="post" class="mb-3">
+            <input type="hidden" name="className" value="@Model.ClassName" />
+            <label for="teacherId" class="form-label">@Localizer["AssignTeacher"]</label>
+            <select class="form-select" id="teacherId" name="teacherId" required>
+                <option value="">@Localizer["SelectTeacher"]</option>
+                @foreach (var teacher in Model.AllTeachers)
+                {
+                    var isSelected = teacher.Id == Model.TeacherId;
+                    <option value="@teacher.Id" selected="@(isSelected ? "selected" : null)">
+                        @teacher.UserName
+                    </option>
+                }
+            </select>
+            <button type="submit" class="btn btn-primary mt-2">@Localizer["Assign"]</button>
+        </form>
 
-<h5>@Localizer["StudentsInThisClass"]:</h5>
-<ul class="list-group mb-3">
-    @foreach (var student in Model.AssignedStudents)
-    {
-        <li class="list-group-item">@student.FirstName @student.LastName</li>
-    }
-</ul>
+        <hr />
 
-<form asp-action="AssignStudents" method="post">
-    <input type="hidden" name="className" value="@Model.ClassName" />
-    <h5>@Localizer["AssignStudents"]:</h5>
-    <div class="mb-3" style="max-height: 300px; overflow-y: auto;">
-        @foreach (var student in Model.AllStudents)
-        {
-            <div class="form-check">
-                <input class="form-check-input"
-                       type="checkbox"
-                       name="studentIds"
-                       value="@student.Id"
-                @(Model.AssignedStudents.Any(s => s.Id == student.Id) ? "checked" : "") />
-                <label class="form-check-label">
-                    @student.FirstName @student.LastName
-                </label>
+        <h5>@Localizer["StudentsInThisClass"]:</h5>
+        <ul class="list-group mb-3">
+            @foreach (var student in Model.AssignedStudents)
+            {
+                <li class="list-group-item">@student.FirstName @student.LastName</li>
+            }
+        </ul>
+
+        <form asp-action="AssignStudents" method="post">
+            <input type="hidden" name="className" value="@Model.ClassName" />
+            <h5>@Localizer["AssignStudents"]:</h5>
+            <div class="mb-3" style="max-height: 300px; overflow-y: auto;">
+                @foreach (var student in Model.AllStudents)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               name="studentIds"
+                               value="@student.Id"
+                               @(Model.AssignedStudents.Any(s => s.Id == student.Id) ? "checked" : "") />
+                        <label class="form-check-label">
+                            @student.FirstName @student.LastName
+                        </label>
+                    </div>
+                }
             </div>
+            <button type="submit" class="btn btn-primary">@Localizer["AssignStudents"]</button>
+        </form>
+
+        <hr />
+
+        <form asp-action="AddSubjectToClass" method="post" class="mt-4">
+            <input type="hidden" name="className" value="@Model.ClassName" />
+            <div class="mb-3">
+                <label for="subjectName" class="form-label">@Localizer["NewSubjectName"]</label>
+                <input type="text" id="subjectName" name="subjectName" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="subjectTeacherId" class="form-label">@Localizer["AssignTeacherToSubject"]</label>
+                <select id="subjectTeacherId" name="teacherId" class="form-select" required>
+                    <option value="">@Localizer["SelectTeacher"]</option>
+                    @foreach (var teacher in Model.AllTeachers)
+                    {
+                        <option value="@teacher.Id">@teacher.UserName</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">@Localizer["AddSubject"]</button>
+        </form>
+        <h5>@Localizer["ExistingSubjects"]</h5>
+
+        @if (Model.Subjects.Any())
+        {
+            <ul class="list-group mb-3">
+                @foreach (var subject in Model.Subjects)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>
+                            @subject.Name
+                            (@(Model.SubjectTeacherNames.TryGetValue(subject.Id, out var teacherName) ? teacherName : "—"))
+                        </span>
+                        <form asp-action="RemoveSubjectFromClass" method="post" class="mb-0">
+                            <input type="hidden" name="className" value="@Model.ClassName" />
+                            <input type="hidden" name="subjectId" value="@subject.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('@Localizer["ConfirmDeleteSubject"]');">
+                                @Localizer["Remove"]
+                            </button>
+                        </form>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>@Localizer["NoSubjectsAssigned"]</p>
         }
     </div>
-    <button type="submit" class="btn btn-primary">@Localizer["AssignStudents"]</button>
-</form>
+</div>

@@ -135,4 +135,7 @@
   <data name="Admin Panel" xml:space="preserve">
     <value> Panel administratora</value>
   </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Harmonogram</value>
+  </data>
 </root>

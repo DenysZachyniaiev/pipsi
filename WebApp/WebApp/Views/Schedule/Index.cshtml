@@ -1,0 +1,17 @@
+﻿@model List<WebApp.Models.Class>
+
+<h2>Select Class to View Schedule</h2>
+
+<form method="get" asp-controller="Schedule" asp-action="ViewSchedule">
+    <div class="mb-3">
+        <label for="className" class="form-label">Class</label>
+        <select id="className" name="className" class="form-select" required>
+            <option value="" disabled selected>-- Choose a class --</option>
+            @foreach (var c in Model)
+            {
+                <option value="@c.Name">@c.Name</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Show Schedule</button>
+</form>

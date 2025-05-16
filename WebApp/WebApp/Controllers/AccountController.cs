@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
 using WebApp.ViewModels;
 using WebApp.Services;
-using MailKit;
 
 public class AccountController : Controller
 {

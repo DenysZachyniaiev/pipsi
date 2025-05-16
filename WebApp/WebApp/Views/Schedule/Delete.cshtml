@@ -1,0 +1,22 @@
+﻿@model WebApp.Models.ScheduleEntry
+@inject WebApp.Data.AppDbContext DbContext
+
+@{
+    ViewData["Title"] = "Delete Schedule Entry";
+    var subject = DbContext.Subjects.FirstOrDefault(s => s.Id == Model.SubjectId);
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered">
+    <tr><th>Day</th><td>@Model.Day</td></tr>
+    <tr><th>Hour</th><td>@Model.Hour</td></tr>
+    <tr><th>Subject</th><td>@(subject != null ? subject.Name : "Unknown")</td></tr>
+    <tr><th>Classroom</th><td>@Model.ClassroomNumber</td></tr>
+</table>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="ViewSchedule" asp-route-className="@ViewBag.ClassName" class="btn btn-secondary">Cancel</a>
+</form>

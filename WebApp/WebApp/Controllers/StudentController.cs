@@ -33,11 +33,11 @@ namespace WebApp.Controllers
             }
 
             const string cacheKey = "AllStudents";
-            if (!cache.TryGetValue("AllStudents", out List<Student> students))
+            if (!cache.TryGetValue(cacheKey, out List<Student> students))
             {
                 logger.LogInformation("AllStudents not found in cache, fetching from DB...");
                 students = context.Students.ToList();
-                cache.Set("AllStudents", students, TimeSpan.FromMinutes(5));
+                cache.Set(cacheKey, students, TimeSpan.FromMinutes(5));
                 logger.LogInformation("AllStudents cached.");
             }
             else
@@ -58,12 +58,15 @@ namespace WebApp.Controllers
                 .GroupBy(cs => cs.ClassName)
                 .ToDictionary(g => g.Key, g => g.Select(cs => cs.StudentId).ToList());
 
+            var subjects = context.Subjects.ToList();
+
             var viewModel = new ClassDetailsViewModel
             {
                 Classes = classes,
                 AllStudents = students,
                 AllTeachers = teachers.ToList(),
-                ClassStudentMap = classStudentMap
+                ClassStudentMap = classStudentMap,
+                Subjects = subjects
             };
 
             return View(viewModel);
@@ -93,6 +96,10 @@ namespace WebApp.Controllers
 
             var relatedEntries = context.ClassStudents.Where(cs => cs.ClassName == className);
             context.ClassStudents.RemoveRange(relatedEntries);
+
+            // Usuwamy przedmioty tej klasy
+            var relatedSubjects = context.Subjects.Where(s => s.ClassName == className);
+            context.Subjects.RemoveRange(relatedSubjects);
 
             context.Classes.Remove(classToDelete);
             context.SaveChanges();
@@ -132,72 +139,27 @@ namespace WebApp.Controllers
             return RedirectToAction("Classes");
         }
 
-        public IActionResult Add()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public IActionResult Add(Student student)
+        public IActionResult AddSubjectToClass(string className, string subjectName, string teacherId)
         {
-            if (!ModelState.IsValid)
-                return View(student);
+            if (string.IsNullOrWhiteSpace(className) || string.IsNullOrWhiteSpace(subjectName) || string.IsNullOrWhiteSpace(teacherId))
+                return BadRequest("Invalid data.");
 
-            context.Students.Add(student);
+            var classExists = context.Classes.Any(c => c.Name == className);
+            if (!classExists)
+                return BadRequest("Class does not exist.");
+
+            var subject = new Subject
+            {
+                Name = subjectName,
+                ClassName = className,
+                TeacherId = teacherId
+            };
+
+            context.Subjects.Add(subject);
             context.SaveChanges();
-            cache.Remove("AllStudents");
 
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult Edit(int id)
-        {
-            var student = context.Students.FirstOrDefault(s => s.Id == id);
-            if (student == null)
-                return NotFound("Student not found.");
-
-            return View(student);
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Student student)
-        {
-            if (!ModelState.IsValid)
-                return View(student);
-
-            context.Students.Update(student);
-            context.SaveChanges();
-            cache.Remove("AllStudents");
-
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult Delete(int id)
-        {
-            var student = context.Students.FirstOrDefault(s => s.Id == id);
-            if (student == null)
-                return NotFound("Student not found.");
-
-            return View(student);
-        }
-
-        [HttpPost]
-        public IActionResult DeleteConfirmed(int id)
-        {
-            var student = context.Students.FirstOrDefault(s => s.Id == id);
-            if (student == null)
-                return NotFound("Student not found.");
-
-            context.Students.Remove(student);
-            context.SaveChanges();
-            cache.Remove("AllStudents");
-
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult AccessDenied()
-        {
-            return RedirectToAction("Login", "Account", new { returnUrl = "/Student" });
+            return RedirectToAction("Classes");
         }
 
         [HttpGet]
@@ -206,21 +168,51 @@ namespace WebApp.Controllers
             var classEntity = context.Classes.FirstOrDefault(c => c.Name == className);
             if (classEntity == null) return NotFound();
 
-            var assignedIds = context.ClassStudents
+            var assignedStudentIds = context.ClassStudents
                 .Where(cs => cs.ClassName == className)
                 .Select(cs => cs.StudentId)
                 .ToList();
+
+            var subjects = context.Subjects.Where(s => s.ClassName == className).ToList();
+
+            var teachers = userManager.GetUsersInRoleAsync("Teacher").Result.ToList();
+
+            var teachersDict = teachers.ToDictionary(t => t.Id, t => t.UserName);
 
             var viewModel = new ClassDetailsViewModel
             {
                 ClassName = classEntity.Name,
                 TeacherId = classEntity.TeacherId,
-                AllTeachers = userManager.GetUsersInRoleAsync("Teacher").Result.ToList(),
+                AllTeachers = teachers,
                 AllStudents = context.Students.ToList(),
-                AssignedStudents = context.Students.Where(s => assignedIds.Contains(s.Id)).ToList()
+                AssignedStudents = context.Students.Where(s => assignedStudentIds.Contains(s.Id)).ToList(),
+                Subjects = subjects,
+                SubjectTeacherNames = subjects.ToDictionary(
+                    s => s.Id,
+                    s => teachersDict.ContainsKey(s.TeacherId) ? teachersDict[s.TeacherId] : "Unknown")
             };
 
             return PartialView("GetClassDetails", viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult RemoveSubjectFromClass(string className, int subjectId)
+        {
+            if (string.IsNullOrEmpty(className))
+                return BadRequest();
+
+            var subject = context.Subjects
+                .FirstOrDefault(s => s.Id == subjectId && s.ClassName == className);
+
+            if (subject == null)
+            {
+                return NotFound();
+            }
+
+            context.Subjects.Remove(subject);
+            context.SaveChanges();
+
+            return RedirectToAction("Classes");
         }
     }
 }
