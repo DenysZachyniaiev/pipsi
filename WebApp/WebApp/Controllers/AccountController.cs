@@ -38,6 +38,7 @@ public class AccountController : Controller
         await signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }
+
     [HttpGet]
     public IActionResult Login()
     {
@@ -75,7 +76,6 @@ public class AccountController : Controller
         return View(model);
     }
 
-
     [HttpGet]
     public IActionResult Register()
     {
@@ -92,16 +92,24 @@ public class AccountController : Controller
         if (!ModelState.IsValid)
             return View(model);
 
-        if (model.SkipVerification)
+        var existingUser = await userManager.FindByEmailAsync(model.Email);
+
+        if (existingUser != null)
         {
-            return await FinalizeRegistration(model);
+            var body = $"Ktoś próbował zarejestrować się na Twój adres email.<br>" +
+                       $"Jeśli to Ty - zignoruj tę wiadomość.<br>" +
+                       $"Jeśli to nie Ty - możesz zignorować, lub zmienić hasło w ustawieniach.";
+
+            await emailService.SendEmailAsync(model.Email, "Próba rejestracji", body);
         }
+        else
+        {
+            var code = new Random().Next(100000, 999999).ToString();
+            HttpContext.Session.SetString("VerificationCode", code);
 
-        var code = new Random().Next(100000, 999999).ToString();
-        HttpContext.Session.SetString("VerificationCode", code);
-
-        var body = $"Your code is: <b>{code}</b>";
-        await emailService.SendEmailAsync(model.Email, "WebApp", body);
+            var body = $"Twój kod rejestracyjny to: <b>{code}</b>";
+            await emailService.SendEmailAsync(model.Email, "Kod weryfikacyjny - WebApp", body);
+        }
 
         return View("ConfirmCode", model);
     }
@@ -143,5 +151,4 @@ public class AccountController : Controller
 
         return View("Register", model);
     }
-
 }

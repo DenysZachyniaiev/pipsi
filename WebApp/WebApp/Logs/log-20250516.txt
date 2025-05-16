@@ -5991,3 +5991,409 @@ WHERE "s"."Id" IN (
 2025-05-16 21:52:17.071 +02:00 [INF] Executed action WebApp.Controllers.StudentController.GetClassDetails (WebApp) in 9.3071ms
 2025-05-16 21:52:17.072 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.GetClassDetails (WebApp)'
 2025-05-16 21:52:17.075 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student/GetClassDetails?className=aaa - 200 null text/html; charset=utf-8 15.5081ms
+2025-05-16 22:23:05.848 +02:00 [INF] User profile is available. Using 'C:\Users\48723\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-16 22:23:08.347 +02:00 [INF] Executed DbCommand (79ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-16 22:23:08.492 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-16 22:23:08.493 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-16 22:23:08.494 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-16 22:23:08.520 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-16 22:23:08.609 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-16 22:23:08.655 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2025-05-16 22:23:09.553 +02:00 [INF] Now listening on: https://localhost:7021
+2025-05-16 22:23:09.553 +02:00 [INF] Now listening on: http://localhost:5043
+2025-05-16 22:23:09.709 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-16 22:23:09.710 +02:00 [INF] Hosting environment: Development
+2025-05-16 22:23:09.710 +02:00 [INF] Content root path: C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp
+2025-05-16 22:23:13.943 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-16 22:23:14.049 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-16 22:23:14.081 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-16 22:23:14.102 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:23:14.908 +02:00 [INF] Executed ViewResult - view Index executed in 810.5628ms.
+2025-05-16 22:23:14.910 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 828.1368ms
+2025-05-16 22:23:14.911 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-16 22:23:14.919 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 991.3883ms
+2025-05-16 22:23:15.064 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-05-16 22:23:15.065 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - null null
+2025-05-16 22:23:15.065 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-05-16 22:23:15.082 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - null null
+2025-05-16 22:23:15.082 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:23:15.084 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - null null
+2025-05-16 22:23:15.088 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-05-16 22:23:15.116 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 33.979ms
+2025-05-16 22:23:15.127 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\css\site.css'
+2025-05-16 22:23:15.127 +02:00 [INF] Sending file. Request path: '/WebApp.styles.css'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\scopedcss\bundle\WebApp.styles.css'
+2025-05-16 22:23:15.127 +02:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\js\site.js'
+2025-05-16 22:23:15.128 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 200 362 text/css 62.5697ms
+2025-05-16 22:23:15.128 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - 200 1124 text/css 63.5523ms
+2025-05-16 22:23:15.128 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - 200 1795 text/javascript 45.9419ms
+2025-05-16 22:23:15.166 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2025-05-16 22:23:15.174 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 110.4205ms
+2025-05-16 22:23:15.220 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2025-05-16 22:23:15.221 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 132.4696ms
+2025-05-16 22:23:15.287 +02:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\lib\jquery\dist\jquery.min.js'
+2025-05-16 22:23:15.287 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - 200 89503 text/javascript 202.862ms
+2025-05-16 22:23:23.975 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-16 22:23:23.980 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:23:24.010 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-16 22:23:24.039 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:23:24.062 +02:00 [INF] Executed ViewResult - view Index executed in 25.7285ms.
+2025-05-16 22:23:24.063 +02:00 [INF] Executed action AccountController.Index (WebApp) in 52.2454ms
+2025-05-16 22:23:24.063 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:23:24.063 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 88.6823ms
+2025-05-16 22:23:24.152 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:23:24.154 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.5562ms
+2025-05-16 22:23:27.432 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account/Register - null null
+2025-05-16 22:23:27.437 +02:00 [INF] Executing endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:23:27.441 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller AccountController (WebApp).
+2025-05-16 22:23:27.465 +02:00 [INF] Executing ViewResult, running view Register.
+2025-05-16 22:23:27.588 +02:00 [INF] Executed ViewResult - view Register executed in 123.5954ms.
+2025-05-16 22:23:27.588 +02:00 [INF] Executed action AccountController.Register (WebApp) in 146.8619ms
+2025-05-16 22:23:27.588 +02:00 [INF] Executed endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:23:27.588 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account/Register - 200 null text/html; charset=utf-8 156.8733ms
+2025-05-16 22:23:27.669 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:23:27.670 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2025-05-16 22:23:27.670 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2025-05-16 22:23:27.670 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.698ms
+2025-05-16 22:23:27.770 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2025-05-16 22:23:27.771 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5831 text/javascript 100.6398ms
+2025-05-16 22:23:27.771 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2025-05-16 22:23:27.772 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery-validation/dist/jquery.validate.min.js - 200 24604 text/javascript 102.9826ms
+2025-05-16 22:24:16.085 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/Register - application/x-www-form-urlencoded 273
+2025-05-16 22:24:16.088 +02:00 [INF] Executing endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:24:16.101 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(WebApp.ViewModels.RegisterViewModel) on controller AccountController (WebApp).
+2025-05-16 22:24:16.242 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 19)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-16 22:24:19.475 +02:00 [INF] Executing ViewResult, running view ConfirmCode.
+2025-05-16 22:24:19.501 +02:00 [INF] Executed ViewResult - view ConfirmCode executed in 27.3435ms.
+2025-05-16 22:24:19.515 +02:00 [INF] Executed action AccountController.Register (WebApp) in 3412.6646ms
+2025-05-16 22:24:19.517 +02:00 [INF] Executed endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:24:19.523 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/Register - 200 null text/html; charset=utf-8 3438.8686ms
+2025-05-16 22:24:19.569 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:24:19.571 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.8313ms
+2025-05-16 22:25:05.849 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account/Register - null null
+2025-05-16 22:25:05.864 +02:00 [INF] Executing endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:25:05.865 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller AccountController (WebApp).
+2025-05-16 22:25:05.866 +02:00 [INF] Executing ViewResult, running view Register.
+2025-05-16 22:25:05.871 +02:00 [INF] Executed ViewResult - view Register executed in 4.6699ms.
+2025-05-16 22:25:05.871 +02:00 [INF] Executed action AccountController.Register (WebApp) in 5.8796ms
+2025-05-16 22:25:05.871 +02:00 [INF] Executed endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:25:05.871 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account/Register - 200 null text/html; charset=utf-8 22.177ms
+2025-05-16 22:25:05.985 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:05.989 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 4.226ms
+2025-05-16 22:25:14.036 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-16 22:25:14.038 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:25:14.038 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-16 22:25:14.039 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:25:14.043 +02:00 [INF] Executed ViewResult - view Index executed in 3.7413ms.
+2025-05-16 22:25:14.043 +02:00 [INF] Executed action AccountController.Index (WebApp) in 4.7022ms
+2025-05-16 22:25:14.043 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:25:14.043 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 8.241ms
+2025-05-16 22:25:14.123 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:14.128 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 4.5278ms
+2025-05-16 22:25:15.702 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+2025-05-16 22:25:15.703 +02:00 [INF] Executing endpoint 'AccountController.Login (WebApp)'
+2025-05-16 22:25:15.706 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller AccountController (WebApp).
+2025-05-16 22:25:15.712 +02:00 [INF] Executing ViewResult, running view Login.
+2025-05-16 22:25:15.743 +02:00 [INF] Executed ViewResult - view Login executed in 34.5584ms.
+2025-05-16 22:25:15.743 +02:00 [INF] Executed action AccountController.Login (WebApp) in 36.9344ms
+2025-05-16 22:25:15.743 +02:00 [INF] Executed endpoint 'AccountController.Login (WebApp)'
+2025-05-16 22:25:15.744 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 41.6455ms
+2025-05-16 22:25:15.820 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:15.821 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.0774ms
+2025-05-16 22:25:16.069 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/favicon.ico - null null
+2025-05-16 22:25:16.079 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\favicon.ico'
+2025-05-16 22:25:16.080 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/favicon.ico - 499 5430 image/x-icon 10.5691ms
+2025-05-16 22:25:27.187 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/Login - application/x-www-form-urlencoded 234
+2025-05-16 22:25:27.190 +02:00 [INF] Executing endpoint 'AccountController.Login (WebApp)'
+2025-05-16 22:25:27.200 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(WebApp.ViewModels.LoginViewModel) on controller AccountController (WebApp).
+2025-05-16 22:25:27.233 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-16 22:25:27.561 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0
+2025-05-16 22:25:27.611 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-16 22:25:27.613 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-16 22:25:27.627 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."ClaimType", "a"."ClaimValue"
+FROM "AspNetRoleClaims" AS "a"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-16 22:25:27.636 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-05-16 22:25:27.638 +02:00 [INF] Executing RedirectResult, redirecting to /Account.
+2025-05-16 22:25:27.640 +02:00 [INF] Executed action AccountController.Login (WebApp) in 439.3848ms
+2025-05-16 22:25:27.640 +02:00 [INF] Executed endpoint 'AccountController.Login (WebApp)'
+2025-05-16 22:25:27.641 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/Login - 302 0 null 454.5891ms
+2025-05-16 22:25:27.652 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-16 22:25:27.662 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:25:27.662 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-16 22:25:27.679 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-05-16 22:25:27.680 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:25:27.724 +02:00 [INF] Executed ViewResult - view Index executed in 44.3501ms.
+2025-05-16 22:25:27.734 +02:00 [INF] Executed action AccountController.Index (WebApp) in 72.4848ms
+2025-05-16 22:25:27.735 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:25:27.735 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 82.7583ms
+2025-05-16 22:25:27.932 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:27.935 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.2264ms
+2025-05-16 22:25:30.449 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Admin - null null
+2025-05-16 22:25:30.463 +02:00 [INF] Executing endpoint 'AdminController.Index (WebApp)'
+2025-05-16 22:25:30.468 +02:00 [INF] Route matched with {action = "Index", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AdminController (WebApp).
+2025-05-16 22:25:30.494 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+2025-05-16 22:25:30.500 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-16 22:25:30.501 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-16 22:25:30.502 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-16 22:25:30.504 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:25:30.525 +02:00 [INF] Executed ViewResult - view Index executed in 20.1886ms.
+2025-05-16 22:25:30.525 +02:00 [INF] Executed action AdminController.Index (WebApp) in 56.9386ms
+2025-05-16 22:25:30.525 +02:00 [INF] Executed endpoint 'AdminController.Index (WebApp)'
+2025-05-16 22:25:30.536 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Admin - 200 null text/html; charset=utf-8 87.0686ms
+2025-05-16 22:25:30.600 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:30.612 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 11.6098ms
+2025-05-16 22:25:37.383 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-16 22:25:37.389 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-16 22:25:37.390 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-16 22:25:37.391 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:25:37.395 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-05-16 22:25:37.400 +02:00 [INF] Executed ViewResult - view Index executed in 8.0532ms.
+2025-05-16 22:25:37.400 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 10.5315ms
+2025-05-16 22:25:37.401 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-16 22:25:37.401 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 17.6575ms
+2025-05-16 22:25:37.493 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-05-16 22:25:37.493 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - null null
+2025-05-16 22:25:37.493 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - null null
+2025-05-16 22:25:37.495 +02:00 [INF] The file /js/site.js was not modified
+2025-05-16 22:25:37.495 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-05-16 22:25:37.495 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - 304 null text/javascript 2.5134ms
+2025-05-16 22:25:37.496 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-05-16 22:25:37.497 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 4.193ms
+2025-05-16 22:25:37.497 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - 304 null text/javascript 3.7541ms
+2025-05-16 22:25:37.500 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-05-16 22:25:37.500 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-05-16 22:25:37.500 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:37.500 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - null null
+2025-05-16 22:25:37.502 +02:00 [INF] The file /WebApp.styles.css was not modified
+2025-05-16 22:25:37.503 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - 304 null text/css 3.0787ms
+2025-05-16 22:25:37.503 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-05-16 22:25:37.503 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 3.6702ms
+2025-05-16 22:25:37.505 +02:00 [INF] The file /css/site.css was not modified
+2025-05-16 22:25:37.505 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 304 null text/css 5.2705ms
+2025-05-16 22:25:37.509 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 10.1097ms
+2025-05-16 22:25:40.872 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-16 22:25:40.874 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:25:40.875 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-16 22:25:40.878 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-05-16 22:25:40.878 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:25:40.885 +02:00 [INF] Executed ViewResult - view Index executed in 6.6523ms.
+2025-05-16 22:25:40.885 +02:00 [INF] Executed action AccountController.Index (WebApp) in 10.5582ms
+2025-05-16 22:25:40.885 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:25:40.886 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 13.4999ms
+2025-05-16 22:25:40.947 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:40.951 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.8295ms
+2025-05-16 22:25:41.164 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/favicon.ico - null null
+2025-05-16 22:25:41.168 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\favicon.ico'
+2025-05-16 22:25:41.168 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/favicon.ico - 499 5430 image/x-icon 4.2233ms
+2025-05-16 22:25:42.330 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/Logout - application/x-www-form-urlencoded 225
+2025-05-16 22:25:42.332 +02:00 [INF] Executing endpoint 'AccountController.Logout (WebApp)'
+2025-05-16 22:25:42.343 +02:00 [INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller AccountController (WebApp).
+2025-05-16 22:25:42.352 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2025-05-16 22:25:42.355 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2025-05-16 22:25:42.356 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2025-05-16 22:25:42.357 +02:00 [INF] Executing RedirectResult, redirecting to /.
+2025-05-16 22:25:42.358 +02:00 [INF] Executed action AccountController.Logout (WebApp) in 14.2239ms
+2025-05-16 22:25:42.358 +02:00 [INF] Executed endpoint 'AccountController.Logout (WebApp)'
+2025-05-16 22:25:42.358 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/Logout - 302 0 null 28.0054ms
+2025-05-16 22:25:42.366 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-16 22:25:42.367 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-16 22:25:42.367 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-16 22:25:42.367 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:25:42.369 +02:00 [INF] Executed ViewResult - view Index executed in 1.5805ms.
+2025-05-16 22:25:42.369 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 1.7573ms
+2025-05-16 22:25:42.369 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-16 22:25:42.369 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 3.7631ms
+2025-05-16 22:25:42.430 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:42.432 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.5207ms
+2025-05-16 22:25:44.395 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-16 22:25:44.397 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:25:44.398 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-16 22:25:44.399 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:25:44.400 +02:00 [INF] Executed ViewResult - view Index executed in 1.3792ms.
+2025-05-16 22:25:44.400 +02:00 [INF] Executed action AccountController.Index (WebApp) in 2.5118ms
+2025-05-16 22:25:44.400 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:25:44.400 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 6.8658ms
+2025-05-16 22:25:44.467 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:44.469 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.8949ms
+2025-05-16 22:25:45.775 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account/Register - null null
+2025-05-16 22:25:45.778 +02:00 [INF] Executing endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:25:45.779 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller AccountController (WebApp).
+2025-05-16 22:25:45.780 +02:00 [INF] Executing ViewResult, running view Register.
+2025-05-16 22:25:45.783 +02:00 [INF] Executed ViewResult - view Register executed in 3.4073ms.
+2025-05-16 22:25:45.783 +02:00 [INF] Executed action AccountController.Register (WebApp) in 4.16ms
+2025-05-16 22:25:45.783 +02:00 [INF] Executed endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:25:45.783 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account/Register - 200 null text/html; charset=utf-8 14.7517ms
+2025-05-16 22:25:45.857 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:25:45.859 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.0918ms
+2025-05-16 22:26:18.037 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/Register - application/x-www-form-urlencoded 293
+2025-05-16 22:26:18.049 +02:00 [INF] Executing endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:26:18.049 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(WebApp.ViewModels.RegisterViewModel) on controller AccountController (WebApp).
+2025-05-16 22:26:18.054 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 39)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-16 22:26:19.772 +02:00 [INF] Executing ViewResult, running view ConfirmCode.
+2025-05-16 22:26:19.775 +02:00 [INF] Executed ViewResult - view ConfirmCode executed in 3.228ms.
+2025-05-16 22:26:19.775 +02:00 [INF] Executed action AccountController.Register (WebApp) in 1725.4912ms
+2025-05-16 22:26:19.775 +02:00 [INF] Executed endpoint 'AccountController.Register (WebApp)'
+2025-05-16 22:26:19.776 +02:00 [INF] Session started; Key:14f075a6-1b32-6829-1c8e-286ed5651ce1, Id:058452dd-a7da-9d79-f6c2-14e19b8549b5
+2025-05-16 22:26:19.780 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/Register - 200 null text/html; charset=utf-8 1742.9729ms
+2025-05-16 22:26:19.864 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:26:19.870 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 6.3438ms
+2025-05-16 22:26:20.071 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/favicon.ico - null null
+2025-05-16 22:26:20.109 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\favicon.ico'
+2025-05-16 22:26:20.109 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/favicon.ico - 499 5430 image/x-icon 38.268ms
+2025-05-16 22:26:41.371 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/ConfirmCode - application/x-www-form-urlencoded 294
+2025-05-16 22:26:41.372 +02:00 [INF] Executing endpoint 'AccountController.ConfirmCode (WebApp)'
+2025-05-16 22:26:41.383 +02:00 [INF] Route matched with {action = "ConfirmCode", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ConfirmCode(WebApp.ViewModels.RegisterViewModel) on controller AccountController (WebApp).
+2025-05-16 22:26:41.595 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 39)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-05-16 22:26:41.840 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 39), @p4='?' (DbType = Boolean), @p5='?' (Size = 1), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 39), @p9='?' (Size = 39), @p10='?' (Size = 84), @p11='?', @p12='?' (DbType = Boolean), @p13='?' (Size = 32), @p14='?' (DbType = Boolean), @p15='?' (Size = 39)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2025-05-16 22:26:41.856 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-16 22:26:41.857 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2025-05-16 22:26:41.861 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-16 22:26:41.867 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 39)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2025-05-16 22:26:41.917 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUserRoles" ("RoleId", "UserId")
+VALUES (@p0, @p1);
+2025-05-16 22:26:41.925 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p15='?' (Size = 36), @p0='?' (DbType = Int32), @p1='?' (Size = 36), @p16='?' (Size = 36), @p2='?' (Size = 39), @p3='?' (DbType = Boolean), @p4='?' (Size = 1), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 39), @p8='?' (Size = 39), @p9='?' (Size = 84), @p10='?', @p11='?' (DbType = Boolean), @p12='?' (Size = 32), @p13='?' (DbType = Boolean), @p14='?' (Size = 39)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "FullName" = @p4, "LockoutEnabled" = @p5, "LockoutEnd" = @p6, "NormalizedEmail" = @p7, "NormalizedUserName" = @p8, "PasswordHash" = @p9, "PhoneNumber" = @p10, "PhoneNumberConfirmed" = @p11, "SecurityStamp" = @p12, "TwoFactorEnabled" = @p13, "UserName" = @p14
+WHERE "Id" = @p15 AND "ConcurrencyStamp" = @p16
+RETURNING 1;
+2025-05-16 22:26:41.947 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0
+2025-05-16 22:26:41.948 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-16 22:26:41.949 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-16 22:26:41.950 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."ClaimType", "a"."ClaimValue"
+FROM "AspNetRoleClaims" AS "a"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-16 22:26:41.951 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-05-16 22:26:41.951 +02:00 [INF] Executing RedirectResult, redirecting to /Account.
+2025-05-16 22:26:41.951 +02:00 [INF] Executed action AccountController.ConfirmCode (WebApp) in 567.7124ms
+2025-05-16 22:26:41.951 +02:00 [INF] Executed endpoint 'AccountController.ConfirmCode (WebApp)'
+2025-05-16 22:26:41.953 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/ConfirmCode - 302 0 null 582.5453ms
+2025-05-16 22:26:41.967 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-16 22:26:41.969 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:26:41.969 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-16 22:26:41.971 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-05-16 22:26:41.972 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-16 22:26:41.975 +02:00 [INF] Executed ViewResult - view Index executed in 3.4715ms.
+2025-05-16 22:26:41.976 +02:00 [INF] Executed action AccountController.Index (WebApp) in 6.6766ms
+2025-05-16 22:26:41.976 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-16 22:26:41.976 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 10.2744ms
+2025-05-16 22:26:42.054 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-16 22:26:42.056 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.1412ms
+2025-05-16 22:26:42.276 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/favicon.ico - null null
+2025-05-16 22:26:42.282 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\favicon.ico'
+2025-05-16 22:26:42.282 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/favicon.ico - 499 5430 image/x-icon 6.7469ms
