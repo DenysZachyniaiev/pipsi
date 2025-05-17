@@ -23,6 +23,12 @@
     </div>
 
     <div class="mb-3">
+        <label asp-for="Date" class="form-label">Data</label>
+        <input asp-for="Date" type="date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
         <label asp-for="SubjectId" class="form-label"></label>
         <select asp-for="SubjectId" asp-items="ViewBag.Subjects" class="form-select">
             <option value="">-- Select subject --</option>

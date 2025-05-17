@@ -10,6 +10,7 @@
 
 <table class="table table-bordered">
     <tr><th>Day</th><td>@Model.Day</td></tr>
+    <tr><th>Date</th><td>@Model.Date.ToString("yyyy-MM-dd")</td></tr>
     <tr><th>Hour</th><td>@Model.Hour</td></tr>
     <tr><th>Subject</th><td>@(subject != null ? subject.Name : "Unknown")</td></tr>
     <tr><th>Classroom</th><td>@Model.ClassroomNumber</td></tr>

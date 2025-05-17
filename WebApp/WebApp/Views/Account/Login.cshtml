@@ -24,6 +24,12 @@
     </div>
 
     <button type="submit" class="btn btn-primary">@Localizer["SubmitLogin"]</button>
+
+    <div class="mt-3">
+        <a asp-controller="Account" asp-action="ForgotPassword" class="btn btn-link">
+            @Localizer["ForgotPassword"]
+        </a>
+    </div>
 </form>
 
 @section Scripts {

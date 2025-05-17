@@ -151,4 +151,67 @@ public class AccountController : Controller
 
         return View("Register", model);
     }
+
+    [HttpGet]
+    public IActionResult ForgotPassword()
+    {
+        return View(new ForgotPasswordViewModel());
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+    {
+        if (!ModelState.IsValid)
+            return View(model);
+
+        var user = await userManager.FindByEmailAsync(model.Email);
+
+        var code = new Random().Next(100000, 999999).ToString();
+        HttpContext.Session.SetString("ResetCode", code);
+
+        await emailService.SendEmailAsync(model.Email, "Kod resetowania hasła", $"Twój kod to: <b>{code}</b>");
+
+        return View("ForgotPasswordCode", new ResetPasswordViewModel(model.Email));
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ConfirmForgotPassword(ResetPasswordViewModel model)
+    {
+        var expectedCode = HttpContext.Session.GetString("ResetCode");
+
+        if (expectedCode == null)
+        {
+            ModelState.AddModelError(string.Empty, "Sesja wygasła. Spróbuj ponownie.");
+            return RedirectToAction("ForgotPassword");
+        }
+
+        if (model.VerificationCode != expectedCode)
+        {
+            ModelState.AddModelError(string.Empty, "Niepoprawny kod");
+            return View("ForgotPasswordCode", model);
+        }
+
+        var user = await userManager.FindByEmailAsync(model.Email);
+
+        if (user != null)
+        {
+            var resetToken = await userManager.GeneratePasswordResetTokenAsync(user);
+            var result = await userManager.ResetPasswordAsync(user, resetToken, model.NewPassword);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                    ModelState.AddModelError(string.Empty, error.Description);
+
+                return View("ForgotPasswordCode", model);
+            }
+        }
+
+        HttpContext.Session.Remove("ResetCode");
+
+        TempData["PasswordResetSuccess"] = "Jeśli email był poprawny, hasło zostało zresetowane.";
+        return RedirectToAction("Login");
+    }
 }
