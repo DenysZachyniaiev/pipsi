@@ -1,0 +1,476 @@
+2025-05-14 22:47:25.562 +02:00 [INF] User profile is available. Using 'C:\Users\Jan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-14 22:47:28.918 +02:00 [INF] Executed DbCommand (195ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-14 22:47:28.987 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-14 22:47:29.122 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-14 22:47:29.122 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-14 22:47:29.153 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-14 22:47:29.193 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-14 22:47:29.233 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2025-05-14 22:47:30.717 +02:00 [INF] Now listening on: https://localhost:7021
+2025-05-14 22:47:30.717 +02:00 [INF] Now listening on: http://localhost:5043
+2025-05-14 22:47:30.802 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-14 22:47:30.802 +02:00 [INF] Hosting environment: Development
+2025-05-14 22:47:30.802 +02:00 [INF] Content root path: C:\Users\Jan\source\webapp\WebApp\WebApp
+2025-05-14 22:47:39.188 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-14 22:47:42.190 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:42.235 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-14 22:47:42.274 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-14 22:47:42.284 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-14 22:47:44.250 +02:00 [INF] Executed ViewResult - view Index executed in 1966.0715ms.
+2025-05-14 22:47:44.254 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:47:44.261 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-05-14 22:47:44.265 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 1989.2456ms
+2025-05-14 22:47:44.265 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-14 22:47:44.266 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - null null
+2025-05-14 22:47:44.266 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - null null
+2025-05-14 22:47:44.266 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:44.266 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:44.266 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:44.277 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 5098.9226ms
+2025-05-14 22:47:44.286 +02:00 [INF] Sending file. Request path: '/WebApp.styles.css'. Physical path: 'C:\Users\Jan\source\webapp\WebApp\WebApp\obj\Debug\net8.0\scopedcss\bundle\WebApp.styles.css'
+2025-05-14 22:47:44.286 +02:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Jan\source\webapp\WebApp\WebApp\wwwroot\js\site.js'
+2025-05-14 22:47:44.287 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - 200 1795 text/javascript 20.6383ms
+2025-05-14 22:47:44.287 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - 200 1124 text/css 21.3477ms
+2025-05-14 22:47:44.288 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 34.1763ms
+2025-05-14 22:47:44.289 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-05-14 22:47:44.289 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-05-14 22:47:44.289 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - null null
+2025-05-14 22:47:44.291 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:44.291 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:44.291 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:44.294 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Jan\source\webapp\WebApp\WebApp\wwwroot\css\site.css'
+2025-05-14 22:47:44.294 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 200 362 text/css 4.9227ms
+2025-05-14 22:47:44.294 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:47:44.391 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 96.6263ms
+2025-05-14 22:47:44.503 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\Jan\source\webapp\WebApp\WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2025-05-14 22:47:44.503 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 241.8326ms
+2025-05-14 22:47:45.438 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\Jan\source\webapp\WebApp\WebApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2025-05-14 22:47:45.439 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 1150.0237ms
+2025-05-14 22:47:46.504 +02:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\Jan\source\webapp\WebApp\WebApp\wwwroot\lib\jquery\dist\jquery.min.js'
+2025-05-14 22:47:46.504 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - 200 89503 text/javascript 2215.129ms
+2025-05-14 22:47:46.542 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/favicon.ico - null null
+2025-05-14 22:47:46.544 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:46.626 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Jan\source\webapp\WebApp\WebApp\wwwroot\favicon.ico'
+2025-05-14 22:47:46.626 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/favicon.ico - 200 5430 image/x-icon 84.2225ms
+2025-05-14 22:47:48.708 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student - null null
+2025-05-14 22:47:48.714 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:48.723 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-05-14 22:47:48.728 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2025-05-14 22:47:48.728 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student - 302 0 null 20.3137ms
+2025-05-14 22:47:48.775 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account/Index?ReturnUrl=%2FStudent - null null
+2025-05-14 22:47:48.777 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:48.779 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-14 22:47:48.787 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-14 22:47:48.910 +02:00 [WRN] The temp data cookie .AspNetCore.Mvc.CookieTempDataProvider could not be loaded.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider.LoadTempData(HttpContext context)
+2025-05-14 22:47:49.613 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-14 22:47:49.625 +02:00 [INF] Executed ViewResult - view Index executed in 13.0404ms.
+2025-05-14 22:47:49.626 +02:00 [INF] Executed action AccountController.Index (WebApp) in 837.8712ms
+2025-05-14 22:47:49.626 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-14 22:47:49.626 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account/Index?ReturnUrl=%2FStudent - 200 null text/html; charset=utf-8 851.139ms
+2025-05-14 22:47:49.658 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:47:49.658 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:47:49.662 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.7931ms
+2025-05-14 22:47:49.679 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.5544ms
+2025-05-14 22:47:51.219 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+2025-05-14 22:47:51.221 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:51.222 +02:00 [INF] Executing endpoint 'AccountController.Login (WebApp)'
+2025-05-14 22:47:51.223 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller AccountController (WebApp).
+2025-05-14 22:47:51.234 +02:00 [INF] Executing ViewResult, running view Login.
+2025-05-14 22:47:51.299 +02:00 [INF] Executed ViewResult - view Login executed in 66.0874ms.
+2025-05-14 22:47:51.299 +02:00 [INF] Executed action AccountController.Login (WebApp) in 75.9842ms
+2025-05-14 22:47:51.299 +02:00 [INF] Executed endpoint 'AccountController.Login (WebApp)'
+2025-05-14 22:47:51.300 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 81.2392ms
+2025-05-14 22:47:51.313 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:47:51.313 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2025-05-14 22:47:51.314 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2025-05-14 22:47:51.314 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:51.315 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.4616ms
+2025-05-14 22:47:51.318 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:51.334 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:47:51.350 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.2874ms
+2025-05-14 22:47:51.585 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'C:\Users\Jan\source\webapp\WebApp\WebApp\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2025-05-14 22:47:51.586 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery-validation/dist/jquery.validate.min.js - 200 24604 text/javascript 272.184ms
+2025-05-14 22:47:51.707 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\Jan\source\webapp\WebApp\WebApp\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2025-05-14 22:47:51.708 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5831 text/javascript 393.6381ms
+2025-05-14 22:47:55.327 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/Login - application/x-www-form-urlencoded 234
+2025-05-14 22:47:55.330 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2025-05-14 22:47:55.330 +02:00 [INF] Executing endpoint 'AccountController.Login (WebApp)'
+2025-05-14 22:47:55.336 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(WebApp.ViewModels.LoginViewModel) on controller AccountController (WebApp).
+2025-05-14 22:47:55.399 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-14 22:47:56.111 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0
+2025-05-14 22:47:56.135 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-14 22:47:56.136 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-14 22:47:56.141 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."ClaimType", "a"."ClaimValue"
+FROM "AspNetRoleClaims" AS "a"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-14 22:47:56.144 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-05-14 22:47:56.144 +02:00 [INF] Executing RedirectResult, redirecting to /Student.
+2025-05-14 22:47:56.145 +02:00 [INF] Executed action AccountController.Login (WebApp) in 808.1961ms
+2025-05-14 22:47:56.145 +02:00 [INF] Executed endpoint 'AccountController.Login (WebApp)'
+2025-05-14 22:47:56.147 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/Login - 302 0 null 820.2519ms
+2025-05-14 22:47:56.149 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student - null null
+2025-05-14 22:47:56.155 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.Index (WebApp)'
+2025-05-14 22:47:56.157 +02:00 [INF] Route matched with {action = "Index", controller = "Student"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-14 22:47:56.159 +02:00 [INF] AllStudents not found in cache, fetching from DB...
+2025-05-14 22:47:56.179 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+2025-05-14 22:47:56.191 +02:00 [INF] AllStudents cached.
+2025-05-14 22:47:56.191 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-14 22:47:56.201 +02:00 [INF] Executed ViewResult - view Index executed in 9.9663ms.
+2025-05-14 22:47:56.202 +02:00 [INF] Executed action WebApp.Controllers.StudentController.Index (WebApp) in 44.5205ms
+2025-05-14 22:47:56.202 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.Index (WebApp)'
+2025-05-14 22:47:56.202 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student - 200 null text/html; charset=utf-8 52.9803ms
+2025-05-14 22:47:56.211 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:47:56.211 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:47:56.212 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.7127ms
+2025-05-14 22:47:56.227 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.2928ms
+2025-05-14 22:47:58.658 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Schedule - null null
+2025-05-14 22:47:58.662 +02:00 [INF] Executing endpoint 'WebApp.Controllers.ScheduleController.Index (WebApp)'
+2025-05-14 22:47:58.663 +02:00 [INF] Route matched with {action = "Index", controller = "Schedule"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.ScheduleController (WebApp).
+2025-05-14 22:47:58.674 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+ORDER BY "c"."Name"
+2025-05-14 22:47:58.684 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-14 22:47:58.693 +02:00 [INF] Executed ViewResult - view Index executed in 10.3235ms.
+2025-05-14 22:47:58.693 +02:00 [INF] Executed action WebApp.Controllers.ScheduleController.Index (WebApp) in 29.7326ms
+2025-05-14 22:47:58.693 +02:00 [INF] Executed endpoint 'WebApp.Controllers.ScheduleController.Index (WebApp)'
+2025-05-14 22:47:58.694 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Schedule - 200 null text/html; charset=utf-8 35.9198ms
+2025-05-14 22:47:58.702 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:47:58.702 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:47:58.705 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.7231ms
+2025-05-14 22:47:58.715 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.4255ms
+2025-05-14 22:48:01.311 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Schedule/ViewSchedule?className=aaa - null null
+2025-05-14 22:48:01.316 +02:00 [INF] Executing endpoint 'WebApp.Controllers.ScheduleController.ViewSchedule (WebApp)'
+2025-05-14 22:48:01.318 +02:00 [INF] Route matched with {action = "ViewSchedule", controller = "Schedule"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewSchedule(System.String) on controller WebApp.Controllers.ScheduleController (WebApp).
+2025-05-14 22:48:01.709 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassroomNumber", "s"."Date", "s"."Day", "s"."Hour", "s"."SubjectId"
+FROM "ScheduleEntries" AS "s"
+WHERE "s"."SubjectId" IN (
+    SELECT "s0"."Id"
+    FROM "Subjects" AS "s0"
+    WHERE "s0"."ClassName" = @__className_0
+)
+ORDER BY "s"."Day", "s"."Hour"
+2025-05-14 22:48:01.850 +02:00 [INF] Executing ViewResult, running view ViewSchedule.
+2025-05-14 22:48:01.896 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__entry_SubjectId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+WHERE "s"."Id" = @__entry_SubjectId_0
+LIMIT 1
+2025-05-14 22:48:01.978 +02:00 [INF] Executed ViewResult - view ViewSchedule executed in 128.6305ms.
+2025-05-14 22:48:01.978 +02:00 [INF] Executed action WebApp.Controllers.ScheduleController.ViewSchedule (WebApp) in 660.6156ms
+2025-05-14 22:48:01.978 +02:00 [INF] Executed endpoint 'WebApp.Controllers.ScheduleController.ViewSchedule (WebApp)'
+2025-05-14 22:48:01.979 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Schedule/ViewSchedule?className=aaa - 200 null text/html; charset=utf-8 667.7777ms
+2025-05-14 22:48:01.992 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:48:01.993 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:48:01.995 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.8765ms
+2025-05-14 22:48:02.011 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.5936ms
+2025-05-14 22:48:12.674 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Schedule - null null
+2025-05-14 22:48:12.678 +02:00 [INF] Executing endpoint 'WebApp.Controllers.ScheduleController.Index (WebApp)'
+2025-05-14 22:48:12.678 +02:00 [INF] Route matched with {action = "Index", controller = "Schedule"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.ScheduleController (WebApp).
+2025-05-14 22:48:12.679 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+ORDER BY "c"."Name"
+2025-05-14 22:48:12.679 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-14 22:48:12.683 +02:00 [INF] Executed ViewResult - view Index executed in 3.1269ms.
+2025-05-14 22:48:12.683 +02:00 [INF] Executed action WebApp.Controllers.ScheduleController.Index (WebApp) in 4.5646ms
+2025-05-14 22:48:12.683 +02:00 [INF] Executed endpoint 'WebApp.Controllers.ScheduleController.Index (WebApp)'
+2025-05-14 22:48:12.683 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Schedule - 200 null text/html; charset=utf-8 8.8615ms
+2025-05-14 22:48:12.691 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:48:12.691 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:48:12.692 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.1502ms
+2025-05-14 22:48:12.716 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.9492ms
+2025-05-14 22:48:17.936 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Schedule/ViewSchedule?className=aaa - null null
+2025-05-14 22:48:17.941 +02:00 [INF] Executing endpoint 'WebApp.Controllers.ScheduleController.ViewSchedule (WebApp)'
+2025-05-14 22:48:17.941 +02:00 [INF] Route matched with {action = "ViewSchedule", controller = "Schedule"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewSchedule(System.String) on controller WebApp.Controllers.ScheduleController (WebApp).
+2025-05-14 22:48:17.943 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassroomNumber", "s"."Date", "s"."Day", "s"."Hour", "s"."SubjectId"
+FROM "ScheduleEntries" AS "s"
+WHERE "s"."SubjectId" IN (
+    SELECT "s0"."Id"
+    FROM "Subjects" AS "s0"
+    WHERE "s0"."ClassName" = @__className_0
+)
+ORDER BY "s"."Day", "s"."Hour"
+2025-05-14 22:48:17.943 +02:00 [INF] Executing ViewResult, running view ViewSchedule.
+2025-05-14 22:48:17.947 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__entry_SubjectId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+WHERE "s"."Id" = @__entry_SubjectId_0
+LIMIT 1
+2025-05-14 22:48:17.950 +02:00 [INF] Executed ViewResult - view ViewSchedule executed in 6.7385ms.
+2025-05-14 22:48:17.950 +02:00 [INF] Executed action WebApp.Controllers.ScheduleController.ViewSchedule (WebApp) in 9.2477ms
+2025-05-14 22:48:17.950 +02:00 [INF] Executed endpoint 'WebApp.Controllers.ScheduleController.ViewSchedule (WebApp)'
+2025-05-14 22:48:17.951 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Schedule/ViewSchedule?className=aaa - 200 null text/html; charset=utf-8 14.3811ms
+2025-05-14 22:48:17.959 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:48:17.959 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:48:17.961 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.6952ms
+2025-05-14 22:48:17.976 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.7492ms
+2025-05-14 22:48:23.971 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Schedule/Create?className=aaa - null null
+2025-05-14 22:48:23.979 +02:00 [INF] Executing endpoint 'WebApp.Controllers.ScheduleController.Create (WebApp)'
+2025-05-14 22:48:23.981 +02:00 [INF] Route matched with {action = "Create", controller = "Schedule"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String) on controller WebApp.Controllers.ScheduleController (WebApp).
+2025-05-14 22:48:24.005 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT CAST("s"."Id" AS TEXT) AS "Value", "s"."Name" AS "Text"
+FROM "Subjects" AS "s"
+WHERE "s"."ClassName" = @__className_0
+2025-05-14 22:48:24.011 +02:00 [INF] Executing ViewResult, running view Create.
+2025-05-14 22:48:24.090 +02:00 [INF] Executed ViewResult - view Create executed in 80.273ms.
+2025-05-14 22:48:24.090 +02:00 [INF] Executed action WebApp.Controllers.ScheduleController.Create (WebApp) in 109.2089ms
+2025-05-14 22:48:24.090 +02:00 [INF] Executed endpoint 'WebApp.Controllers.ScheduleController.Create (WebApp)'
+2025-05-14 22:48:24.090 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Schedule/Create?className=aaa - 200 null text/html; charset=utf-8 119.511ms
+2025-05-14 22:48:24.098 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:48:24.098 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:48:24.100 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.8944ms
+2025-05-14 22:48:24.115 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.4513ms
+2025-05-14 22:48:30.347 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Schedule?className=aaa - null null
+2025-05-14 22:48:30.351 +02:00 [INF] Executing endpoint 'WebApp.Controllers.ScheduleController.Index (WebApp)'
+2025-05-14 22:48:30.351 +02:00 [INF] Route matched with {action = "Index", controller = "Schedule"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.ScheduleController (WebApp).
+2025-05-14 22:48:30.352 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+ORDER BY "c"."Name"
+2025-05-14 22:48:30.352 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-14 22:48:30.356 +02:00 [INF] Executed ViewResult - view Index executed in 3.6122ms.
+2025-05-14 22:48:30.356 +02:00 [INF] Executed action WebApp.Controllers.ScheduleController.Index (WebApp) in 5.3421ms
+2025-05-14 22:48:30.356 +02:00 [INF] Executed endpoint 'WebApp.Controllers.ScheduleController.Index (WebApp)'
+2025-05-14 22:48:30.357 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Schedule?className=aaa - 200 null text/html; charset=utf-8 9.9615ms
+2025-05-14 22:48:30.364 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:48:30.365 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.6787ms
+2025-05-14 22:48:30.365 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:48:30.420 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.648ms
+2025-05-14 22:48:34.440 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Schedule/ViewSchedule?className=kkk - null null
+2025-05-14 22:48:34.446 +02:00 [INF] Executing endpoint 'WebApp.Controllers.ScheduleController.ViewSchedule (WebApp)'
+2025-05-14 22:48:34.446 +02:00 [INF] Route matched with {action = "ViewSchedule", controller = "Schedule"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewSchedule(System.String) on controller WebApp.Controllers.ScheduleController (WebApp).
+2025-05-14 22:48:34.447 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassroomNumber", "s"."Date", "s"."Day", "s"."Hour", "s"."SubjectId"
+FROM "ScheduleEntries" AS "s"
+WHERE "s"."SubjectId" IN (
+    SELECT "s0"."Id"
+    FROM "Subjects" AS "s0"
+    WHERE "s0"."ClassName" = @__className_0
+)
+ORDER BY "s"."Day", "s"."Hour"
+2025-05-14 22:48:34.448 +02:00 [INF] Executing ViewResult, running view ViewSchedule.
+2025-05-14 22:48:34.453 +02:00 [INF] Executed ViewResult - view ViewSchedule executed in 4.9769ms.
+2025-05-14 22:48:34.453 +02:00 [INF] Executed action WebApp.Controllers.ScheduleController.ViewSchedule (WebApp) in 6.8774ms
+2025-05-14 22:48:34.453 +02:00 [INF] Executed endpoint 'WebApp.Controllers.ScheduleController.ViewSchedule (WebApp)'
+2025-05-14 22:48:34.453 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Schedule/ViewSchedule?className=kkk - 200 null text/html; charset=utf-8 13.8974ms
+2025-05-14 22:48:34.464 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:48:34.464 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:48:34.465 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.5748ms
+2025-05-14 22:48:34.482 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.1428ms
+2025-05-14 22:48:36.002 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Schedule/Create?className=kkk - null null
+2025-05-14 22:48:36.168 +02:00 [INF] Executing endpoint 'WebApp.Controllers.ScheduleController.Create (WebApp)'
+2025-05-14 22:48:36.168 +02:00 [INF] Route matched with {action = "Create", controller = "Schedule"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String) on controller WebApp.Controllers.ScheduleController (WebApp).
+2025-05-14 22:48:36.169 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT CAST("s"."Id" AS TEXT) AS "Value", "s"."Name" AS "Text"
+FROM "Subjects" AS "s"
+WHERE "s"."ClassName" = @__className_0
+2025-05-14 22:48:36.170 +02:00 [INF] Executing ViewResult, running view Create.
+2025-05-14 22:48:36.173 +02:00 [INF] Executed ViewResult - view Create executed in 3.7273ms.
+2025-05-14 22:48:36.174 +02:00 [INF] Executed action WebApp.Controllers.ScheduleController.Create (WebApp) in 5.8978ms
+2025-05-14 22:48:36.174 +02:00 [INF] Executed endpoint 'WebApp.Controllers.ScheduleController.Create (WebApp)'
+2025-05-14 22:48:36.174 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Schedule/Create?className=kkk - 200 null text/html; charset=utf-8 171.906ms
+2025-05-14 22:48:36.183 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:48:36.183 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:48:36.185 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.7352ms
+2025-05-14 22:48:36.198 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.1041ms
+2025-05-14 22:49:07.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Schedule?className=kkk - null null
+2025-05-14 22:49:07.339 +02:00 [INF] Executing endpoint 'WebApp.Controllers.ScheduleController.Index (WebApp)'
+2025-05-14 22:49:07.340 +02:00 [INF] Route matched with {action = "Index", controller = "Schedule"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.ScheduleController (WebApp).
+2025-05-14 22:49:07.341 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+ORDER BY "c"."Name"
+2025-05-14 22:49:07.342 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-14 22:49:07.345 +02:00 [INF] Executed ViewResult - view Index executed in 3.4063ms.
+2025-05-14 22:49:07.345 +02:00 [INF] Executed action WebApp.Controllers.ScheduleController.Index (WebApp) in 5.689ms
+2025-05-14 22:49:07.345 +02:00 [INF] Executed endpoint 'WebApp.Controllers.ScheduleController.Index (WebApp)'
+2025-05-14 22:49:07.346 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Schedule?className=kkk - 200 null text/html; charset=utf-8 22.6386ms
+2025-05-14 22:49:07.361 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:49:07.362 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:49:07.367 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 6.5086ms
+2025-05-14 22:49:07.380 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.0847ms
+2025-05-14 22:51:12.932 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Admin - null null
+2025-05-14 22:51:12.955 +02:00 [INF] Executing endpoint 'AdminController.Index (WebApp)'
+2025-05-14 22:51:12.958 +02:00 [INF] Route matched with {action = "Index", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller AdminController (WebApp).
+2025-05-14 22:51:12.965 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+2025-05-14 22:51:12.966 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-14 22:51:12.967 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-14 22:51:12.967 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-14 22:51:12.967 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-14 22:51:12.968 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-14 22:51:12.979 +02:00 [INF] Executed ViewResult - view Index executed in 11.3483ms.
+2025-05-14 22:51:12.982 +02:00 [INF] Executed action AdminController.Index (WebApp) in 23.8595ms
+2025-05-14 22:51:12.982 +02:00 [INF] Executed endpoint 'AdminController.Index (WebApp)'
+2025-05-14 22:51:12.982 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Admin - 200 null text/html; charset=utf-8 50.2541ms
+2025-05-14 22:51:13.004 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-05-14 22:51:13.005 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-05-14 22:51:13.007 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:51:13.010 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-05-14 22:51:13.011 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 6.7028ms
+2025-05-14 22:51:13.011 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - null null
+2025-05-14 22:51:13.010 +02:00 [INF] The file /css/site.css was not modified
+2025-05-14 22:51:13.013 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - null null
+2025-05-14 22:51:13.013 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 304 null text/css 8.7188ms
+2025-05-14 22:51:13.016 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-05-14 22:51:13.016 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - 304 null text/javascript 4.9769ms
+2025-05-14 22:51:13.017 +02:00 [INF] The file /WebApp.styles.css was not modified
+2025-05-14 22:51:13.017 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - 304 null text/css 6.4243ms
+2025-05-14 22:51:13.021 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 14.7462ms
+2025-05-14 22:51:13.023 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-05-14 22:51:13.023 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - null null
+2025-05-14 22:51:13.023 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-05-14 22:51:13.023 +02:00 [INF] The file /js/site.js was not modified
+2025-05-14 22:51:13.023 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 0.8346ms
+2025-05-14 22:51:13.023 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - 304 null text/javascript 0.7834ms
+2025-05-14 22:51:13.071 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:51:13.088 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.349ms
+2025-05-14 22:58:55.699 +02:00 [INF] User profile is available. Using 'C:\Users\Jan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-14 22:58:56.765 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-14 22:58:56.827 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-14 22:58:56.828 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-14 22:58:56.829 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-14 22:58:56.841 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-14 22:58:56.891 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-14 22:58:56.912 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2025-05-14 22:58:57.240 +02:00 [INF] Now listening on: https://localhost:7021
+2025-05-14 22:58:57.240 +02:00 [INF] Now listening on: http://localhost:5043
+2025-05-14 22:58:57.312 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-14 22:58:57.312 +02:00 [INF] Hosting environment: Development
+2025-05-14 22:58:57.312 +02:00 [INF] Content root path: C:\Users\Jan\source\webapp\WebApp\WebApp
+2025-05-14 22:58:58.118 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-14 22:58:58.335 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-14 22:58:58.354 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-14 22:58:58.364 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-14 22:58:58.467 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-05-14 22:58:58.608 +02:00 [INF] Executed ViewResult - view Index executed in 235.9175ms.
+2025-05-14 22:58:58.612 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 258.0617ms
+2025-05-14 22:58:58.613 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-14 22:58:58.626 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-05-14 22:58:58.631 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-05-14 22:58:58.632 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 530.0784ms
+2025-05-14 22:58:58.633 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - null null
+2025-05-14 22:58:58.636 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - null null
+2025-05-14 22:58:58.637 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-05-14 22:58:58.637 +02:00 [INF] The file /css/site.css was not modified
+2025-05-14 22:58:58.637 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-05-14 22:58:58.638 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 11.9126ms
+2025-05-14 22:58:58.638 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - 304 null text/javascript 1.9354ms
+2025-05-14 22:58:58.638 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-05-14 22:58:58.638 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - null null
+2025-05-14 22:58:58.639 +02:00 [INF] The file /WebApp.styles.css was not modified
+2025-05-14 22:58:58.639 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - 304 null text/css 6.6443ms
+2025-05-14 22:58:58.639 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-05-14 22:58:58.639 +02:00 [INF] The file /js/site.js was not modified
+2025-05-14 22:58:58.639 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 1.2408ms
+2025-05-14 22:58:58.639 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - 304 null text/javascript 1.2492ms
+2025-05-14 22:58:58.646 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 304 null text/css 14.5989ms
+2025-05-14 22:58:58.669 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-14 22:58:58.671 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-14 22:58:58.676 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 6.4775ms
+2025-05-14 22:58:58.823 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 151.7245ms

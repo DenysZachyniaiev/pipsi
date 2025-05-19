@@ -4,6 +4,12 @@
     string className = ViewBag.ClassName ?? "";
 }
 
+
+
+
+
+
+
 <h2>@ViewData["Title"] dla klasy @className</h2>
 
 <form asp-action="Create" method="post">
@@ -23,6 +29,9 @@
         <label asp-for="Date" class="form-label">Data</label>
         <input asp-for="Date" class="form-control" type="date" />
         <span asp-validation-for="Date" class="text-danger"></span>
+
+
+
     </div>
 
     <div class="mb-3">
