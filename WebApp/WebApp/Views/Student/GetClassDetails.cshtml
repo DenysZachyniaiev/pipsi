@@ -33,6 +33,25 @@
             }
         </ul>
 
+        @if (User.IsInRole("Admin") || User.IsInRole("Teacher"))
+        {
+            <div class="mb-3 d-flex gap-2">
+                <a asp-controller="Grades"
+                   asp-action="ManageGrades"
+                   asp-route-className="@Model.ClassName"
+                   class="btn btn-warning">
+                    @Localizer["ManageGrades"]
+                </a>
+
+                <a asp-controller="Assignment"
+                   asp-action="Create"
+                   asp-route-className="@Model.ClassName"
+                   class="btn btn-primary">
+                    Add Assignment
+                </a>
+            </div>
+        }
+
         <form asp-action="AssignStudents" method="post">
             <input type="hidden" name="className" value="@Model.ClassName" />
             <h5>@Localizer["AssignStudents"]:</h5>

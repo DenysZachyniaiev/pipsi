@@ -1,0 +1,76 @@
+﻿@model WebApp.ViewModels.CreateAssignmentViewModel
+@{
+    var subjects = ViewBag.Subjects as List<WebApp.Models.Subject>;
+}
+
+<h3>Create Assignment for class @Model.ClassName</h3>
+
+<form asp-action="Create" method="post">
+    <input type="hidden" name="ClassName" value="@Model.ClassName" />
+
+    <div class="mb-3">
+        <label>Name:</label>
+        <input name="Name" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Type:</label>
+        <select name="Type" class="form-select" required>
+            <option value="">-- select type --</option>
+            <option>Sprawdzian</option>
+            <option>Kartkówka</option>
+            <option>Zadanie domowe</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Subject:</label>
+        <select name="SubjectName" class="form-select" required>
+            <option value="">-- select subject --</option>
+            @foreach (var subject in subjects)
+            {
+                <option value="@subject.Name">@subject.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Start date:</label>
+        <input type="date" name="StartDate" class="form-control" value="@Model.StartDate.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Due date (optional):</label>
+        <input type="date" name="DueDate" class="form-control" value="@Model.DueDate?.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <div class="mb-3">
+        <label>Assign to students:</label>
+
+        <div class="mb-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAll(true)">Select All</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAll(false)">Deselect All</button>
+        </div>
+
+        <div class="border rounded p-2" style="max-height: 250px; overflow-y: auto;">
+            @foreach (var student in Model.AllStudents)
+            {
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input student-checkbox" name="SelectedStudentIds" value="@student.Id" />
+                    <label class="form-check-label">@student.FirstName @student.LastName</label>
+                </div>
+            }
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create Assignment</button>
+    <a asp-controller="Grades" asp-action="ManageGrades" asp-route-className="@Model.ClassName" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+@section Scripts {
+    <script>
+        function toggleAll(checked) {
+            document.querySelectorAll('.student-checkbox').forEach(cb => cb.checked = checked);
+        }
+    </script>
+}

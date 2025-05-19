@@ -5,7 +5,6 @@ using Microsoft.Extensions.Caching.Memory;
 using WebApp.ViewModels;
 using WebApp.Data;
 using WebApp.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace WebApp.Controllers
 {
@@ -23,6 +22,14 @@ namespace WebApp.Controllers
             this.userManager = userManager;
             this.cache = cache;
             this.logger = logger;
+        }
+
+        private bool UserCanEditClass(string className)
+        {
+            if (User.IsInRole("Admin")) return true;
+
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            return context.Subjects.Any(s => s.ClassName == className && s.TeacherId == userId);
         }
 
         public IActionResult Index()
@@ -50,7 +57,27 @@ namespace WebApp.Controllers
 
         public async Task<IActionResult> Classes()
         {
-            var classes = context.Classes.ToList();
+            var isAdmin = User.IsInRole("Admin");
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            List<Class> classes;
+            if (isAdmin)
+            {
+                classes = context.Classes.ToList();
+            }
+            else
+            {
+                var classNames = context.Subjects
+                    .Where(s => s.TeacherId == userId)
+                    .Select(s => s.ClassName)
+                    .Distinct()
+                    .ToList();
+
+                classes = context.Classes
+                    .Where(c => classNames.Contains(c.Name))
+                    .ToList();
+            }
+
             var students = context.Students.ToList();
             var teachers = await userManager.GetUsersInRoleAsync("Teacher");
 
@@ -90,6 +117,8 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult DeleteClass(string className)
         {
+            if (!UserCanEditClass(className)) return Forbid();
+
             var classToDelete = context.Classes.FirstOrDefault(c => c.Name == className);
             if (classToDelete == null)
                 return NotFound();
@@ -97,7 +126,6 @@ namespace WebApp.Controllers
             var relatedEntries = context.ClassStudents.Where(cs => cs.ClassName == className);
             context.ClassStudents.RemoveRange(relatedEntries);
 
-            // Usuwamy przedmioty tej klasy
             var relatedSubjects = context.Subjects.Where(s => s.ClassName == className);
             context.Subjects.RemoveRange(relatedSubjects);
 
@@ -110,6 +138,8 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult AssignTeacher(string className, string teacherId)
         {
+            if (!UserCanEditClass(className)) return Forbid();
+
             var classEntity = context.Classes.FirstOrDefault(c => c.Name == className);
             if (classEntity == null)
                 return NotFound();
@@ -123,6 +153,8 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult AssignStudents(string className, List<int> studentIds)
         {
+            if (!UserCanEditClass(className)) return Forbid();
+
             var existing = context.ClassStudents.Where(cs => cs.ClassName == className);
             context.ClassStudents.RemoveRange(existing);
 
@@ -142,11 +174,12 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult AddSubjectToClass(string className, string subjectName, string teacherId)
         {
+            if (!UserCanEditClass(className)) return Forbid();
+
             if (string.IsNullOrWhiteSpace(className) || string.IsNullOrWhiteSpace(subjectName) || string.IsNullOrWhiteSpace(teacherId))
                 return BadRequest("Invalid data.");
 
-            var classExists = context.Classes.Any(c => c.Name == className);
-            if (!classExists)
+            if (!context.Classes.Any(c => c.Name == className))
                 return BadRequest("Class does not exist.");
 
             var subject = new Subject
@@ -162,11 +195,46 @@ namespace WebApp.Controllers
             return RedirectToAction("Classes");
         }
 
+        [HttpPost]
+        public IActionResult RemoveSubjectFromClass(string className, int subjectId)
+        {
+            if (!UserCanEditClass(className)) return Forbid();
+
+            if (string.IsNullOrEmpty(className))
+                return BadRequest();
+
+            var subject = context.Subjects
+                .FirstOrDefault(s => s.Id == subjectId && s.ClassName == className);
+
+            if (subject == null)
+                return NotFound();
+
+            context.Subjects.Remove(subject);
+            context.SaveChanges();
+
+            return RedirectToAction("Classes");
+        }
+
         [HttpGet]
         public IActionResult GetClassDetails(string className)
         {
             var classEntity = context.Classes.FirstOrDefault(c => c.Name == className);
             if (classEntity == null) return NotFound();
+
+            var isAdmin = User.IsInRole("Admin");
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (!isAdmin)
+            {
+                var teachesHere = context.Subjects.Any(s =>
+                    s.ClassName == className &&
+                    s.TeacherId == userId);
+
+                if (!teachesHere)
+                {
+                    return Forbid();
+                }
+            }
 
             var assignedStudentIds = context.ClassStudents
                 .Where(cs => cs.ClassName == className)
@@ -174,9 +242,7 @@ namespace WebApp.Controllers
                 .ToList();
 
             var subjects = context.Subjects.Where(s => s.ClassName == className).ToList();
-
             var teachers = userManager.GetUsersInRoleAsync("Teacher").Result.ToList();
-
             var teachersDict = teachers.ToDictionary(t => t.Id, t => t.UserName);
 
             var viewModel = new ClassDetailsViewModel
@@ -193,26 +259,6 @@ namespace WebApp.Controllers
             };
 
             return PartialView("GetClassDetails", viewModel);
-        }
-
-        [HttpPost]
-        public IActionResult RemoveSubjectFromClass(string className, int subjectId)
-        {
-            if (string.IsNullOrEmpty(className))
-                return BadRequest();
-
-            var subject = context.Subjects
-                .FirstOrDefault(s => s.Id == subjectId && s.ClassName == className);
-
-            if (subject == null)
-            {
-                return NotFound();
-            }
-
-            context.Subjects.Remove(subject);
-            context.SaveChanges();
-
-            return RedirectToAction("Classes");
         }
     }
 }

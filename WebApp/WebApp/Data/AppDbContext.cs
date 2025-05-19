@@ -10,11 +10,16 @@ namespace WebApp.Data
             : base(options)
         {
         }
+
         public DbSet<Class> Classes => Set<Class>();
         public DbSet<ClassStudents> ClassStudents => Set<ClassStudents>();
         public DbSet<Student> Students => Set<Student>();
         public DbSet<Subject> Subjects => Set<Subject>();
         public DbSet<ScheduleEntry> ScheduleEntries => Set<ScheduleEntry>();
+        public DbSet<Grade> Grades { get; set; }
+        public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<AssignmentStudent> AssignmentStudents { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -57,7 +62,21 @@ namespace WebApp.Data
                 .WithMany()
                 .HasForeignKey(se => se.SubjectId)
                 .OnDelete(DeleteBehavior.Cascade);
-        }
 
+            modelBuilder.Entity<AssignmentStudent>()
+                .HasKey(x => new { x.AssignmentId, x.StudentId });
+
+            modelBuilder.Entity<AssignmentStudent>()
+                .HasOne(x => x.Assignment)
+                .WithMany(a => a.AssignedStudents)
+                .HasForeignKey(x => x.AssignmentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<AssignmentStudent>()
+                .HasOne(x => x.Student)
+                .WithMany()
+                .HasForeignKey(x => x.StudentId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }

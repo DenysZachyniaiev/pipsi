@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApp.Data;
 
@@ -10,9 +11,11 @@ using WebApp.Data;
 namespace WebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250518173515_AddAssignmentIdToGrade")]
+    partial class AddAssignmentIdToGrade
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.4");
@@ -253,7 +256,12 @@ namespace WebApp.Migrations
                     b.Property<int>("StudentId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("AssignmentId1")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("AssignmentId", "StudentId");
+
+                    b.HasIndex("AssignmentId1");
 
                     b.HasIndex("StudentId");
 
@@ -447,10 +455,14 @@ namespace WebApp.Migrations
             modelBuilder.Entity("WebApp.Models.AssignmentStudent", b =>
                 {
                     b.HasOne("Assignment", "Assignment")
-                        .WithMany("AssignedStudents")
+                        .WithMany()
                         .HasForeignKey("AssignmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Assignment", null)
+                        .WithMany("AssignedStudents")
+                        .HasForeignKey("AssignmentId1");
 
                     b.HasOne("WebApp.Models.Student", "Student")
                         .WithMany()

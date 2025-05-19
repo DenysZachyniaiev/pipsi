@@ -1,0 +1,81 @@
+﻿@model WebApp.ViewModels.EditAssignmentViewModel
+
+<h3>Edit Assignment for class @Model.ClassName</h3>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="hidden" name="ClassName" value="@Model.ClassName" />
+
+    <div class="mb-3">
+        <label>Name:</label>
+        <input name="Name" class="form-control" value="@Model.Name" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Type:</label>
+        <select name="Type" class="form-select" required>
+            <option value="">-- select type --</option>
+            @foreach (var type in new[] { "Sprawdzian", "Kartkówka", "Zadanie domowe" })
+            {
+                var selected = Model.Type == type ? "selected" : "";
+                @Html.Raw($"<option value=\"{type}\" {selected}>{type}</option>")
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Subject:</label>
+        <select name="SubjectName" class="form-select" required>
+            <option value="">-- select subject --</option>
+            @foreach (var subject in Model.AvailableSubjects)
+            {
+                var selected = Model.SubjectName == subject.Name ? "selected" : "";
+                @Html.Raw($"<option value=\"{subject.Name}\" {selected}>{subject.Name}</option>")
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Start date:</label>
+        <input type="date" name="StartDate" class="form-control"
+               value="@Model.StartDate.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Due date (optional):</label>
+        <input type="date" name="DueDate" class="form-control"
+               value="@Model.DueDate?.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <div class="mb-3">
+        <label>Assign to students:</label>
+
+        <div class="mb-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAll(true)">Select All</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleAll(false)">Deselect All</button>
+        </div>
+
+        <div class="border rounded p-2" style="max-height: 250px; overflow-y: auto;">
+            @foreach (var student in Model.AllStudents)
+            {
+                var isChecked = Model.SelectedStudentIds.Contains(student.Id) ? "checked" : "";
+                @Html.Raw($@"
+                    <div class='form-check'>
+                        <input type='checkbox' class='form-check-input student-checkbox' name='SelectedStudentIds' value='{student.Id}' {isChecked} />
+                        <label class='form-check-label'>{student.FirstName} {student.LastName}</label>
+                    </div>")
+            }
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save changes</button>
+    <a asp-controller="Grades" asp-action="ManageGrades" asp-route-className="@Model.ClassName" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+@section Scripts {
+    <script>
+        function toggleAll(checked) {
+            document.querySelectorAll('.student-checkbox').forEach(cb => cb.checked = checked);
+        }
+    </script>
+}

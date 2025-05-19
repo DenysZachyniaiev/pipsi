@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApp.Data;
 
@@ -10,44 +11,14 @@ using WebApp.Data;
 namespace WebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250518143438_AddGradeModel")]
+    partial class AddGradeModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.4");
-
-            modelBuilder.Entity("Assignment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ClassName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("DueDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SubjectName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Assignments");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -245,21 +216,6 @@ namespace WebApp.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("WebApp.Models.AssignmentStudent", b =>
-                {
-                    b.Property<int>("AssignmentId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("AssignmentId", "StudentId");
-
-                    b.HasIndex("StudentId");
-
-                    b.ToTable("AssignmentStudents");
-                });
-
             modelBuilder.Entity("WebApp.Models.Class", b =>
                 {
                     b.Property<string>("Name")
@@ -295,9 +251,6 @@ namespace WebApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("AssignmentId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
@@ -312,8 +265,6 @@ namespace WebApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AssignmentId");
 
                     b.ToTable("Grades");
                 });
@@ -444,25 +395,6 @@ namespace WebApp.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WebApp.Models.AssignmentStudent", b =>
-                {
-                    b.HasOne("Assignment", "Assignment")
-                        .WithMany("AssignedStudents")
-                        .HasForeignKey("AssignmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebApp.Models.Student", "Student")
-                        .WithMany()
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Assignment");
-
-                    b.Navigation("Student");
-                });
-
             modelBuilder.Entity("WebApp.Models.ClassStudents", b =>
                 {
                     b.HasOne("WebApp.Models.Class", null)
@@ -476,15 +408,6 @@ namespace WebApp.Migrations
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("WebApp.Models.Grade", b =>
-                {
-                    b.HasOne("Assignment", "Assignment")
-                        .WithMany()
-                        .HasForeignKey("AssignmentId");
-
-                    b.Navigation("Assignment");
                 });
 
             modelBuilder.Entity("WebApp.Models.ScheduleEntry", b =>
@@ -509,11 +432,6 @@ namespace WebApp.Migrations
                         .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Assignment", b =>
-                {
-                    b.Navigation("AssignedStudents");
                 });
 #pragma warning restore 612, 618
         }
