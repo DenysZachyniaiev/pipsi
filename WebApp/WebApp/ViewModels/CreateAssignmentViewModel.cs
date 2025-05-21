@@ -15,6 +15,8 @@ namespace WebApp.ViewModels
 
         public string ClassName { get; set; }
 
+        public string Test = "test";
+
         public List<Student> AllStudents { get; set; } = new();
         public List<int> SelectedStudentIds { get; set; } = new();
     }
