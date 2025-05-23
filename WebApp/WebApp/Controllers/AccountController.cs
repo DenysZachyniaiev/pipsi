@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Data;
 using WebApp.Models;
-using WebApp.ViewModels;
 using WebApp.Services;
+using WebApp.ViewModels;
 
 public class AccountController : Controller
 {
@@ -28,7 +30,44 @@ public class AccountController : Controller
         }
 
         var user = await userManager.GetUserAsync(User);
-        return View(user);
+        if (user == null)
+            return NotFound();
+
+        var roles = await userManager.GetRolesAsync(user);
+        var isStudent = roles.Contains("Student");
+
+        if (!isStudent)
+            return View(user);
+
+        var context = HttpContext.RequestServices.GetRequiredService<AppDbContext>();
+
+        var studentEntry = context.Students.FirstOrDefault(s => s.Id == user.Id);
+        if (studentEntry == null)
+            return View(user);
+
+        var assignmentIds = context.AssignmentStudents
+            .Where(a => a.StudentId == user.Id)
+            .Select(a => a.AssignmentId)
+            .ToList();
+
+        var assignments = context.Assignments
+            .Where(a => assignmentIds.Contains(a.Id))
+            .OrderByDescending(a => a.StartDate)
+            .ToList();
+
+        var grades = context.Grades
+            .Where(g => g.StudentId == user.Id && g.AssignmentId.HasValue)
+            .ToDictionary(g => g.AssignmentId!.Value, g => (int?)g.Value);
+
+        var viewModel = new AccountStudentViewModel
+        {
+            User = user,
+            Student = studentEntry,
+            Assignments = assignments,
+            Grades = grades
+        };
+
+        return View(viewModel);
     }
 
     [HttpPost]
@@ -135,13 +174,24 @@ public class AccountController : Controller
         {
             UserName = model.Email,
             Email = model.Email,
-            FullName = model.FullName
+            FirstName = model.FirstName,
+            LastName = model.LastName
         };
 
         var result = await userManager.CreateAsync(user, model.Password);
         if (result.Succeeded)
         {
             await userManager.AddToRoleAsync(user, "Student");
+
+            var dbContext = HttpContext.RequestServices.GetRequiredService<WebApp.Data.AppDbContext>();
+            dbContext.Students.Add(new Student
+            {
+                Id = user.Id,
+                FirstName = user.FirstName ?? user.UserName ?? "Unknown",
+                LastName = user.LastName ?? ""
+            });
+            await dbContext.SaveChangesAsync();
+
             await signInManager.SignInAsync(user, isPersistent: false);
             return RedirectToAction("Index", "Account");
         }

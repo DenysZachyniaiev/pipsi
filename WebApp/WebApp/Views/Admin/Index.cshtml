@@ -19,7 +19,7 @@
             <tr>
                 <td>@item.User.Id</td>
                 <td>@item.User.Email</td>
-                <td>@item.User.FullName</td>
+                <td>@($"{item.User.FirstName} {item.User.LastName}")</td>
                 <td>@item.Role</td>
             </tr>
         }

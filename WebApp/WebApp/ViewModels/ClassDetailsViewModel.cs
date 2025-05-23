@@ -15,7 +15,7 @@ namespace WebApp.ViewModels
 
         public List<Student> AssignedStudents { get; set; }
 
-        public Dictionary<string, List<int>> ClassStudentMap { get; set; } = new();
+        public Dictionary<string, List<string>> ClassStudentMap { get; set; } = new();
         public List<Subject> Subjects { get; set; } = new();
         public Dictionary<int, string> SubjectTeacherNames { get; set; } = new();
     }

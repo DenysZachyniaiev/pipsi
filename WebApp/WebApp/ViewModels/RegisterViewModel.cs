@@ -14,11 +14,16 @@ namespace WebApp.ViewModels
 
         [DataType(DataType.Password)]
         [Compare("Password")]
+        [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; } = string.Empty;
 
         [Required]
-        [Display(Name = "Full Name")]
-        public string FullName { get; set; } = string.Empty;
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; } = string.Empty;
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; } = string.Empty;
 
         public string? VerificationCode { get; set; }
 

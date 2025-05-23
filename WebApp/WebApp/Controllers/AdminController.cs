@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using WebApp.Models;
 using WebApp.ViewModels;
 
@@ -42,8 +43,9 @@ public class AdminController : Controller
         {
             Id = user.Id,
             Email = user.Email,
-            FullName = user.FullName,
-            Role = roles.FirstOrDefault() ?? ""
+            Role = roles.FirstOrDefault() ?? "",
+            StudentFirstName = user.FirstName,
+            StudentLastName = user.LastName
         };
 
         ViewBag.AllRoles = roleManager.Roles.Select(r => r.Name).ToList();
@@ -57,18 +59,55 @@ public class AdminController : Controller
         if (user == null)
             return NotFound();
 
-        user.FullName = model.FullName;
         user.Email = model.Email;
         user.UserName = model.Email;
+        user.FirstName = model.StudentFirstName;
+        user.LastName = model.StudentLastName;
 
         var userRoles = await userManager.GetRolesAsync(user);
-        if (!userRoles.Contains(model.Role))
+        var currentRole = userRoles.FirstOrDefault();
+
+        if (currentRole != model.Role)
         {
-            await userManager.RemoveFromRolesAsync(user, userRoles);
+            if (!string.IsNullOrEmpty(currentRole))
+                await userManager.RemoveFromRoleAsync(user, currentRole);
+
             await userManager.AddToRoleAsync(user, model.Role);
         }
 
         await userManager.UpdateAsync(user);
+
+        var dbContext = HttpContext.RequestServices.GetRequiredService<WebApp.Data.AppDbContext>();
+        var memoryCache = HttpContext.RequestServices.GetRequiredService<IMemoryCache>();
+
+        var studentEntry = dbContext.Students.FirstOrDefault(s => s.Id == user.Id);
+
+        if (model.Role == "Student" && studentEntry == null)
+        {
+            dbContext.Students.Add(new Student
+            {
+                Id = user.Id,
+                FirstName = user.FirstName ?? user.UserName ?? "Unknown",
+                LastName = user.LastName ?? ""
+            });
+        }
+        else if (model.Role != "Student" && studentEntry != null)
+        {
+            var grades = dbContext.Grades.Where(g => g.StudentId == user.Id);
+            var classLinks = dbContext.ClassStudents.Where(cs => cs.StudentId == user.Id);
+            var assignmentLinks = dbContext.AssignmentStudents.Where(a => a.StudentId == user.Id);
+
+            dbContext.Grades.RemoveRange(grades);
+            dbContext.ClassStudents.RemoveRange(classLinks);
+            dbContext.AssignmentStudents.RemoveRange(assignmentLinks);
+            dbContext.Students.Remove(studentEntry);
+        }
+
+        await dbContext.SaveChangesAsync();
+
+        // Inwalidacja cache uczniów
+        memoryCache.Remove("AllStudents");
+
         return RedirectToAction("Index");
     }
 
@@ -87,6 +126,33 @@ public class AdminController : Controller
         var user = await userManager.FindByIdAsync(id);
         if (user == null)
             return NotFound();
+
+        var userRoles = await userManager.GetRolesAsync(user);
+        var isStudent = userRoles.Contains("Student");
+
+        var dbContext = HttpContext.RequestServices.GetRequiredService<WebApp.Data.AppDbContext>();
+        var memoryCache = HttpContext.RequestServices.GetRequiredService<IMemoryCache>();
+
+        if (isStudent)
+        {
+            var studentEntry = dbContext.Students.FirstOrDefault(s => s.Id == user.Id);
+            if (studentEntry != null)
+            {
+                var grades = dbContext.Grades.Where(g => g.StudentId == user.Id);
+                var classLinks = dbContext.ClassStudents.Where(cs => cs.StudentId == user.Id);
+                var assignmentLinks = dbContext.AssignmentStudents.Where(a => a.StudentId == user.Id);
+
+                dbContext.Grades.RemoveRange(grades);
+                dbContext.ClassStudents.RemoveRange(classLinks);
+                dbContext.AssignmentStudents.RemoveRange(assignmentLinks);
+                dbContext.Students.Remove(studentEntry);
+            }
+
+            await dbContext.SaveChangesAsync();
+        }
+
+        // Inwalidacja cache uczniów
+        memoryCache.Remove("AllStudents");
 
         await userManager.DeleteAsync(user);
         return RedirectToAction("Index");

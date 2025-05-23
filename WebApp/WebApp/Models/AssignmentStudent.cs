@@ -5,7 +5,7 @@
         public int AssignmentId { get; set; }
         public Assignment Assignment { get; set; }
 
-        public int StudentId { get; set; }
+        public string StudentId { get; set; } = string.Empty;
         public Student Student { get; set; }
     }
 }

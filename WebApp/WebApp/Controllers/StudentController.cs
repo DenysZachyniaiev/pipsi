@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
-using WebApp.ViewModels;
+using System.Linq;
 using WebApp.Data;
 using WebApp.Models;
+using WebApp.ViewModels;
 
 namespace WebApp.Controllers
 {
@@ -78,7 +80,13 @@ namespace WebApp.Controllers
                     .ToList();
             }
 
-            var students = context.Students.ToList();
+            var assignedStudentIds = context.ClassStudents.Select(cs => cs.StudentId).ToHashSet();
+
+            var students = context.Students
+                .Where(s => !assignedStudentIds.Contains(s.Id))
+                .ToList();
+
+
             var teachers = await userManager.GetUsersInRoleAsync("Teacher");
 
             var classStudentMap = context.ClassStudents
@@ -151,9 +159,34 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult AssignStudents(string className, List<int> studentIds)
+        public async Task<IActionResult> AssignStudents(string className, List<string> studentIds)
         {
             if (!UserCanEditClass(className)) return Forbid();
+
+            var existingStudentIds = context.Students.Select(s => s.Id).ToHashSet();
+
+            var missingStudentIds = studentIds.Where(id => !existingStudentIds.Contains(id)).ToList();
+            if (missingStudentIds.Any())
+            {
+                var userAccounts = await userManager.Users
+                    .Where(u => missingStudentIds.Contains(u.Id))
+                    .ToListAsync();
+
+                foreach (var user in userAccounts)
+                {
+                    var firstName = user.FirstName ?? user.UserName ?? "Unknown";
+                    var lastName = user.LastName ?? "";
+
+                    context.Students.Add(new Student
+                    {
+                        Id = user.Id,
+                        FirstName = firstName,
+                        LastName = lastName
+                    });
+                }
+
+                context.SaveChanges();
+            }
 
             var existing = context.ClassStudents.Where(cs => cs.ClassName == className);
             context.ClassStudents.RemoveRange(existing);
@@ -250,7 +283,11 @@ namespace WebApp.Controllers
                 ClassName = classEntity.Name,
                 TeacherId = classEntity.TeacherId,
                 AllTeachers = teachers,
-                AllStudents = context.Students.ToList(),
+                AllStudents = context.Students
+                    .Where(s =>
+                        !context.ClassStudents.Any(cs => cs.StudentId == s.Id && cs.ClassName != className)
+                    )
+                    .ToList(),
                 AssignedStudents = context.Students.Where(s => assignedStudentIds.Contains(s.Id)).ToList(),
                 Subjects = subjects,
                 SubjectTeacherNames = subjects.ToDictionary(
