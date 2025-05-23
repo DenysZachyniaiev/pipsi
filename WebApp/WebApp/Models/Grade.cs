@@ -8,7 +8,7 @@ namespace WebApp.Models
         public int Id { get; set; }
 
         [Required]
-        public int StudentId { get; set; }
+        public string StudentId { get; set; } = string.Empty;
 
         [Required]
         public string SubjectName { get; set; } = string.Empty;

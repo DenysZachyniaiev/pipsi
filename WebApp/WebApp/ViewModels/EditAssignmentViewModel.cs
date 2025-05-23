@@ -20,6 +20,7 @@ namespace WebApp.ViewModels
         public List<Subject> AvailableSubjects { get; set; } = new();
 
         public List<Student> AllStudents { get; set; } = new();
-        public List<int> SelectedStudentIds { get; set; } = new();
+
+        public List<string> SelectedStudentIds { get; set; } = new();
     }
 }

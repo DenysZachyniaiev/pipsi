@@ -1,18 +1,104 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model WebApp.Models.AppUser
+@using WebApp.Models
+@using WebApp.ViewModels
+@model object
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 @{
     ViewData["Title"] = Localizer["Account"];
+
+    var isStudent = Model is AccountStudentViewModel;
+    var studentModel = isStudent ? (AccountStudentViewModel)Model : null;
+    var userModel = isStudent ? studentModel.User : (AppUser)Model;
 }
 
 <h2>@Localizer["Account"]</h2>
 
 @if (User.Identity?.IsAuthenticated ?? false)
 {
-    <p><strong>@Localizer["FullName"]:</strong> @Model.FullName</p>
+    <p><strong>@Localizer["FirstName"]:</strong> @userModel.FirstName</p>
+    <p><strong>@Localizer["LastName"]:</strong> @userModel.LastName</p>
+
+    @if (isStudent)
+    {
+        <h4 class="mt-4">Oceny</h4>
+        @if (studentModel!.Assignments.Any(a => studentModel.Grades.ContainsKey(a.Id)))
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nazwa</th>
+                        <th>Przedmiot</th>
+                        <th>Typ</th>
+                        <th>Data</th>
+                        <th>Ocena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var assignment in studentModel.Assignments.Where(a => studentModel.Grades.ContainsKey(a.Id)))
+                    {
+                        var grade = studentModel.Grades[assignment.Id]?.ToString() ?? "–";
+                        <tr>
+                            <td>@assignment.Name</td>
+                            <td>@assignment.SubjectName</td>
+                            <td>@assignment.Type</td>
+                            <td>
+                                @assignment.StartDate.ToString("dd.MM.yyyy")
+                                @if (assignment.Type == "Zadanie domowe" && assignment.DueDate.HasValue)
+                                {
+                                    @: – @assignment.DueDate.Value.ToString("dd.MM.yyyy")
+                                }
+                            </td>
+                            <td>@grade</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">Brak ocenionych zadań.</p>
+        }
+
+        <h4 class="mt-4">Zadania bez oceny</h4>
+        @if (studentModel.Assignments.Any(a => !studentModel.Grades.ContainsKey(a.Id)))
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nazwa</th>
+                        <th>Przedmiot</th>
+                        <th>Typ</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var assignment in studentModel.Assignments.Where(a => !studentModel.Grades.ContainsKey(a.Id)))
+                    {
+                        <tr>
+                            <td>@assignment.Name</td>
+                            <td>@assignment.SubjectName</td>
+                            <td>@assignment.Type</td>
+                            <td>
+                                @assignment.StartDate.ToString("dd.MM.yyyy")
+                                @if (assignment.Type == "Zadanie domowe" && assignment.DueDate.HasValue)
+                                {
+                                    @: – @assignment.DueDate.Value.ToString("dd.MM.yyyy")
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">Brak zadań bez oceny.</p>
+        }
+    }
+
     <form method="post" asp-action="Logout">
-        <button type="submit" class="btn btn-danger">@Localizer["Logout"]</button>
+        <button type="submit" class="btn btn-danger mt-3">@Localizer["Logout"]</button>
     </form>
 }
 else

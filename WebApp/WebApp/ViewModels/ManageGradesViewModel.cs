@@ -9,8 +9,8 @@ namespace WebApp.ViewModels
 
         public List<Student> Students { get; set; } = new();
         public List<Assignment> Assignments { get; set; } = new();
-        public Dictionary<int, Dictionary<int, int?>> Grades { get; set; } = new();
-        public Dictionary<int, HashSet<int>> AssignmentStudentMap { get; set; } = new();
+        public Dictionary<int, Dictionary<string, int?>> Grades { get; set; } = new();
+        public Dictionary<int, HashSet<string>> AssignmentStudentMap { get; set; } = new();
         public DateTime? WeekStart { get; set; }
     }
 }

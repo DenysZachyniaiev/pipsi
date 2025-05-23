@@ -183,7 +183,7 @@ namespace WebApp.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin,Teacher")]
-        public IActionResult SaveGrades(string className, Dictionary<int, Dictionary<int, string>> Grades)
+        public IActionResult SaveGrades(string className, Dictionary<int, Dictionary<string, string>> Grades)
         {
             int changes = 0;
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;

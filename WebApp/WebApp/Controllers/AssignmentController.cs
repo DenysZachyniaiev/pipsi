@@ -201,6 +201,7 @@ namespace WebApp.Controllers
             assignment.Type = model.Type;
             assignment.StartDate = model.StartDate;
             assignment.DueDate = model.DueDate;
+            assignment.SubjectName = model.SubjectName;
 
             var existingLinks = context.AssignmentStudents.Where(x => x.AssignmentId == assignment.Id);
             context.AssignmentStudents.RemoveRange(existingLinks);
@@ -217,7 +218,6 @@ namespace WebApp.Controllers
 
             return RedirectToAction("ManageGrades", "Grades", new { className = model.ClassName });
         }
-
 
         [HttpPost]
         public IActionResult Delete(int id)

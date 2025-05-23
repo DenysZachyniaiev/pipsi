@@ -3,7 +3,7 @@
 
 <h2>@Localizer["DeleteUser"]</h2>
 
-<p>@Localizer["AreYouSureDelete"] <strong>@Model.FullName</strong>?</p>
+<p>@Localizer["AreYouSureDelete"] <strong>@Model.FirstName @Model.LastName</strong>?</p>
 
 <form asp-action="Delete">
     <input type="hidden" asp-for="Id" />

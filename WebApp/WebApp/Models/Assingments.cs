@@ -10,7 +10,7 @@ public class Assignment
     public string? ClassName { get; set; }
 
     public DateTime StartDate { get; set; }
-    public DateTime? DueDate { get; set; } // null = nie dotyczy (np. dla sprawdzianu)
+    public DateTime? DueDate { get; set; }
 
     public ICollection<AssignmentStudent> AssignedStudents { get; set; } = new List<AssignmentStudent>();
 }

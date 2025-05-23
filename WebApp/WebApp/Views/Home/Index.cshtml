@@ -9,7 +9,12 @@
     if (User.Identity?.IsAuthenticated ?? false)
     {
         var user = await UserManager.GetUserAsync(User);
-        fullName = string.IsNullOrEmpty(user?.FullName) ? "Guest" : user.FullName;
+        if (user != null)
+        {
+            var first = user.FirstName ?? "";
+            var last = user.LastName ?? "";
+            fullName = $"{first} {last}".Trim();
+        }
     }
 }
 
