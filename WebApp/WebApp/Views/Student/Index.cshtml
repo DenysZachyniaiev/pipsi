@@ -35,7 +35,7 @@
 
     <form asp-controller="Student" asp-action="Edit" method="get" class="row g-2 mb-2">
         <div class="col-sm-8 col-12">
-            <input type="number" name="id" min="1" class="form-control" placeholder="@Localizer["EditPlaceholder"]" required />
+            <input type="text" name="id" min="1" class="form-control" placeholder="@Localizer["EditPlaceholder"]" required />
         </div>
         <div class="col-sm-4 col-12">
             <button type="submit" class="btn btn-primary w-100">@Localizer["Edit"]</button>
@@ -44,14 +44,13 @@
 
     <form asp-controller="Student" asp-action="Delete" method="get" class="row g-2 mb-2">
         <div class="col-sm-8 col-12">
-            <input type="number" name="id" min="1" class="form-control" placeholder="@Localizer["DeletePlaceholder"]" required />
+            <input type="text" name="id" min="1" class="form-control" placeholder="@Localizer["DeletePlaceholder"]" required />
         </div>
         <div class="col-sm-4 col-12">
             <button type="submit" class="btn btn-danger w-100">@Localizer["Delete"]</button>
         </div>
     </form>
 
-    <a asp-controller="Student" asp-action="Add" class="btn btn-success w-100 w-sm-auto">@Localizer["AddNewStudent"]</a>
 </div>
 
 <div class="mt-3">

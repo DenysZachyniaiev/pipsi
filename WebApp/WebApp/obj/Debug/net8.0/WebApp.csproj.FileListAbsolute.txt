@@ -1052,7 +1052,6 @@ C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resource
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Admin.Index.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Home.Index.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Shared._Layout.resources
-C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Add.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Classes.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Delete.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Edit.resources
@@ -1076,8 +1075,6 @@ C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resource
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Home.Index.pl.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Shared._Layout.en.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Shared._Layout.pl.resources
-C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Add.en.resources
-C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Add.pl.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Classes.en.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Classes.pl.resources
 C:\Users\dzaci\source\repos\pipsi\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Delete.en.resources

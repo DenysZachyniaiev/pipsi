@@ -17,141 +17,133 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApp
 build_property.RootNamespace = WebApp
-build_property.ProjectDir = C:\Users\Jan\source\webapp\WebApp\WebApp\
+build_property.ProjectDir = C:\Users\dzaci\Source\Repos\pipsi\WebApp\WebApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\Jan\source\webapp\WebApp\WebApp
+build_property.MSBuildProjectDirectory = C:\Users\dzaci\Source\Repos\pipsi\WebApp\WebApp
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Account/ConfirmCode.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Account/ConfirmCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtQ29kZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Account/ForgotPassword.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Account/ForgotPasswordCode.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Account/ForgotPasswordCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Account/Index.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Account/Login.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Account/Register.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Admin/Delete.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Admin/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Admin/Edit.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Admin/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Admin/Index.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Assignment/Create.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Assignment/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Assignment/Edit.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Assignment/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Grades/AddGrade.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhZGVzXEFkZEdyYWRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Grades/ManageGrades.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Grades/ManageGrades.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhZGVzXE1hbmFnZUdyYWRlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Home/Index.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Home/Privacy.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Home/PublicHolidays.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Home/PublicHolidays.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQdWJsaWNIb2xpZGF5cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Schedule/Create.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Schedule/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Schedule/Delete.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Schedule/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Schedule/Edit.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Schedule/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Schedule/Index.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Schedule/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Schedule/ViewSchedule.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Schedule/ViewSchedule.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcVmlld1NjaGVkdWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Shared/Error.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Student/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxBZGQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Student/Classes.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Student/Classes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDbGFzc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Student/Delete.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Student/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Student/Edit.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Student/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Student/GetClassDetails.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Student/GetClassDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxHZXRDbGFzc0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Student/Index.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/_ViewImports.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/_ViewStart.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jan/source/webapp/WebApp/WebApp/Views/Shared/_Layout.cshtml]
+[C:/Users/dzaci/Source/Repos/pipsi/WebApp/WebApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7882z672yd
