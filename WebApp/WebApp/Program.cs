@@ -22,6 +22,10 @@ namespace WebApp
 
             builder.Services.AddScoped<EmailService>();
 
+            builder.Services.AddHttpClient();
+            builder.Services.AddHttpClient<GeoLocationService>();
+            builder.Services.AddScoped<GeoLocationService>();
+
             builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = false;

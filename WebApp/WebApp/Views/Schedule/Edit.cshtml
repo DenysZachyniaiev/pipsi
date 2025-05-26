@@ -6,19 +6,12 @@
 
 <h2>Edit Schedule Entry for class @ViewBag.ClassName</h2>
 
-<form asp-action="Edit" method="post">
+<form asp-action="Edit" asp-route-className="@ViewBag.ClassName" method="post">
     <input type="hidden" asp-for="Id" />
-    <input type="hidden" name="className" value="@ViewBag.ClassName" />
-
-    <div class="mb-3">
-        <label asp-for="Day" class="form-label"></label>
-        <select asp-for="Day" asp-items="ViewBag.Days" class="form-select"></select>
-        <span asp-validation-for="Day" class="text-danger"></span>
-    </div>
 
     <div class="mb-3">
         <label asp-for="Hour" class="form-label"></label>
-        <input asp-for="Hour" type="number" min="1" max="12" class="form-control" />
+        <input asp-for="Hour" type="number" min="8" max="16" class="form-control" />
         <span asp-validation-for="Hour" class="text-danger"></span>
     </div>
 
@@ -47,5 +40,6 @@
 </form>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <partial name="_ValidationScriptsPartial" />
+    <div asp-validation-summary="All" class="text-danger"></div>
 }

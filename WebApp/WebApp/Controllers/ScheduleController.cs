@@ -2,13 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using WebApp.Data;
 using WebApp.Models;
+using WebApp.ViewModels;
 
 namespace WebApp.Controllers
 {
     [Authorize]
-    public class ScheduleController: Controller
+    public class ScheduleController : Controller
     {
         private readonly AppDbContext context;
 
@@ -23,51 +25,61 @@ namespace WebApp.Controllers
             return View(classes);
         }
 
-        public IActionResult ViewSchedule(string className)
+        public IActionResult ViewSchedule(string className, string? weekStart)
         {
             if (string.IsNullOrEmpty(className))
                 return RedirectToAction("Index");
 
+            DateTime weekStartDate;
+            if (!string.IsNullOrEmpty(weekStart) && TryParseIsoWeek(weekStart, out var parsedDate))
+            {
+                weekStartDate = parsedDate;
+            }
+            else
+            {
+                var today = DateTime.Today;
+                weekStartDate = ISOWeek.ToDateTime(ISOWeek.GetYear(today), ISOWeek.GetWeekOfYear(today), DayOfWeek.Monday);
+            }
+
+            var weekEndDate = weekStartDate.AddDays(6);
+
+            // Pobierz tylko te przedmioty, które są z danej klasy
+            var subjectsForClass = context.Subjects
+                .Where(s => s.ClassName == className)
+                .ToDictionary(s => s.Id, s => s);
+
+            // Pobierz wpisy harmonogramu tylko z pasującymi SubjectId
             var entries = context.ScheduleEntries
-                .Where(e => context.Subjects
-                    .Where(s => s.ClassName == className)
-                    .Select(s => s.Id)
-                    .Contains(e.SubjectId))
-                .OrderBy(e => e.Day)
-                .ThenBy(e => e.Hour)
+                .Where(e =>
+                    subjectsForClass.Keys.Contains(e.SubjectId) &&
+                    e.Date >= weekStartDate &&
+                    e.Date <= weekEndDate)
                 .ToList();
 
-            ViewBag.ClassName = className;
-            return View(entries);
+            var viewModel = new WeeklyScheduleViewModel
+            {
+                ClassName = className,
+                WeekStart = weekStartDate,
+                ScheduleEntries = entries.Select(e => new ScheduleEntryDisplay
+                {
+                    Id = e.Id,
+                    Date = e.Date,
+                    Day = e.Day,
+                    Hour = e.Hour,
+                    SubjectName = subjectsForClass.TryGetValue(e.SubjectId, out var subj) ? subj.Name : "Unknown",
+                    ClassroomNumber = e.ClassroomNumber
+                }).ToList()
+            };
+
+            return View(viewModel);
         }
 
-        private void PopulateDays()
-        {
-            ViewBag.Days = Enum.GetValues(typeof(DayOfWeek))
-                .Cast<DayOfWeek>()
-                .Select(d => new SelectListItem
-                {
-                    Text = d.ToString(),
-                    Value = ((int)d).ToString()
-                }).ToList();
-        }
-
-        private void PopulateSubjects(string className)
-        {
-            ViewBag.Subjects = context.Subjects
-                .Where(s => s.ClassName == className)
-                .Select(s => new SelectListItem
-                {
-                    Value = s.Id.ToString(),
-                    Text = s.Name
-                }).ToList();
-        }
 
         [Authorize(Roles = "Admin")]
         public IActionResult Create(string className)
         {
             if (string.IsNullOrEmpty(className))
-                return RedirectToAction(nameof(ViewSchedule));
+                return RedirectToAction(nameof(Index));
 
             PopulateDays();
             PopulateSubjects(className);
@@ -81,11 +93,12 @@ namespace WebApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                PopulateDays();
                 PopulateSubjects(className);
                 ViewBag.ClassName = className;
                 return View(model);
             }
+
+            model.Day = model.Date.DayOfWeek;
 
             context.ScheduleEntries.Add(model);
             context.SaveChanges();
@@ -113,11 +126,12 @@ namespace WebApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                PopulateDays();
                 PopulateSubjects(className);
                 ViewBag.ClassName = className;
                 return View(model);
             }
+
+            model.Day = model.Date.DayOfWeek;
 
             context.ScheduleEntries.Update(model);
             context.SaveChanges();
@@ -126,29 +140,16 @@ namespace WebApp.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public IActionResult Delete(int id, string className)
-        {
-            var entry = context.ScheduleEntries.Find(id);
-            if (entry == null)
-                return NotFound();
-
-            context.ScheduleEntries.Remove(entry);
-            context.SaveChanges();
-
-            return RedirectToAction(nameof(ViewSchedule), new { className });
-        }
-
-
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var entry = context.ScheduleEntries.Find(id);
+            var entry = context.ScheduleEntries.FirstOrDefault(e => e.Id == id);
             if (entry == null)
                 return NotFound();
 
             var subject = context.Subjects.FirstOrDefault(s => s.Id == entry.SubjectId);
             ViewBag.SubjectName = subject?.Name ?? "Unknown";
+            ViewBag.ClassName = subject?.ClassName ?? "";
 
             return View(entry);
         }
@@ -162,18 +163,62 @@ namespace WebApp.Controllers
             if (entry == null)
                 return NotFound();
 
+            var className = context.Subjects
+                .Where(s => s.Id == entry.SubjectId)
+                .Select(s => s.ClassName)
+                .FirstOrDefault() ?? "";
+
             context.ScheduleEntries.Remove(entry);
             context.SaveChanges();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ViewSchedule), new { className });
         }
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public JsonResult GetSubjectsByClass(string className)
         {
-            var subjects = context.Subjects.Where(s => s.ClassName == className).ToList();
+            var subjects = context.Subjects
+                .Where(s => s.ClassName == className)
+                .Select(s => new { s.Id, s.Name })
+                .ToList();
+
             return Json(subjects);
+        }
+
+        private void PopulateDays()
+        {
+            ViewBag.Days = Enum.GetValues(typeof(DayOfWeek))
+                .Cast<DayOfWeek>()
+                .Select(d => new SelectListItem
+                {
+                    Text = d.ToString(),
+                    Value = ((int)d).ToString()
+                }).ToList();
+        }
+
+        private void PopulateSubjects(string className)
+        {
+            ViewBag.Subjects = context.Subjects
+                .Where(s => s.ClassName == className)
+                .Select(s => new SelectListItem
+                {
+                    Value = s.Id.ToString(),
+                    Text = s.Name
+                }).ToList();
+        }
+
+        private static bool TryParseIsoWeek(string isoWeek, out DateTime weekStart)
+        {
+            weekStart = default;
+            var match = System.Text.RegularExpressions.Regex.Match(isoWeek, @"^(\d{4})-W(\d{2})$");
+            if (!match.Success) return false;
+
+            int year = int.Parse(match.Groups[1].Value);
+            int week = int.Parse(match.Groups[2].Value);
+
+            weekStart = ISOWeek.ToDateTime(year, week, DayOfWeek.Monday);
+            return true;
         }
     }
 }

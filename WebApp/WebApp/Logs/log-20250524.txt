@@ -1,0 +1,286 @@
+2025-05-24 22:45:40.851 +02:00 [INF] User profile is available. Using 'C:\Users\48723\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-24 22:45:42.177 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:45:42.237 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:45:42.238 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:45:42.238 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:45:42.248 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-24 22:45:42.287 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-24 22:45:42.306 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2025-05-24 22:45:42.799 +02:00 [INF] Now listening on: https://localhost:7021
+2025-05-24 22:45:42.799 +02:00 [INF] Now listening on: http://localhost:5043
+2025-05-24 22:45:42.875 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-24 22:45:42.876 +02:00 [INF] Hosting environment: Development
+2025-05-24 22:45:42.876 +02:00 [INF] Content root path: C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp
+2025-05-24 22:45:45.364 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-24 22:45:45.580 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-24 22:45:45.597 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-24 22:45:45.610 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-24 22:45:45.895 +02:00 [INF] Executed ViewResult - view Index executed in 287.7529ms.
+2025-05-24 22:45:45.900 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 301.5209ms
+2025-05-24 22:45:45.902 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-24 22:45:45.911 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 554.9771ms
+2025-05-24 22:45:45.984 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-05-24 22:45:45.988 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - null null
+2025-05-24 22:45:45.988 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/css/site.css?v=peyd87LiQPMAR6VndvjJhRs0PmfaybjQLfLP78daImg - null null
+2025-05-24 22:45:45.990 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - null null
+2025-05-24 22:45:45.994 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-05-24 22:45:45.995 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - 304 null text/javascript 5.468ms
+2025-05-24 22:45:45.997 +02:00 [INF] The file /WebApp.styles.css was not modified
+2025-05-24 22:45:45.997 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - 304 null text/css 9.6895ms
+2025-05-24 22:45:46.000 +02:00 [INF] The file /css/site.css was not modified
+2025-05-24 22:45:46.005 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/css/site.css?v=peyd87LiQPMAR6VndvjJhRs0PmfaybjQLfLP78daImg - 304 null text/css 17.219ms
+2025-05-24 22:45:46.010 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-24 22:45:46.011 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-05-24 22:45:46.011 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - null null
+2025-05-24 22:45:46.012 +02:00 [INF] The file /js/site.js was not modified
+2025-05-24 22:45:46.012 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-24 22:45:46.012 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - 304 null text/javascript 0.7801ms
+2025-05-24 22:45:46.012 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-05-24 22:45:46.014 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 2.8115ms
+2025-05-24 22:45:46.017 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 11.3453ms
+2025-05-24 22:45:46.046 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2025-05-24 22:45:46.046 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 62.4391ms
+2025-05-24 22:45:46.093 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 80.7177ms
+2025-05-24 22:45:59.266 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/PublicHoliday - null null
+2025-05-24 22:45:59.278 +02:00 [INF] Executing endpoint 'WebApp.Controllers.PublicHolidayController.Index (WebApp)'
+2025-05-24 22:45:59.286 +02:00 [INF] Route matched with {action = "Index", controller = "PublicHoliday"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller WebApp.Controllers.PublicHolidayController (WebApp).
+2025-05-24 22:45:59.299 +02:00 [INF] Executed action WebApp.Controllers.PublicHolidayController.Index (WebApp) in 12.0946ms
+2025-05-24 22:45:59.300 +02:00 [INF] Executed endpoint 'WebApp.Controllers.PublicHolidayController.Index (WebApp)'
+2025-05-24 22:45:59.306 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A suitable constructor for type 'WebApp.Services.GeoLocationService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfoEx[] constructors, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.Cache.get_Activator()
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.CreateClient(HttpClient httpClient)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method237(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-24 22:45:59.410 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/PublicHoliday - 500 null text/html; charset=utf-8 144.3486ms
+2025-05-24 22:45:59.481 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-24 22:45:59.481 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-24 22:45:59.485 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.1037ms
+2025-05-24 22:45:59.500 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.0386ms
+2025-05-24 22:50:39.717 +02:00 [INF] User profile is available. Using 'C:\Users\48723\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-24 22:50:41.275 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:50:41.371 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:50:41.372 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:50:41.373 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:50:41.386 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-24 22:50:41.441 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-24 22:50:41.469 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2025-05-24 22:50:42.051 +02:00 [INF] Now listening on: https://localhost:7021
+2025-05-24 22:50:42.051 +02:00 [INF] Now listening on: http://localhost:5043
+2025-05-24 22:50:42.143 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-24 22:50:42.143 +02:00 [INF] Hosting environment: Development
+2025-05-24 22:50:42.143 +02:00 [INF] Content root path: C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp
+2025-05-24 22:50:43.242 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-24 22:50:43.406 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-24 22:50:43.420 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-24 22:50:43.429 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-24 22:50:43.633 +02:00 [INF] Executed ViewResult - view Index executed in 205.2881ms.
+2025-05-24 22:50:43.638 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 217.5155ms
+2025-05-24 22:50:43.639 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-24 22:50:43.648 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 415.2188ms
+2025-05-24 22:50:43.661 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-24 22:50:43.668 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-24 22:50:43.673 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 11.4357ms
+2025-05-24 22:50:43.703 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.7197ms
+2025-05-24 22:50:43.825 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/favicon.ico - null null
+2025-05-24 22:50:43.842 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\favicon.ico'
+2025-05-24 22:50:43.842 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/favicon.ico - 499 5430 image/x-icon 17.4208ms
+2025-05-24 22:51:11.490 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/PublicHoliday - null null
+2025-05-24 22:51:11.517 +02:00 [INF] Executing endpoint 'WebApp.Controllers.PublicHolidayController.Index (WebApp)'
+2025-05-24 22:51:11.526 +02:00 [INF] Route matched with {action = "Index", controller = "PublicHoliday"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller WebApp.Controllers.PublicHolidayController (WebApp).
+2025-05-24 22:51:11.591 +02:00 [INF] Start processing HTTP request GET http://ip-api.com/json/127.0.0.1
+2025-05-24 22:51:11.594 +02:00 [INF] Sending HTTP request GET http://ip-api.com/json/127.0.0.1
+2025-05-24 22:51:11.842 +02:00 [INF] Received HTTP response headers after 242.8985ms - 200
+2025-05-24 22:51:11.844 +02:00 [INF] End processing HTTP request after 254.9054ms - 200
+2025-05-24 22:51:12.036 +02:00 [INF] Executed action WebApp.Controllers.PublicHolidayController.Index (WebApp) in 509.535ms
+2025-05-24 22:51:12.038 +02:00 [INF] Executed endpoint 'WebApp.Controllers.PublicHolidayController.Index (WebApp)'
+2025-05-24 22:51:12.046 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Text.Json.JsonElement.GetProperty(String propertyName)
+   at WebApp.Services.GeoLocationService.GetCountryCodeAsync(HttpContext httpContext) in C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\Services\GeoLocationService.cs:line 31
+   at WebApp.Controllers.PublicHolidayController.Index() in C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\Controllers\PublicHolidayController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-24 22:51:12.375 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/PublicHoliday - 500 null text/html; charset=utf-8 885.552ms
+2025-05-24 22:51:12.432 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-24 22:51:12.432 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-24 22:51:12.436 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 4.9345ms
+2025-05-24 22:51:12.480 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.9819ms
+2025-05-24 22:58:24.896 +02:00 [INF] User profile is available. Using 'C:\Users\48723\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-24 22:58:26.389 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:58:26.479 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:58:26.480 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:58:26.481 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-24 22:58:26.495 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-24 22:58:26.558 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-24 22:58:26.587 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2025-05-24 22:58:27.344 +02:00 [INF] Now listening on: https://localhost:7021
+2025-05-24 22:58:27.344 +02:00 [INF] Now listening on: http://localhost:5043
+2025-05-24 22:58:27.481 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-24 22:58:27.482 +02:00 [INF] Hosting environment: Development
+2025-05-24 22:58:27.482 +02:00 [INF] Content root path: C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp
+2025-05-24 22:58:28.546 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-24 22:58:28.784 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-24 22:58:28.806 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-24 22:58:28.822 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-24 22:58:29.052 +02:00 [INF] Executed ViewResult - view Index executed in 233.8522ms.
+2025-05-24 22:58:29.057 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 250.5099ms
+2025-05-24 22:58:29.058 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-24 22:58:29.070 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 534.9423ms
+2025-05-24 22:58:29.099 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-24 22:58:29.102 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-24 22:58:29.108 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 8.988ms
+2025-05-24 22:58:29.154 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.1342ms
+2025-05-24 22:58:29.278 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/favicon.ico - null null
+2025-05-24 22:58:29.319 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\favicon.ico'
+2025-05-24 22:58:29.320 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/favicon.ico - 499 5430 image/x-icon 42.156ms
+2025-05-24 22:58:33.063 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/PublicHoliday - null null
+2025-05-24 22:58:33.080 +02:00 [INF] Executing endpoint 'WebApp.Controllers.PublicHolidayController.Index (WebApp)'
+2025-05-24 22:58:33.088 +02:00 [INF] Route matched with {action = "Index", controller = "PublicHoliday"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller WebApp.Controllers.PublicHolidayController (WebApp).
+2025-05-24 22:58:33.127 +02:00 [INF] Start processing HTTP request GET https://ipapi.co/127.0.0.1/json/
+2025-05-24 22:58:33.131 +02:00 [INF] Sending HTTP request GET https://ipapi.co/127.0.0.1/json/
+2025-05-24 22:58:33.800 +02:00 [INF] Received HTTP response headers after 664.257ms - 429
+2025-05-24 22:58:33.801 +02:00 [INF] End processing HTTP request after 676.7817ms - 429
+2025-05-24 22:58:33.804 +02:00 [INF] Start processing HTTP request GET https://date.nager.at/api/v3/PublicHolidays/2025/PL
+2025-05-24 22:58:33.805 +02:00 [INF] Sending HTTP request GET https://date.nager.at/api/v3/PublicHolidays/2025/PL
+2025-05-24 22:58:34.209 +02:00 [INF] Received HTTP response headers after 404.4353ms - 200
+2025-05-24 22:58:34.210 +02:00 [INF] End processing HTTP request after 405.3489ms - 200
+2025-05-24 22:58:34.422 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-24 22:58:34.542 +02:00 [INF] Executed ViewResult - view Index executed in 122.0341ms.
+2025-05-24 22:58:34.542 +02:00 [INF] Executed action WebApp.Controllers.PublicHolidayController.Index (WebApp) in 1454.3822ms
+2025-05-24 22:58:34.543 +02:00 [INF] Executed endpoint 'WebApp.Controllers.PublicHolidayController.Index (WebApp)'
+2025-05-24 22:58:34.543 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/PublicHoliday - 200 null text/html; charset=utf-8 1479.7481ms
+2025-05-24 22:58:34.593 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-24 22:58:34.594 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-24 22:58:34.615 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 21.0899ms
+2025-05-24 22:58:34.681 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 87.9196ms

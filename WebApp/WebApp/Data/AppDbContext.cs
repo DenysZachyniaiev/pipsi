@@ -57,12 +57,6 @@ namespace WebApp.Data
             modelBuilder.Entity<ScheduleEntry>()
                 .HasKey(se => se.Id);
 
-            modelBuilder.Entity<ScheduleEntry>()
-                .HasOne<Subject>()
-                .WithMany()
-                .HasForeignKey(se => se.SubjectId)
-                .OnDelete(DeleteBehavior.Cascade);
-
             modelBuilder.Entity<AssignmentStudent>()
                 .HasKey(x => new { x.AssignmentId, x.StudentId });
 

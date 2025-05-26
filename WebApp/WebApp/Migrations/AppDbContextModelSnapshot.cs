@@ -196,8 +196,10 @@ namespace WebApp.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("FullName")
-                        .IsRequired()
+                    b.Property<string>("FirstName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("LockoutEnabled")
@@ -250,8 +252,8 @@ namespace WebApp.Migrations
                     b.Property<int>("AssignmentId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("StudentId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("StudentId")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("AssignmentId", "StudentId");
 
@@ -276,8 +278,8 @@ namespace WebApp.Migrations
 
             modelBuilder.Entity("WebApp.Models.ClassStudents", b =>
                 {
-                    b.Property<int>("StudentId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("StudentId")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ClassName")
                         .HasColumnType("TEXT");
@@ -301,8 +303,9 @@ namespace WebApp.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("StudentId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("StudentId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("SubjectName")
                         .IsRequired()
@@ -349,9 +352,8 @@ namespace WebApp.Migrations
 
             modelBuilder.Entity("WebApp.Models.Student", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -489,11 +491,13 @@ namespace WebApp.Migrations
 
             modelBuilder.Entity("WebApp.Models.ScheduleEntry", b =>
                 {
-                    b.HasOne("WebApp.Models.Subject", null)
+                    b.HasOne("WebApp.Models.Subject", "Subject")
                         .WithMany()
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Subject");
                 });
 
             modelBuilder.Entity("WebApp.Models.Subject", b =>

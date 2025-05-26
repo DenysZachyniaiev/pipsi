@@ -54,6 +54,12 @@
                                     <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">@Localizer["Admin Panel"]</a>
                             </li>
                             }
+                            @if (User.Identity?.IsAuthenticated ?? false)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="PublicHoliday" asp-action="Index">Święta</a>
+                                </li>
+                            }
                             <form id="langForm" asp-controller="Language" asp-action="SetLanguage" method="post" class="d-flex align-items-center ms-2">
                                 <input type="hidden" name="returnUrl" value="@Context.Request.Path@Context.Request.QueryString" />
                                 <select name="culture" class="form-select form-select-sm" onchange="document.getElementById('langForm').submit()">

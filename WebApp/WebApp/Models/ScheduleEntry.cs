@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApp.Models
 {
@@ -7,6 +8,7 @@ namespace WebApp.Models
         public int Id { get; set; }
 
         public DayOfWeek Day { get; set; }
+        [Range(8, 16, ErrorMessage = "Hour must be between 8 and 16.")]
         public int Hour { get; set; }
 
         [Required]

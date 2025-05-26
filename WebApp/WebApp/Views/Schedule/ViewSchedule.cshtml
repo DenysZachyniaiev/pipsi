@@ -1,59 +1,92 @@
-﻿@model List<WebApp.Models.ScheduleEntry>
-@inject WebApp.Data.AppDbContext DbContext
+﻿@model WebApp.ViewModels.WeeklyScheduleViewModel
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Schedule for class: " + (ViewBag.ClassName ?? "unknown");
+    ViewData["Title"] = $"Schedule for {Model.ClassName}";
+
+    var weekStart = Model.WeekStart.Date;
+    var weekEnd = weekStart.AddDays(6);
+    var prevWeek = weekStart.AddDays(-7);
+    var nextWeek = weekStart.AddDays(7);
+
+    var currentWeekValue = $"{System.Globalization.ISOWeek.GetYear(weekStart)}-W{System.Globalization.ISOWeek.GetWeekOfYear(weekStart):D2}";
+    var prevWeekValue = $"{System.Globalization.ISOWeek.GetYear(prevWeek)}-W{System.Globalization.ISOWeek.GetWeekOfYear(prevWeek):D2}";
+    var nextWeekValue = $"{System.Globalization.ISOWeek.GetYear(nextWeek)}-W{System.Globalization.ISOWeek.GetWeekOfYear(nextWeek):D2}";
 }
 
 <h2>@ViewData["Title"]</h2>
 
 @if (User.IsInRole("Admin"))
 {
-    <a asp-controller="Schedule" asp-action="Create" asp-route-className="@(ViewBag.ClassName)" class="btn btn-success mb-3">Add new entry</a>
+    <a asp-action="Create" asp-route-className="@Model.ClassName" class="btn btn-success mb-3">Add new entry</a>
 }
 
-@if (!Model.Any())
-{
-    <div class="alert alert-info">No schedule entries found for this class.</div>
-}
-else
-{
-    <table class="table table-striped table-bordered sortable-table">
-        <thead>
-            <tr>
-                <th>@Localizer["Date"]<span class="sort-icon">↕</span></th>
-                <th>@Localizer["Day"]<span class="sort-icon">↕</span></th>
-                <th>@Localizer["Hour"]<span class="sort-icon">↕</span></th>
-                <th>@Localizer["Subject"]<span class="sort-icon">↕</span></th>
-                <th>@Localizer["Classroom"]<span class="sort-icon">↕</span></th>
-                @if (User.IsInRole("Admin"))
-                {
-                    <th>Actions</th>
-                }
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var entry in Model)
+<div class="mb-3 d-flex align-items-center gap-2 flex-wrap">
+    <form method="get" asp-action="ViewSchedule">
+        <input type="hidden" name="className" value="@Model.ClassName" />
+        <input type="hidden" name="weekStart" value="@prevWeekValue" />
+        <button type="submit" class="btn btn-outline-secondary">&laquo; Previous Week</button>
+    </form>
+
+    <form method="get" asp-action="ViewSchedule" class="d-flex align-items-center gap-2">
+        <input type="hidden" name="className" value="@Model.ClassName" />
+        <label for="weekStart" class="form-label mb-0">Week:</label>
+        <input type="week" name="weekStart" class="form-control" value="@currentWeekValue" onchange="this.form.submit()" />
+    </form>
+
+    <form method="get" asp-action="ViewSchedule">
+        <input type="hidden" name="className" value="@Model.ClassName" />
+        <input type="hidden" name="weekStart" value="@nextWeekValue" />
+        <button type="submit" class="btn btn-outline-secondary">Next Week &raquo;</button>
+    </form>
+</div>
+
+<p class="text-muted">Selected week: <strong>@weekStart.ToString("dd.MM.yyyy") – @weekEnd.ToString("dd.MM.yyyy")</strong></p>
+
+<table class="table table-bordered text-center align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>Hour</th>
+            @for (int i = 0; i < 7; i++)
             {
-                var subject = DbContext.Subjects.FirstOrDefault(s => s.Id == entry.SubjectId);
-                <tr>
-                    <td>@entry.Date.ToString("yyyy-MM-dd")</td>
-                    <td>@entry.Day</td>
-                    <td>@entry.Hour</td>
-                    <td>@(subject != null ? subject.Name : "Unknown")</td>
-                    <td>@entry.ClassroomNumber</td>
-                    @if (User.IsInRole("Admin"))
+                var day = weekStart.AddDays(i);
+                <th>@day.ToString("dddd dd.MM", System.Globalization.CultureInfo.CurrentCulture)</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (int hour = 8; hour <= 16; hour++)
+        {
+            <tr>
+                <td><strong>@hour</strong></td>
+                @for (int i = 0; i < 7; i++)
+                {
+                    var currentDate = weekStart.AddDays(i);
+                    var entry = Model.ScheduleEntries.FirstOrDefault(e => e.Date.Date == currentDate.Date && e.Hour == hour);
+
+                    if (entry != null)
                     {
                         <td>
-                            <a asp-action="Edit" asp-route-id="@entry.Id" asp-route-className="@ViewBag.ClassName">Edit</a>
-                            <a asp-controller="Schedule" asp-action="Delete" asp-route-id="@entry.Id" class="btn btn-sm btn-danger">Delete</a>
+                            <div><strong>@entry.SubjectName</strong></div>
+                            <div class="text-muted">Room: @entry.ClassroomNumber</div>
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <div class="mt-1">
+                                    <a asp-action="Edit" asp-route-id="@entry.Id" asp-route-className="@Model.ClassName" class="btn btn-sm btn-outline-primary">Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@entry.Id" asp-route-className="@Model.ClassName" class="btn btn-sm btn-outline-danger">Delete</a>
+                                </div>
+                            }
                         </td>
                     }
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+                    else
+                    {
+                        <td class="text-muted">–</td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>
 
-<a asp-controller="Schedule" asp-action="Index" class="btn btn-secondary">Back to Class Selection</a>
+<a asp-action="Index" class="btn btn-secondary">Back to class selection</a>

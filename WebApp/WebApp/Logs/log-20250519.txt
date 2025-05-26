@@ -16307,3 +16307,1164 @@ ORDER BY "g"."AssignmentId"
 2025-05-19 16:53:34.586 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
 2025-05-19 16:53:34.587 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.1036ms
 2025-05-19 16:53:34.593 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.8399ms
+2025-05-19 19:10:18.143 +02:00 [INF] User profile is available. Using 'C:\Users\48723\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-19 19:10:19.623 +02:00 [INF] Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-19 19:10:19.684 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-19 19:10:19.685 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-19 19:10:19.686 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-19 19:10:19.698 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-19 19:10:19.742 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-19 19:10:19.764 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2025-05-19 19:10:20.324 +02:00 [INF] Now listening on: https://localhost:7021
+2025-05-19 19:10:20.324 +02:00 [INF] Now listening on: http://localhost:5043
+2025-05-19 19:10:20.406 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-19 19:10:20.407 +02:00 [INF] Hosting environment: Development
+2025-05-19 19:10:20.407 +02:00 [INF] Content root path: C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp
+2025-05-19 19:10:22.029 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-19 19:10:22.429 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-05-19 19:10:22.466 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0
+2025-05-19 19:10:22.489 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-19 19:10:22.490 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-19 19:10:22.497 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."ClaimType", "a"."ClaimValue"
+FROM "AspNetRoleClaims" AS "a"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-19 19:10:22.534 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-19 19:10:22.554 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-19 19:10:22.579 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:10:22.996 +02:00 [INF] Executed ViewResult - view Index executed in 426.009ms.
+2025-05-19 19:10:23.005 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 450.0187ms
+2025-05-19 19:10:23.006 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-19 19:10:23.016 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 1001.2148ms
+2025-05-19 19:10:23.072 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/css/site.css?v=peyd87LiQPMAR6VndvjJhRs0PmfaybjQLfLP78daImg - null null
+2025-05-19 19:10:23.078 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:10:23.093 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-05-19 19:10:23.093 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - null null
+2025-05-19 19:10:23.098 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-05-19 19:10:23.099 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - null null
+2025-05-19 19:10:23.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - null null
+2025-05-19 19:10:23.114 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:10:23.115 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-05-19 19:10:23.115 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-05-19 19:10:23.115 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-05-19 19:10:23.115 +02:00 [INF] The file /js/site.js was not modified
+2025-05-19 19:10:23.115 +02:00 [INF] The file /WebApp.styles.css was not modified
+2025-05-19 19:10:23.117 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery/dist/jquery.min.js - 304 null text/javascript 14.4791ms
+2025-05-19 19:10:23.118 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 19.9691ms
+2025-05-19 19:10:23.119 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/js/site.js?v=xLYJQd2VyVZjdPrzYwdJlW3Ol-WetKN6vvjKjm40cQY - 304 null text/javascript 19.7446ms
+2025-05-19 19:10:23.119 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 41.4908ms
+2025-05-19 19:10:23.119 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 26.0911ms
+2025-05-19 19:10:23.120 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/WebApp.styles.css?v=NHDagKxwSJBv79tsRBVd8ERlwnzqTOeSBctwcvTZyp8 - 304 null text/css 26.5821ms
+2025-05-19 19:10:23.148 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\css\site.css'
+2025-05-19 19:10:23.149 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/css/site.css?v=peyd87LiQPMAR6VndvjJhRs0PmfaybjQLfLP78daImg - 200 562 text/css 76.7119ms
+2025-05-19 19:10:23.249 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 135.7632ms
+2025-05-19 19:10:23.289 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/favicon.ico - null null
+2025-05-19 19:10:23.333 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\favicon.ico'
+2025-05-19 19:10:23.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/favicon.ico - 499 5430 image/x-icon 44.8965ms
+2025-05-19 19:10:38.869 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student - null null
+2025-05-19 19:10:38.893 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.Index (WebApp)'
+2025-05-19 19:10:38.897 +02:00 [INF] Route matched with {action = "Index", controller = "Student"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-19 19:10:38.898 +02:00 [INF] AllStudents not found in cache, fetching from DB...
+2025-05-19 19:10:38.942 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+2025-05-19 19:10:38.963 +02:00 [INF] AllStudents cached.
+2025-05-19 19:10:38.965 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:10:38.983 +02:00 [INF] Executed ViewResult - view Index executed in 19.1427ms.
+2025-05-19 19:10:38.984 +02:00 [INF] Executed action WebApp.Controllers.StudentController.Index (WebApp) in 87.4726ms
+2025-05-19 19:10:38.985 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.Index (WebApp)'
+2025-05-19 19:10:38.985 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student - 200 null text/html; charset=utf-8 115.77ms
+2025-05-19 19:10:39.049 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:10:39.049 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:10:39.052 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.0351ms
+2025-05-19 19:10:39.090 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.916ms
+2025-05-19 19:10:41.363 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student/Classes - null null
+2025-05-19 19:10:41.370 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.Classes (WebApp)'
+2025-05-19 19:10:41.380 +02:00 [INF] Route matched with {action = "Classes", controller = "Student"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Classes() on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-19 19:10:41.401 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+2025-05-19 19:10:41.414 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+2025-05-19 19:10:41.420 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-19 19:10:41.436 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Id", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."FullName", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetUsers" AS "a0" ON "a"."UserId" = "a0"."Id"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-19 19:10:41.493 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."ClassName", "c"."StudentId"
+FROM "ClassStudents" AS "c"
+ORDER BY "c"."ClassName"
+2025-05-19 19:10:41.515 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+2025-05-19 19:10:41.529 +02:00 [INF] Executing ViewResult, running view Classes.
+2025-05-19 19:10:41.543 +02:00 [INF] Executed ViewResult - view Classes executed in 14.9451ms.
+2025-05-19 19:10:41.543 +02:00 [INF] Executed action WebApp.Controllers.StudentController.Classes (WebApp) in 163.4982ms
+2025-05-19 19:10:41.543 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.Classes (WebApp)'
+2025-05-19 19:10:41.544 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student/Classes - 200 null text/html; charset=utf-8 181.4311ms
+2025-05-19 19:10:41.596 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:10:41.597 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:10:41.599 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.3114ms
+2025-05-19 19:10:41.616 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.2501ms
+2025-05-19 19:10:46.829 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student/GetClassDetails?className=kkk - null null
+2025-05-19 19:10:46.836 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.GetClassDetails (WebApp)'
+2025-05-19 19:10:46.850 +02:00 [INF] Route matched with {action = "GetClassDetails", controller = "Student"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetClassDetails(System.String) on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-19 19:10:46.882 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+WHERE "c"."Name" = @__className_0
+LIMIT 1
+2025-05-19 19:10:46.891 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:10:46.897 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+WHERE "s"."ClassName" = @__className_0
+2025-05-19 19:10:46.897 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-19 19:10:46.899 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Id", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."FullName", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetUsers" AS "a0" ON "a"."UserId" = "a0"."Id"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-19 19:10:46.903 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+2025-05-19 19:10:46.974 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__assignedStudentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignedStudentIds_0) AS "a"
+)
+2025-05-19 19:10:46.979 +02:00 [INF] Executing PartialViewResult, running view GetClassDetails.
+2025-05-19 19:10:47.002 +02:00 [INF] Executed PartialViewResult - view GetClassDetails executed in 24.2241ms.
+2025-05-19 19:10:47.002 +02:00 [INF] Executed action WebApp.Controllers.StudentController.GetClassDetails (WebApp) in 152.4183ms
+2025-05-19 19:10:47.003 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.GetClassDetails (WebApp)'
+2025-05-19 19:10:47.003 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student/GetClassDetails?className=kkk - 200 null text/html; charset=utf-8 174.3505ms
+2025-05-19 19:10:50.699 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - null null
+2025-05-19 19:10:50.708 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:10:50.710 +02:00 [INF] Route matched with {action = "ManageGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ManageGrades(System.String, System.String) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:10:50.716 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:10:50.726 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:10:50.733 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."ClassName" = @__className_0
+2025-05-19 19:10:50.790 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" IN (
+    SELECT "a0"."value"
+    FROM json_each(@__assignmentIds_0) AS "a0"
+)
+ORDER BY "a"."AssignmentId"
+2025-05-19 19:10:50.832 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."AssignmentId", "g"."Id", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" IS NOT NULL AND "g"."AssignmentId" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignmentIds_0) AS "a"
+)
+ORDER BY "g"."AssignmentId"
+2025-05-19 19:10:50.855 +02:00 [INF] Executing ViewResult, running view ManageGrades.
+2025-05-19 19:10:50.900 +02:00 [INF] Executed ViewResult - view ManageGrades executed in 46.9178ms.
+2025-05-19 19:10:50.901 +02:00 [INF] Executed action WebApp.Controllers.GradesController.ManageGrades (WebApp) in 190.2893ms
+2025-05-19 19:10:50.901 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:10:50.901 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - 200 null text/html; charset=utf-8 202.5301ms
+2025-05-19 19:10:50.961 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:10:50.961 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:10:50.963 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.2444ms
+2025-05-19 19:10:50.977 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.5515ms
+2025-05-19 19:12:44.791 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Assignment/Edit/4 - null null
+2025-05-19 19:12:44.829 +02:00 [INF] Executing endpoint 'WebApp.Controllers.AssignmentController.Edit (WebApp)'
+2025-05-19 19:12:44.836 +02:00 [INF] Route matched with {action = "Edit", controller = "Assignment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Edit(Int32) on controller WebApp.Controllers.AssignmentController (WebApp).
+2025-05-19 19:12:44.853 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."Id" = @__id_0
+LIMIT 1
+2025-05-19 19:12:44.861 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignment_ClassName_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__assignment_ClassName_0
+2025-05-19 19:12:44.862 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:12:44.866 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignment_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" = @__assignment_Id_0
+2025-05-19 19:12:44.872 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignment_ClassName_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+WHERE "s"."ClassName" = @__assignment_ClassName_0
+2025-05-19 19:12:44.876 +02:00 [INF] Executing ViewResult, running view Edit.
+2025-05-19 19:12:44.891 +02:00 [INF] Executed ViewResult - view Edit executed in 17.1277ms.
+2025-05-19 19:12:44.891 +02:00 [INF] Executed action WebApp.Controllers.AssignmentController.Edit (WebApp) in 55.0483ms
+2025-05-19 19:12:44.892 +02:00 [INF] Executed endpoint 'WebApp.Controllers.AssignmentController.Edit (WebApp)'
+2025-05-19 19:12:44.896 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Assignment/Edit/4 - 200 null text/html; charset=utf-8 105.4123ms
+2025-05-19 19:12:44.966 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:12:44.966 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:12:44.969 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.0886ms
+2025-05-19 19:12:44.998 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.5882ms
+2025-05-19 19:13:00.617 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Assignment/Edit/4 - application/x-www-form-urlencoded 408
+2025-05-19 19:13:00.632 +02:00 [INF] Executing endpoint 'WebApp.Controllers.AssignmentController.Edit (WebApp)'
+2025-05-19 19:13:00.651 +02:00 [INF] Route matched with {action = "Edit", controller = "Assignment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Edit(WebApp.ViewModels.EditAssignmentViewModel) on controller WebApp.Controllers.AssignmentController (WebApp).
+2025-05-19 19:13:00.699 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."Id" = @__model_Id_0
+LIMIT 1
+2025-05-19 19:13:00.708 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignment_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" = @__assignment_Id_0
+2025-05-19 19:13:00.871 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "AssignmentStudents"
+WHERE "AssignmentId" = @p0 AND "StudentId" = @p1
+RETURNING 1;
+2025-05-19 19:13:00.878 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Assignments" SET "DueDate" = @p0, "StartDate" = @p1
+WHERE "Id" = @p2
+RETURNING 1;
+2025-05-19 19:13:00.895 +02:00 [INF] Executing RedirectResult, redirecting to /Grades/ManageGrades?className=kkk.
+2025-05-19 19:13:00.896 +02:00 [INF] Executed action WebApp.Controllers.AssignmentController.Edit (WebApp) in 244.7531ms
+2025-05-19 19:13:00.896 +02:00 [INF] Executed endpoint 'WebApp.Controllers.AssignmentController.Edit (WebApp)'
+2025-05-19 19:13:00.896 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Assignment/Edit/4 - 302 0 null 279.4755ms
+2025-05-19 19:13:00.903 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - null null
+2025-05-19 19:13:00.908 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:13:00.908 +02:00 [INF] Route matched with {action = "ManageGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ManageGrades(System.String, System.String) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:13:00.910 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:13:00.910 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:13:00.911 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."ClassName" = @__className_0
+2025-05-19 19:13:00.911 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" IN (
+    SELECT "a0"."value"
+    FROM json_each(@__assignmentIds_0) AS "a0"
+)
+ORDER BY "a"."AssignmentId"
+2025-05-19 19:13:00.912 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."AssignmentId", "g"."Id", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" IS NOT NULL AND "g"."AssignmentId" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignmentIds_0) AS "a"
+)
+ORDER BY "g"."AssignmentId"
+2025-05-19 19:13:00.912 +02:00 [INF] Executing ViewResult, running view ManageGrades.
+2025-05-19 19:13:00.916 +02:00 [INF] Executed ViewResult - view ManageGrades executed in 3.0934ms.
+2025-05-19 19:13:00.916 +02:00 [INF] Executed action WebApp.Controllers.GradesController.ManageGrades (WebApp) in 7.7479ms
+2025-05-19 19:13:00.916 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:13:00.917 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - 200 null text/html; charset=utf-8 13.7202ms
+2025-05-19 19:13:00.978 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:13:00.979 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:13:00.979 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.4311ms
+2025-05-19 19:13:01.000 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.2402ms
+2025-05-19 19:13:11.981 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Grades/SaveGrades - application/x-www-form-urlencoded 511
+2025-05-19 19:13:11.984 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.SaveGrades (WebApp)'
+2025-05-19 19:13:11.990 +02:00 [INF] Route matched with {action = "SaveGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SaveGrades(System.String, System.Collections.Generic.Dictionary`2[System.Int32,System.Collections.Generic.Dictionary`2[System.Int32,System.String]]) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:13:12.042 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__8__locals1_assignmentId_0='?' (DbType = Int32), @__studentId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."Id", "g"."AssignmentId", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" = @__8__locals1_assignmentId_0 AND "g"."StudentId" = @__studentId_1
+LIMIT 1
+2025-05-19 19:13:12.044 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__8__locals1_assignmentId_0='?' (DbType = Int32), @__studentId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."Id", "g"."AssignmentId", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" = @__8__locals1_assignmentId_0 AND "g"."StudentId" = @__studentId_1
+LIMIT 1
+2025-05-19 19:13:12.074 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Grades" ("AssignmentId", "Date", "StudentId", "SubjectName", "Value")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-05-19 19:13:12.095 +02:00 [INF] Executing RedirectResult, redirecting to /Grades/ManageGrades?className=kkk.
+2025-05-19 19:13:12.097 +02:00 [INF] Executed action WebApp.Controllers.GradesController.SaveGrades (WebApp) in 106.9628ms
+2025-05-19 19:13:12.097 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.SaveGrades (WebApp)'
+2025-05-19 19:13:12.098 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Grades/SaveGrades - 302 0 null 120.4764ms
+2025-05-19 19:13:12.111 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - null null
+2025-05-19 19:13:12.114 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:13:12.114 +02:00 [INF] Route matched with {action = "ManageGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ManageGrades(System.String, System.String) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:13:12.115 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:13:12.115 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:13:12.116 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."ClassName" = @__className_0
+2025-05-19 19:13:12.117 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" IN (
+    SELECT "a0"."value"
+    FROM json_each(@__assignmentIds_0) AS "a0"
+)
+ORDER BY "a"."AssignmentId"
+2025-05-19 19:13:12.118 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."AssignmentId", "g"."Id", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" IS NOT NULL AND "g"."AssignmentId" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignmentIds_0) AS "a"
+)
+ORDER BY "g"."AssignmentId"
+2025-05-19 19:13:12.118 +02:00 [INF] Executing ViewResult, running view ManageGrades.
+2025-05-19 19:13:12.125 +02:00 [INF] Executed ViewResult - view ManageGrades executed in 7.4678ms.
+2025-05-19 19:13:12.126 +02:00 [INF] Executed action WebApp.Controllers.GradesController.ManageGrades (WebApp) in 11.7889ms
+2025-05-19 19:13:12.126 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:13:12.126 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - 200 null text/html; charset=utf-8 15.9772ms
+2025-05-19 19:13:12.188 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:13:12.188 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:13:12.190 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.2126ms
+2025-05-19 19:13:12.210 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.3747ms
+2025-05-19 19:13:12.337 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/favicon.ico - null null
+2025-05-19 19:13:12.346 +02:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\wwwroot\favicon.ico'
+2025-05-19 19:13:12.346 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/favicon.ico - 499 5430 image/x-icon 13.893ms
+2025-05-19 19:13:36.113 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student - null null
+2025-05-19 19:13:36.119 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.Index (WebApp)'
+2025-05-19 19:13:36.119 +02:00 [INF] Route matched with {action = "Index", controller = "Student"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-19 19:13:36.120 +02:00 [INF] AllStudents loaded from cache.
+2025-05-19 19:13:36.120 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:13:36.124 +02:00 [INF] Executed ViewResult - view Index executed in 3.821ms.
+2025-05-19 19:13:36.124 +02:00 [INF] Executed action WebApp.Controllers.StudentController.Index (WebApp) in 4.8946ms
+2025-05-19 19:13:36.125 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.Index (WebApp)'
+2025-05-19 19:13:36.126 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student - 200 null text/html; charset=utf-8 13.2256ms
+2025-05-19 19:13:36.194 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:13:36.195 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:13:36.196 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.9659ms
+2025-05-19 19:13:36.224 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.4769ms
+2025-05-19 19:13:37.959 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student/Classes - null null
+2025-05-19 19:13:37.964 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.Classes (WebApp)'
+2025-05-19 19:13:37.964 +02:00 [INF] Route matched with {action = "Classes", controller = "Student"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Classes() on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-19 19:13:37.966 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+2025-05-19 19:13:37.967 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+2025-05-19 19:13:37.969 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-19 19:13:37.970 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Id", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."FullName", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetUsers" AS "a0" ON "a"."UserId" = "a0"."Id"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-19 19:13:37.970 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."ClassName", "c"."StudentId"
+FROM "ClassStudents" AS "c"
+ORDER BY "c"."ClassName"
+2025-05-19 19:13:37.971 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+2025-05-19 19:13:37.971 +02:00 [INF] Executing ViewResult, running view Classes.
+2025-05-19 19:13:37.974 +02:00 [INF] Executed ViewResult - view Classes executed in 3.132ms.
+2025-05-19 19:13:37.978 +02:00 [INF] Executed action WebApp.Controllers.StudentController.Classes (WebApp) in 13.7674ms
+2025-05-19 19:13:37.978 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.Classes (WebApp)'
+2025-05-19 19:13:37.980 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student/Classes - 200 null text/html; charset=utf-8 20.7674ms
+2025-05-19 19:13:38.038 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:13:38.038 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:13:38.043 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 5.474ms
+2025-05-19 19:13:38.059 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.7692ms
+2025-05-19 19:13:39.659 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student/GetClassDetails?className=kkk - null null
+2025-05-19 19:13:39.661 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.GetClassDetails (WebApp)'
+2025-05-19 19:13:39.661 +02:00 [INF] Route matched with {action = "GetClassDetails", controller = "Student"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetClassDetails(System.String) on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-19 19:13:39.662 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+WHERE "c"."Name" = @__className_0
+LIMIT 1
+2025-05-19 19:13:39.663 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:13:39.664 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+WHERE "s"."ClassName" = @__className_0
+2025-05-19 19:13:39.665 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-19 19:13:39.665 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Id", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."FullName", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetUsers" AS "a0" ON "a"."UserId" = "a0"."Id"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-19 19:13:39.666 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+2025-05-19 19:13:39.667 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignedStudentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignedStudentIds_0) AS "a"
+)
+2025-05-19 19:13:39.668 +02:00 [INF] Executing PartialViewResult, running view GetClassDetails.
+2025-05-19 19:13:39.673 +02:00 [INF] Executed PartialViewResult - view GetClassDetails executed in 4.8685ms.
+2025-05-19 19:13:39.674 +02:00 [INF] Executed action WebApp.Controllers.StudentController.GetClassDetails (WebApp) in 12.8912ms
+2025-05-19 19:13:39.674 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.GetClassDetails (WebApp)'
+2025-05-19 19:13:39.674 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student/GetClassDetails?className=kkk - 200 null text/html; charset=utf-8 15.4737ms
+2025-05-19 19:13:40.955 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Assignment/Create?className=kkk - null null
+2025-05-19 19:13:40.969 +02:00 [INF] Executing endpoint 'WebApp.Controllers.AssignmentController.Create (WebApp)'
+2025-05-19 19:13:40.977 +02:00 [INF] Route matched with {action = "Create", controller = "Assignment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String) on controller WebApp.Controllers.AssignmentController (WebApp).
+2025-05-19 19:13:41.003 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:13:41.003 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:13:41.004 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+WHERE "s"."ClassName" = @__className_0
+2025-05-19 19:13:41.058 +02:00 [INF] Executing ViewResult, running view Create.
+2025-05-19 19:13:41.079 +02:00 [INF] Executed ViewResult - view Create executed in 21.2834ms.
+2025-05-19 19:13:41.080 +02:00 [INF] Executed action WebApp.Controllers.AssignmentController.Create (WebApp) in 102.232ms
+2025-05-19 19:13:41.080 +02:00 [INF] Executed endpoint 'WebApp.Controllers.AssignmentController.Create (WebApp)'
+2025-05-19 19:13:41.080 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Assignment/Create?className=kkk - 200 null text/html; charset=utf-8 125.2307ms
+2025-05-19 19:13:41.126 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:13:41.126 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:13:41.128 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.7129ms
+2025-05-19 19:13:41.144 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.5613ms
+2025-05-19 19:13:55.134 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Assignment/Create - application/x-www-form-urlencoded 367
+2025-05-19 19:13:55.140 +02:00 [INF] Executing endpoint 'WebApp.Controllers.AssignmentController.Create (WebApp)'
+2025-05-19 19:13:55.142 +02:00 [INF] Route matched with {action = "Create", controller = "Assignment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(WebApp.ViewModels.CreateAssignmentViewModel) on controller WebApp.Controllers.AssignmentController (WebApp).
+2025-05-19 19:13:55.153 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__model_ClassName_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__model_ClassName_0
+2025-05-19 19:13:55.159 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 3), @p1='?' (DbType = DateTime), @p2='?' (Size = 14), @p3='?' (DbType = DateTime), @p4='?' (Size = 7), @p5='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Assignments" ("ClassName", "DueDate", "Name", "StartDate", "SubjectName", "Type")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-05-19 19:13:55.167 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AssignmentStudents" ("AssignmentId", "StudentId")
+VALUES (@p0, @p1);
+2025-05-19 19:13:55.167 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AssignmentStudents" ("AssignmentId", "StudentId")
+VALUES (@p0, @p1);
+2025-05-19 19:13:55.169 +02:00 [INF] Executing RedirectResult, redirecting to /Grades/ManageGrades?className=kkk.
+2025-05-19 19:13:55.169 +02:00 [INF] Executed action WebApp.Controllers.AssignmentController.Create (WebApp) in 26.6439ms
+2025-05-19 19:13:55.169 +02:00 [INF] Executed endpoint 'WebApp.Controllers.AssignmentController.Create (WebApp)'
+2025-05-19 19:13:55.169 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Assignment/Create - 302 0 null 35.4985ms
+2025-05-19 19:13:55.176 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - null null
+2025-05-19 19:13:55.179 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:13:55.179 +02:00 [INF] Route matched with {action = "ManageGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ManageGrades(System.String, System.String) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:13:55.181 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:13:55.182 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:13:55.183 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."ClassName" = @__className_0
+2025-05-19 19:13:55.183 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" IN (
+    SELECT "a0"."value"
+    FROM json_each(@__assignmentIds_0) AS "a0"
+)
+ORDER BY "a"."AssignmentId"
+2025-05-19 19:13:55.184 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."AssignmentId", "g"."Id", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" IS NOT NULL AND "g"."AssignmentId" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignmentIds_0) AS "a"
+)
+ORDER BY "g"."AssignmentId"
+2025-05-19 19:13:55.184 +02:00 [INF] Executing ViewResult, running view ManageGrades.
+2025-05-19 19:13:55.187 +02:00 [INF] Executed ViewResult - view ManageGrades executed in 3.1996ms.
+2025-05-19 19:13:55.187 +02:00 [INF] Executed action WebApp.Controllers.GradesController.ManageGrades (WebApp) in 8.2284ms
+2025-05-19 19:13:55.187 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:13:55.188 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - 200 null text/html; charset=utf-8 12.2547ms
+2025-05-19 19:13:55.281 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:13:55.283 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:13:55.285 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.2389ms
+2025-05-19 19:13:55.312 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.7447ms
+2025-05-19 19:13:58.356 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Assignment/Delete/16 - application/x-www-form-urlencoded 225
+2025-05-19 19:13:58.359 +02:00 [INF] Executing endpoint 'WebApp.Controllers.AssignmentController.Delete (WebApp)'
+2025-05-19 19:13:58.362 +02:00 [INF] Route matched with {action = "Delete", controller = "Assignment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int32) on controller WebApp.Controllers.AssignmentController (WebApp).
+2025-05-19 19:13:58.366 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."Id" = @__id_0
+LIMIT 1
+2025-05-19 19:13:58.376 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignment_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."Id", "g"."AssignmentId", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" = @__assignment_Id_0
+2025-05-19 19:13:58.377 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignment_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" = @__assignment_Id_0
+2025-05-19 19:13:58.396 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "AssignmentStudents"
+WHERE "AssignmentId" = @p0 AND "StudentId" = @p1
+RETURNING 1;
+2025-05-19 19:13:58.396 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "AssignmentStudents"
+WHERE "AssignmentId" = @p0 AND "StudentId" = @p1
+RETURNING 1;
+2025-05-19 19:13:58.396 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Assignments"
+WHERE "Id" = @p0
+RETURNING 1;
+2025-05-19 19:13:58.401 +02:00 [INF] Executing RedirectResult, redirecting to /Grades/ManageGrades?className=kkk.
+2025-05-19 19:13:58.402 +02:00 [INF] Executed action WebApp.Controllers.AssignmentController.Delete (WebApp) in 39.7747ms
+2025-05-19 19:13:58.402 +02:00 [INF] Executed endpoint 'WebApp.Controllers.AssignmentController.Delete (WebApp)'
+2025-05-19 19:13:58.402 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Assignment/Delete/16 - 302 0 null 46.0716ms
+2025-05-19 19:13:58.408 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - null null
+2025-05-19 19:13:58.411 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:13:58.411 +02:00 [INF] Route matched with {action = "ManageGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ManageGrades(System.String, System.String) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:13:58.412 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:13:58.413 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:13:58.414 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."ClassName" = @__className_0
+2025-05-19 19:13:58.414 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" IN (
+    SELECT "a0"."value"
+    FROM json_each(@__assignmentIds_0) AS "a0"
+)
+ORDER BY "a"."AssignmentId"
+2025-05-19 19:13:58.415 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."AssignmentId", "g"."Id", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" IS NOT NULL AND "g"."AssignmentId" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignmentIds_0) AS "a"
+)
+ORDER BY "g"."AssignmentId"
+2025-05-19 19:13:58.416 +02:00 [INF] Executing ViewResult, running view ManageGrades.
+2025-05-19 19:13:58.418 +02:00 [INF] Executed ViewResult - view ManageGrades executed in 2.212ms.
+2025-05-19 19:13:58.418 +02:00 [INF] Executed action WebApp.Controllers.GradesController.ManageGrades (WebApp) in 7.4583ms
+2025-05-19 19:13:58.419 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:13:58.419 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - 200 null text/html; charset=utf-8 11.3404ms
+2025-05-19 19:13:58.473 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:13:58.475 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:13:58.475 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.0323ms
+2025-05-19 19:13:58.491 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.1154ms
+2025-05-19 19:16:16.237 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk&weekStart=2025-W22 - null null
+2025-05-19 19:16:16.259 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:16:16.260 +02:00 [INF] Route matched with {action = "ManageGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ManageGrades(System.String, System.String) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:16:16.275 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:16:16.275 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:16:16.289 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3), @__8__locals1_parsedWeekStart_1='?' (DbType = DateTime), @__end_2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."ClassName" = @__className_0 AND "a"."StartDate" >= @__8__locals1_parsedWeekStart_1 AND "a"."StartDate" < @__end_2
+2025-05-19 19:16:16.292 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 2)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" IN (
+    SELECT "a0"."value"
+    FROM json_each(@__assignmentIds_0) AS "a0"
+)
+ORDER BY "a"."AssignmentId"
+2025-05-19 19:16:16.293 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 2)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."AssignmentId", "g"."Id", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" IS NOT NULL AND "g"."AssignmentId" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignmentIds_0) AS "a"
+)
+ORDER BY "g"."AssignmentId"
+2025-05-19 19:16:16.294 +02:00 [INF] Executing ViewResult, running view ManageGrades.
+2025-05-19 19:16:16.303 +02:00 [INF] Executed ViewResult - view ManageGrades executed in 9.614ms.
+2025-05-19 19:16:16.303 +02:00 [INF] Executed action WebApp.Controllers.GradesController.ManageGrades (WebApp) in 43.1348ms
+2025-05-19 19:16:16.304 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:16:16.304 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk&weekStart=2025-W22 - 200 null text/html; charset=utf-8 67.5766ms
+2025-05-19 19:16:16.388 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:16:16.389 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:16:16.401 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 12.6413ms
+2025-05-19 19:16:16.437 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.9635ms
+2025-05-19 19:16:17.302 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk&weekStart=2025-W21 - null null
+2025-05-19 19:16:17.314 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:16:17.315 +02:00 [INF] Route matched with {action = "ManageGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ManageGrades(System.String, System.String) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:16:17.317 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:16:17.317 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:16:17.318 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3), @__8__locals1_parsedWeekStart_1='?' (DbType = DateTime), @__end_2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."ClassName" = @__className_0 AND "a"."StartDate" >= @__8__locals1_parsedWeekStart_1 AND "a"."StartDate" < @__end_2
+2025-05-19 19:16:17.318 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" IN (
+    SELECT "a0"."value"
+    FROM json_each(@__assignmentIds_0) AS "a0"
+)
+ORDER BY "a"."AssignmentId"
+2025-05-19 19:16:17.319 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."AssignmentId", "g"."Id", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" IS NOT NULL AND "g"."AssignmentId" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignmentIds_0) AS "a"
+)
+ORDER BY "g"."AssignmentId"
+2025-05-19 19:16:17.320 +02:00 [INF] Executing ViewResult, running view ManageGrades.
+2025-05-19 19:16:17.323 +02:00 [INF] Executed ViewResult - view ManageGrades executed in 3.5313ms.
+2025-05-19 19:16:17.324 +02:00 [INF] Executed action WebApp.Controllers.GradesController.ManageGrades (WebApp) in 9.0089ms
+2025-05-19 19:16:17.324 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:16:17.324 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk&weekStart=2025-W21 - 200 null text/html; charset=utf-8 22.4091ms
+2025-05-19 19:16:17.382 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:16:17.384 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.9922ms
+2025-05-19 19:16:17.387 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:16:17.424 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.4541ms
+2025-05-19 19:17:28.194 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-19 19:17:28.210 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:17:28.231 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-19 19:17:28.235 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-05-19 19:17:28.239 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:17:28.251 +02:00 [INF] Executed ViewResult - view Index executed in 15.7332ms.
+2025-05-19 19:17:28.252 +02:00 [INF] Executed action AccountController.Index (WebApp) in 21.5749ms
+2025-05-19 19:17:28.253 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:17:28.254 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 60.1079ms
+2025-05-19 19:17:28.299 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:17:28.306 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:17:28.306 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 0.6766ms
+2025-05-19 19:17:28.342 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.5832ms
+2025-05-19 19:17:29.710 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/Logout - application/x-www-form-urlencoded 225
+2025-05-19 19:17:29.714 +02:00 [INF] Executing endpoint 'AccountController.Logout (WebApp)'
+2025-05-19 19:17:29.721 +02:00 [INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller AccountController (WebApp).
+2025-05-19 19:17:29.729 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2025-05-19 19:17:29.730 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2025-05-19 19:17:29.730 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2025-05-19 19:17:29.730 +02:00 [INF] Executing RedirectResult, redirecting to /.
+2025-05-19 19:17:29.730 +02:00 [INF] Executed action AccountController.Logout (WebApp) in 9.2606ms
+2025-05-19 19:17:29.730 +02:00 [INF] Executed endpoint 'AccountController.Logout (WebApp)'
+2025-05-19 19:17:29.730 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/Logout - 302 0 null 20.3557ms
+2025-05-19 19:17:29.736 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-19 19:17:29.738 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-19 19:17:29.738 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-19 19:17:29.739 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:17:29.745 +02:00 [INF] Executed ViewResult - view Index executed in 6.2563ms.
+2025-05-19 19:17:29.746 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 7.7683ms
+2025-05-19 19:17:29.746 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-19 19:17:29.746 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 10.5747ms
+2025-05-19 19:17:29.791 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:17:29.792 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:17:29.792 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.0295ms
+2025-05-19 19:17:29.808 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.6773ms
+2025-05-19 19:17:33.214 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-19 19:17:33.221 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:17:33.221 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-19 19:17:33.223 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:17:33.236 +02:00 [INF] Executed ViewResult - view Index executed in 12.7776ms.
+2025-05-19 19:17:33.238 +02:00 [INF] Executed action AccountController.Index (WebApp) in 16.8045ms
+2025-05-19 19:17:33.238 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:17:33.238 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 24.9084ms
+2025-05-19 19:17:33.275 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:17:33.275 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:17:33.276 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 0.7522ms
+2025-05-19 19:17:33.308 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.7537ms
+2025-05-19 19:17:34.205 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+2025-05-19 19:17:34.210 +02:00 [INF] Executing endpoint 'AccountController.Login (WebApp)'
+2025-05-19 19:17:34.212 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller AccountController (WebApp).
+2025-05-19 19:17:34.213 +02:00 [INF] Executing ViewResult, running view Login.
+2025-05-19 19:17:34.275 +02:00 [INF] Executed ViewResult - view Login executed in 62.1295ms.
+2025-05-19 19:17:34.275 +02:00 [INF] Executed action AccountController.Login (WebApp) in 62.9315ms
+2025-05-19 19:17:34.275 +02:00 [INF] Executed endpoint 'AccountController.Login (WebApp)'
+2025-05-19 19:17:34.275 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 70.1714ms
+2025-05-19 19:17:34.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:17:34.331 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:17:34.333 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2025-05-19 19:17:34.334 +02:00 [INF] The file /lib/jquery-validation/dist/jquery.validate.min.js was not modified
+2025-05-19 19:17:34.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery-validation/dist/jquery.validate.min.js - 304 null text/javascript 1.0626ms
+2025-05-19 19:17:34.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.7748ms
+2025-05-19 19:17:34.338 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2025-05-19 19:17:34.340 +02:00 [INF] The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js was not modified
+2025-05-19 19:17:34.340 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 304 null text/javascript 2.7979ms
+2025-05-19 19:17:34.353 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.0753ms
+2025-05-19 19:17:39.807 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/Login - application/x-www-form-urlencoded 234
+2025-05-19 19:17:39.809 +02:00 [INF] Executing endpoint 'AccountController.Login (WebApp)'
+2025-05-19 19:17:39.813 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(WebApp.ViewModels.LoginViewModel) on controller AccountController (WebApp).
+2025-05-19 19:17:39.818 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-19 19:17:39.928 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0
+2025-05-19 19:17:39.929 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-19 19:17:39.929 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-19 19:17:39.929 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."ClaimType", "a"."ClaimValue"
+FROM "AspNetRoleClaims" AS "a"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-19 19:17:39.931 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-05-19 19:17:39.932 +02:00 [INF] Executing RedirectResult, redirecting to /Account.
+2025-05-19 19:17:39.932 +02:00 [INF] Executed action AccountController.Login (WebApp) in 119.0082ms
+2025-05-19 19:17:39.932 +02:00 [INF] Executed endpoint 'AccountController.Login (WebApp)'
+2025-05-19 19:17:39.933 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/Login - 302 0 null 125.7606ms
+2025-05-19 19:17:39.938 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-19 19:17:39.940 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:17:39.940 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-19 19:17:39.941 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-05-19 19:17:39.941 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:17:39.943 +02:00 [INF] Executed ViewResult - view Index executed in 2.1681ms.
+2025-05-19 19:17:39.944 +02:00 [INF] Executed action AccountController.Index (WebApp) in 3.6267ms
+2025-05-19 19:17:39.944 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:17:39.944 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 6.4309ms
+2025-05-19 19:17:39.984 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:17:39.984 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:17:39.985 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 0.8662ms
+2025-05-19 19:17:40.015 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.4789ms
+2025-05-19 19:17:41.884 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/Logout - application/x-www-form-urlencoded 225
+2025-05-19 19:17:41.887 +02:00 [INF] Executing endpoint 'AccountController.Logout (WebApp)'
+2025-05-19 19:17:41.887 +02:00 [INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller AccountController (WebApp).
+2025-05-19 19:17:41.888 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2025-05-19 19:17:41.888 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2025-05-19 19:17:41.888 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2025-05-19 19:17:41.888 +02:00 [INF] Executing RedirectResult, redirecting to /.
+2025-05-19 19:17:41.888 +02:00 [INF] Executed action AccountController.Logout (WebApp) in 1.2013ms
+2025-05-19 19:17:41.888 +02:00 [INF] Executed endpoint 'AccountController.Logout (WebApp)'
+2025-05-19 19:17:41.888 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/Logout - 302 0 null 4.2501ms
+2025-05-19 19:17:41.897 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-19 19:17:41.902 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-19 19:17:41.902 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-19 19:17:41.902 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:17:41.904 +02:00 [INF] Executed ViewResult - view Index executed in 1.7965ms.
+2025-05-19 19:17:41.905 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 2.5174ms
+2025-05-19 19:17:41.906 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-19 19:17:41.920 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 23.8013ms
+2025-05-19 19:17:41.954 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:17:41.954 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:17:41.956 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 2.0412ms
+2025-05-19 19:17:41.993 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.8448ms
+2025-05-19 19:17:50.560 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Home/Privacy - null null
+2025-05-19 19:17:50.564 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Privacy (WebApp)'
+2025-05-19 19:17:50.566 +02:00 [INF] Route matched with {action = "Privacy", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Privacy() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-19 19:17:50.567 +02:00 [INF] Executing ViewResult, running view Privacy.
+2025-05-19 19:17:50.571 +02:00 [INF] Executed ViewResult - view Privacy executed in 4.7173ms.
+2025-05-19 19:17:50.572 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Privacy (WebApp) in 5.8977ms
+2025-05-19 19:17:50.572 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Privacy (WebApp)'
+2025-05-19 19:17:50.572 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Home/Privacy - 200 null text/html; charset=utf-8 11.9828ms
+2025-05-19 19:17:50.618 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:17:50.621 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:17:50.622 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 0.9437ms
+2025-05-19 19:17:50.635 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.4469ms
+2025-05-19 19:17:51.632 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+2025-05-19 19:17:51.635 +02:00 [INF] Executing endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-19 19:17:51.635 +02:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.HomeController (WebApp).
+2025-05-19 19:17:51.635 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:17:51.641 +02:00 [INF] Executed ViewResult - view Index executed in 5.3999ms.
+2025-05-19 19:17:51.641 +02:00 [INF] Executed action WebApp.Controllers.HomeController.Index (WebApp) in 5.6876ms
+2025-05-19 19:17:51.641 +02:00 [INF] Executed endpoint 'WebApp.Controllers.HomeController.Index (WebApp)'
+2025-05-19 19:17:51.641 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 8.5316ms
+2025-05-19 19:17:51.686 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:17:51.686 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:17:51.687 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 0.7371ms
+2025-05-19 19:17:51.696 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.422ms
+2025-05-19 19:20:02.709 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-19 19:20:02.721 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:20:02.721 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-19 19:20:02.722 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:20:02.726 +02:00 [INF] Executed ViewResult - view Index executed in 4.0833ms.
+2025-05-19 19:20:02.728 +02:00 [INF] Executed action AccountController.Index (WebApp) in 5.911ms
+2025-05-19 19:20:02.728 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:20:02.734 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 24.4771ms
+2025-05-19 19:20:02.823 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/css/site.css?v=peyd87LiQPMAR6VndvjJhRs0PmfaybjQLfLP78daImg - null null
+2025-05-19 19:20:02.824 +02:00 [INF] The file /css/site.css was not modified
+2025-05-19 19:20:02.825 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/css/site.css?v=peyd87LiQPMAR6VndvjJhRs0PmfaybjQLfLP78daImg - 304 null text/css 1.568ms
+2025-05-19 19:20:02.825 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:20:02.825 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:20:02.828 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.0448ms
+2025-05-19 19:20:02.855 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.5954ms
+2025-05-19 19:20:03.686 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+2025-05-19 19:20:03.689 +02:00 [INF] Executing endpoint 'AccountController.Login (WebApp)'
+2025-05-19 19:20:03.689 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller AccountController (WebApp).
+2025-05-19 19:20:03.689 +02:00 [INF] Executing ViewResult, running view Login.
+2025-05-19 19:20:03.693 +02:00 [INF] Executed ViewResult - view Login executed in 3.3759ms.
+2025-05-19 19:20:03.693 +02:00 [INF] Executed action AccountController.Login (WebApp) in 3.7169ms
+2025-05-19 19:20:03.693 +02:00 [INF] Executed endpoint 'AccountController.Login (WebApp)'
+2025-05-19 19:20:03.693 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 7.0618ms
+2025-05-19 19:20:03.750 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:20:03.751 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:20:03.754 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 3.6699ms
+2025-05-19 19:20:03.769 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.2373ms
+2025-05-19 19:20:08.588 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7021/Account/Login - application/x-www-form-urlencoded 234
+2025-05-19 19:20:08.591 +02:00 [INF] Executing endpoint 'AccountController.Login (WebApp)'
+2025-05-19 19:20:08.591 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(WebApp.ViewModels.LoginViewModel) on controller AccountController (WebApp).
+2025-05-19 19:20:08.593 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2025-05-19 19:20:08.700 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0
+2025-05-19 19:20:08.702 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2025-05-19 19:20:08.702 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2025-05-19 19:20:08.703 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."ClaimType", "a"."ClaimValue"
+FROM "AspNetRoleClaims" AS "a"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-19 19:20:08.704 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-05-19 19:20:08.704 +02:00 [INF] Executing RedirectResult, redirecting to /Account.
+2025-05-19 19:20:08.704 +02:00 [INF] Executed action AccountController.Login (WebApp) in 113.1038ms
+2025-05-19 19:20:08.704 +02:00 [INF] Executed endpoint 'AccountController.Login (WebApp)'
+2025-05-19 19:20:08.704 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7021/Account/Login - 302 0 null 116.8429ms
+2025-05-19 19:20:08.715 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Account - null null
+2025-05-19 19:20:08.718 +02:00 [INF] Executing endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:20:08.719 +02:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller AccountController (WebApp).
+2025-05-19 19:20:08.720 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FullName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1
+2025-05-19 19:20:08.720 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:20:08.723 +02:00 [INF] Executed ViewResult - view Index executed in 3.3265ms.
+2025-05-19 19:20:08.724 +02:00 [INF] Executed action AccountController.Index (WebApp) in 5.6357ms
+2025-05-19 19:20:08.724 +02:00 [INF] Executed endpoint 'AccountController.Index (WebApp)'
+2025-05-19 19:20:08.733 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Account - 200 null text/html; charset=utf-8 18.1246ms
+2025-05-19 19:20:08.770 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:20:08.771 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:20:08.771 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 0.9458ms
+2025-05-19 19:20:08.790 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.1727ms
+2025-05-19 19:20:10.326 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student - null null
+2025-05-19 19:20:10.329 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.Index (WebApp)'
+2025-05-19 19:20:10.329 +02:00 [INF] Route matched with {action = "Index", controller = "Student"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-19 19:20:10.333 +02:00 [INF] AllStudents not found in cache, fetching from DB...
+2025-05-19 19:20:10.333 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+2025-05-19 19:20:10.333 +02:00 [INF] AllStudents cached.
+2025-05-19 19:20:10.334 +02:00 [INF] Executing ViewResult, running view Index.
+2025-05-19 19:20:10.340 +02:00 [INF] Executed ViewResult - view Index executed in 5.7562ms.
+2025-05-19 19:20:10.340 +02:00 [INF] Executed action WebApp.Controllers.StudentController.Index (WebApp) in 10.8752ms
+2025-05-19 19:20:10.340 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.Index (WebApp)'
+2025-05-19 19:20:10.341 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student - 200 null text/html; charset=utf-8 14.4329ms
+2025-05-19 19:20:10.387 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:20:10.387 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:20:10.388 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.5429ms
+2025-05-19 19:20:10.404 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.1888ms
+2025-05-19 19:20:12.127 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student/Classes - null null
+2025-05-19 19:20:12.136 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.Classes (WebApp)'
+2025-05-19 19:20:12.137 +02:00 [INF] Route matched with {action = "Classes", controller = "Student"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Classes() on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-19 19:20:12.137 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+2025-05-19 19:20:12.138 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+2025-05-19 19:20:12.138 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-19 19:20:12.139 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Id", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."FullName", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetUsers" AS "a0" ON "a"."UserId" = "a0"."Id"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-19 19:20:12.140 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."ClassName", "c"."StudentId"
+FROM "ClassStudents" AS "c"
+ORDER BY "c"."ClassName"
+2025-05-19 19:20:12.140 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+2025-05-19 19:20:12.140 +02:00 [INF] Executing ViewResult, running view Classes.
+2025-05-19 19:20:12.142 +02:00 [INF] Executed ViewResult - view Classes executed in 1.6312ms.
+2025-05-19 19:20:12.142 +02:00 [INF] Executed action WebApp.Controllers.StudentController.Classes (WebApp) in 5.6626ms
+2025-05-19 19:20:12.143 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.Classes (WebApp)'
+2025-05-19 19:20:12.143 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student/Classes - 200 null text/html; charset=utf-8 16.8788ms
+2025-05-19 19:20:12.194 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:20:12.194 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:20:12.199 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 4.9055ms
+2025-05-19 19:20:12.226 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.107ms
+2025-05-19 19:20:13.864 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Student/GetClassDetails?className=kkk - null null
+2025-05-19 19:20:13.866 +02:00 [INF] Executing endpoint 'WebApp.Controllers.StudentController.GetClassDetails (WebApp)'
+2025-05-19 19:20:13.866 +02:00 [INF] Route matched with {action = "GetClassDetails", controller = "Student"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetClassDetails(System.String) on controller WebApp.Controllers.StudentController (WebApp).
+2025-05-19 19:20:13.867 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Name", "c"."TeacherId"
+FROM "Classes" AS "c"
+WHERE "c"."Name" = @__className_0
+LIMIT 1
+2025-05-19 19:20:13.867 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:20:13.868 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."ClassName", "s"."Name", "s"."TeacherId"
+FROM "Subjects" AS "s"
+WHERE "s"."ClassName" = @__className_0
+2025-05-19 19:20:13.868 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2025-05-19 19:20:13.869 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Id", "a0"."AccessFailedCount", "a0"."ConcurrencyStamp", "a0"."Email", "a0"."EmailConfirmed", "a0"."FullName", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetUsers" AS "a0" ON "a"."UserId" = "a0"."Id"
+WHERE "a"."RoleId" = @__role_Id_0
+2025-05-19 19:20:13.869 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+2025-05-19 19:20:13.870 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignedStudentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignedStudentIds_0) AS "a"
+)
+2025-05-19 19:20:13.870 +02:00 [INF] Executing PartialViewResult, running view GetClassDetails.
+2025-05-19 19:20:13.872 +02:00 [INF] Executed PartialViewResult - view GetClassDetails executed in 2.2761ms.
+2025-05-19 19:20:13.873 +02:00 [INF] Executed action WebApp.Controllers.StudentController.GetClassDetails (WebApp) in 6.5479ms
+2025-05-19 19:20:13.873 +02:00 [INF] Executed endpoint 'WebApp.Controllers.StudentController.GetClassDetails (WebApp)'
+2025-05-19 19:20:13.875 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Student/GetClassDetails?className=kkk - 200 null text/html; charset=utf-8 11.343ms
+2025-05-19 19:20:16.342 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - null null
+2025-05-19 19:20:16.350 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:20:16.350 +02:00 [INF] Route matched with {action = "ManageGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ManageGrades(System.String, System.String) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:20:16.352 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:20:16.353 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:20:16.354 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."ClassName" = @__className_0
+2025-05-19 19:20:16.354 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" IN (
+    SELECT "a0"."value"
+    FROM json_each(@__assignmentIds_0) AS "a0"
+)
+ORDER BY "a"."AssignmentId"
+2025-05-19 19:20:16.355 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."AssignmentId", "g"."Id", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" IS NOT NULL AND "g"."AssignmentId" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignmentIds_0) AS "a"
+)
+ORDER BY "g"."AssignmentId"
+2025-05-19 19:20:16.355 +02:00 [INF] Executing ViewResult, running view ManageGrades.
+2025-05-19 19:20:16.367 +02:00 [INF] Executed ViewResult - view ManageGrades executed in 12.0045ms.
+2025-05-19 19:20:16.373 +02:00 [INF] Executed action WebApp.Controllers.GradesController.ManageGrades (WebApp) in 22.328ms
+2025-05-19 19:20:16.373 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:20:16.373 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk - 200 null text/html; charset=utf-8 31.1581ms
+2025-05-19 19:20:16.418 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:20:16.418 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:20:16.419 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1.1758ms
+2025-05-19 19:20:16.430 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.1405ms
+2025-05-19 19:20:37.549 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk&weekStart=2025-Www - null null
+2025-05-19 19:20:37.558 +02:00 [INF] Executing endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:20:37.558 +02:00 [INF] Route matched with {action = "ManageGrades", controller = "Grades"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ManageGrades(System.String, System.String) on controller WebApp.Controllers.GradesController (WebApp).
+2025-05-19 19:20:37.564 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."StudentId"
+FROM "ClassStudents" AS "c"
+WHERE "c"."ClassName" = @__className_0
+2025-05-19 19:20:37.565 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__studentIds_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."FirstName", "s"."LastName"
+FROM "Students" AS "s"
+WHERE "s"."Id" IN (
+    SELECT "s0"."value"
+    FROM json_each(@__studentIds_0) AS "s0"
+)
+2025-05-19 19:20:37.566 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__className_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClassName", "a"."DueDate", "a"."Name", "a"."StartDate", "a"."SubjectName", "a"."Type"
+FROM "Assignments" AS "a"
+WHERE "a"."ClassName" = @__className_0
+2025-05-19 19:20:37.566 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."AssignmentId", "a"."StudentId"
+FROM "AssignmentStudents" AS "a"
+WHERE "a"."AssignmentId" IN (
+    SELECT "a0"."value"
+    FROM json_each(@__assignmentIds_0) AS "a0"
+)
+ORDER BY "a"."AssignmentId"
+2025-05-19 19:20:37.567 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__assignmentIds_0='?' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT "g"."AssignmentId", "g"."Id", "g"."Date", "g"."StudentId", "g"."SubjectName", "g"."Value"
+FROM "Grades" AS "g"
+WHERE "g"."AssignmentId" IS NOT NULL AND "g"."AssignmentId" IN (
+    SELECT "a"."value"
+    FROM json_each(@__assignmentIds_0) AS "a"
+)
+ORDER BY "g"."AssignmentId"
+2025-05-19 19:20:37.568 +02:00 [INF] Executing ViewResult, running view ManageGrades.
+2025-05-19 19:20:37.570 +02:00 [INF] Executed ViewResult - view ManageGrades executed in 2.6424ms.
+2025-05-19 19:20:37.571 +02:00 [INF] Executed action WebApp.Controllers.GradesController.ManageGrades (WebApp) in 12.46ms
+2025-05-19 19:20:37.571 +02:00 [INF] Executed endpoint 'WebApp.Controllers.GradesController.ManageGrades (WebApp)'
+2025-05-19 19:20:37.571 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/Grades/ManageGrades?className=kkk&weekStart=2025-Www - 200 null text/html; charset=utf-8 22.6212ms
+2025-05-19 19:20:37.620 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+2025-05-19 19:20:37.630 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-19 19:20:37.638 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 8.7032ms
+2025-05-19 19:20:37.650 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.6768ms
