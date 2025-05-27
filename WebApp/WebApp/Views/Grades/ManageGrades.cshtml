@@ -130,7 +130,9 @@ else
                                     ? val?.ToString() : "";
 
                                     <td>
-                                        <input type="text"
+                                        <input type="number"
+                                               min="1"
+                                               max="6"
                                                name="Grades[@assignment.Id][@student.Id]"
                                                value="@grade"
                                                class="form-control text-center"
