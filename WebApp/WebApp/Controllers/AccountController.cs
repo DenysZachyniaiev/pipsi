@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using WebApp.Data;
 using WebApp.Models;
 using WebApp.Services;
@@ -101,14 +102,10 @@ public class AccountController : Controller
             return View(model);
         }
 
-        var result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
+        var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
         if (result.Succeeded)
         {
-            var returnUrl = TempData["ReturnUrl"] as string;
-            if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
-                return Redirect(returnUrl);
-
-            return RedirectToAction("Index", "Account");
+            return RedirectToAction("Index", "Home");
         }
 
         ModelState.AddModelError(string.Empty, "Invalid login attempt.");
@@ -140,15 +137,21 @@ public class AccountController : Controller
                        $"Jeśli to nie Ty - możesz zignorować, lub zmienić hasło w ustawieniach.";
 
             await emailService.SendEmailAsync(model.Email, "Próba rejestracji", body);
-        }
-        else
-        {
-            var code = new Random().Next(100000, 999999).ToString();
-            HttpContext.Session.SetString("VerificationCode", code);
 
-            var body = $"Twój kod rejestracyjny to: <b>{code}</b>";
-            await emailService.SendEmailAsync(model.Email, "Kod weryfikacyjny - WebApp", body);
+            ModelState.AddModelError(string.Empty, "Konto z tym adresem email już istnieje.");
+            return View(model);
         }
+
+        if (model.SkipVerification)
+        {
+            return await FinalizeRegistration(model);
+        }
+
+        var code = new Random().Next(100000, 999999).ToString();
+        HttpContext.Session.SetString("VerificationCode", code);
+
+        var message = $"Twój kod rejestracyjny to: <b>{code}</b>";
+        await emailService.SendEmailAsync(model.Email, "Kod weryfikacyjny - WebApp", message);
 
         return View("ConfirmCode", model);
     }
@@ -175,7 +178,8 @@ public class AccountController : Controller
             UserName = model.Email,
             Email = model.Email,
             FirstName = model.FirstName,
-            LastName = model.LastName
+            LastName = model.LastName,
+            DevSkipVerification = model.SkipVerification
         };
 
         var result = await userManager.CreateAsync(user, model.Password);
@@ -191,6 +195,9 @@ public class AccountController : Controller
                 LastName = user.LastName ?? ""
             });
             await dbContext.SaveChangesAsync();
+
+            var cache = HttpContext.RequestServices.GetRequiredService<IMemoryCache>();
+            cache.Remove("AllStudents");
 
             await signInManager.SignInAsync(user, isPersistent: false);
             return RedirectToAction("Index", "Account");
@@ -216,11 +223,17 @@ public class AccountController : Controller
             return View(model);
 
         var user = await userManager.FindByEmailAsync(model.Email);
-
         var code = new Random().Next(100000, 999999).ToString();
         HttpContext.Session.SetString("ResetCode", code);
 
-        await emailService.SendEmailAsync(model.Email, "Kod resetowania hasła", $"Twój kod to: <b>{code}</b>");
+        if (user?.DevSkipVerification == true)
+        {
+            TempData["AutoFillCode"] = code;
+        }
+        else
+        {
+            await emailService.SendEmailAsync(model.Email, "Kod resetowania hasła", $"Twój kod to: <b>{code}</b>");
+        }
 
         return View("ForgotPasswordCode", new ResetPasswordViewModel(model.Email));
     }

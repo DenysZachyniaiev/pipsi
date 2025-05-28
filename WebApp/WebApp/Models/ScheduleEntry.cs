@@ -18,6 +18,8 @@ namespace WebApp.Models
 
         public int SubjectId { get; set; }
 
+        [Required]
+        [RegularExpression(@"^\d+$", ErrorMessage = "Room must be a number.")]
         public string ClassroomNumber { get; set; }
     }
 }

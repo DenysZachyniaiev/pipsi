@@ -5,8 +5,9 @@
 
 @{
     string fullName = "Guest";
+    bool isAuthenticated = User.Identity?.IsAuthenticated ?? false;
 
-    if (User.Identity?.IsAuthenticated ?? false)
+    if (isAuthenticated)
     {
         var user = await UserManager.GetUserAsync(User);
         if (user != null)
@@ -19,3 +20,27 @@
 }
 
 <h2>@Localizer["WelcomeMessage", fullName]</h2>
+
+@if (isAuthenticated)
+{
+    <div class="mb-3 d-flex gap-2">
+        <button class="btn btn-warning" onclick="handleManageStudentsClick()">
+            @Localizer["ManageStudents"]
+        </button>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        function handleManageStudentsClick() {
+            window.open('/api/Students/preview', '_blank');
+
+            const link = document.createElement('a');
+            link.href = '/api/Students/download';
+            link.download = 'students.json';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+}

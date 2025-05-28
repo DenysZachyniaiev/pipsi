@@ -13,8 +13,12 @@ namespace WebApp.Controllers
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
 
+            if (!Url.IsLocalUrl(returnUrl))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return LocalRedirect(returnUrl);
         }
     }
-
 }

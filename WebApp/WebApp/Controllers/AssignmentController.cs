@@ -19,6 +19,16 @@ namespace WebApp.Controllers
         [HttpGet]
         public IActionResult Create(string className)
         {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var isAdmin = User.IsInRole("Admin");
+
+            if (!isAdmin)
+            {
+                var isAuthorized = context.Subjects.Any(s => s.ClassName == className && s.TeacherId == userId);
+                if (!isAuthorized)
+                    return Forbid();
+            }
+
             var studentIds = context.ClassStudents
                 .Where(cs => cs.ClassName == className)
                 .Select(cs => cs.StudentId)
@@ -27,9 +37,6 @@ namespace WebApp.Controllers
             var students = context.Students
                 .Where(s => studentIds.Contains(s.Id))
                 .ToList();
-
-            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var isAdmin = User.IsInRole("Admin");
 
             var subjects = isAdmin
                 ? context.Subjects.Where(s => s.ClassName == className).ToList()
@@ -92,8 +99,6 @@ namespace WebApp.Controllers
                 return View(model);
             }
 
-            var className = model.ClassName;
-
             var assignment = new Assignment
             {
                 Name = model.Name,
@@ -101,7 +106,7 @@ namespace WebApp.Controllers
                 SubjectName = model.SubjectName,
                 StartDate = model.StartDate,
                 DueDate = model.DueDate,
-                ClassName = className
+                ClassName = model.ClassName
             };
 
             context.Assignments.Add(assignment);
@@ -116,7 +121,11 @@ namespace WebApp.Controllers
             context.AssignmentStudents.AddRange(assignmentStudents);
             context.SaveChanges();
 
-            return RedirectToAction("ManageGrades", "Grades", new { className = className });
+            return RedirectToAction("ManageGrades", "Grades", new
+            {
+                className = model.ClassName,
+                weekStart = ISOFormat(model.StartDate)
+            });
         }
 
         [HttpGet]
@@ -175,7 +184,6 @@ namespace WebApp.Controllers
             return View(viewModel);
         }
 
-
         [HttpPost]
         public IActionResult Edit(EditAssignmentViewModel model)
         {
@@ -216,7 +224,11 @@ namespace WebApp.Controllers
 
             context.SaveChanges();
 
-            return RedirectToAction("ManageGrades", "Grades", new { className = model.ClassName });
+            return RedirectToAction("ManageGrades", "Grades", new
+            {
+                className = model.ClassName,
+                weekStart = ISOFormat(model.StartDate)
+            });
         }
 
         [HttpPost]
@@ -230,11 +242,12 @@ namespace WebApp.Controllers
 
             if (!isAdmin)
             {
-                var subject = context.Subjects.FirstOrDefault(s =>
-                    s.Name == assignment.SubjectName &&
-                    s.ClassName == assignment.ClassName);
+                var subject = context.Subjects
+                    .FirstOrDefault(s => s.ClassName == assignment.ClassName &&
+                                         s.Name == assignment.SubjectName &&
+                                         s.TeacherId == userId);
 
-                if (subject == null || subject.TeacherId != userId)
+                if (subject == null)
                 {
                     return Forbid();
                 }
@@ -248,7 +261,16 @@ namespace WebApp.Controllers
             context.Assignments.Remove(assignment);
             context.SaveChanges();
 
-            return RedirectToAction("ManageGrades", "Grades", new { className = assignment.ClassName });
+            return RedirectToAction("ManageGrades", "Grades", new
+            {
+                className = assignment.ClassName,
+                weekStart = ISOFormat(assignment.StartDate)
+            });
+        }
+
+        private static string ISOFormat(DateTime? date)
+        {
+            return date?.ToString("yyyy-'W'ww") ?? "";
         }
     }
 }

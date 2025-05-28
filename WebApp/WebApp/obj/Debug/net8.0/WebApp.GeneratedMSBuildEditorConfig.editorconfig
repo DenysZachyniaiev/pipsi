@@ -80,10 +80,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/PublicHoliday/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljSG9saWRheVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -118,14 +114,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Student/Classes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDbGFzc2VzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Student/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Student/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/48723/Desktop/pipsi-main/WebApp/WebApp/WebApp/Views/Student/GetClassDetails.cshtml]

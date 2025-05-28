@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Text;
+using System.Text.Json;
 using WebApp.Data;
-using WebApp.Models;
 
 [ApiController]
+[Authorize]
 public class ApiController : ControllerBase
 {
     private readonly AppDbContext context;
@@ -11,11 +14,38 @@ public class ApiController : ControllerBase
     {
         this.context = context;
     }
-    [Route("api/Students")]
+
+    [Route("api/Students/preview")]
     [HttpGet]
-    public ActionResult<IEnumerable<Student>> GetStudents()
+    public IActionResult PreviewStudents()
     {
         var students = context.Students.ToList();
-        return Ok(students);
+
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
+
+        var json = JsonSerializer.Serialize(students, options);
+
+        return Content(json, "application/json", Encoding.UTF8);
+    }
+
+    [Route("api/Students/download")]
+    [HttpGet]
+    public IActionResult DownloadStudents()
+    {
+        var students = context.Students.ToList();
+
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
+
+        var json = JsonSerializer.Serialize(students, options);
+        var bytes = Encoding.UTF8.GetBytes(json);
+        var stream = new MemoryStream(bytes);
+
+        return File(stream, "application/json", "students.json");
     }
 }

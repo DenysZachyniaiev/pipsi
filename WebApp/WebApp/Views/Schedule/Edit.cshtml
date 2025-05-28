@@ -9,6 +9,8 @@
 <form asp-action="Edit" asp-route-className="@ViewBag.ClassName" method="post">
     <input type="hidden" asp-for="Id" />
 
+    <div asp-validation-summary="All" class="text-danger"></div>
+
     <div class="mb-3">
         <label asp-for="Hour" class="form-label"></label>
         <input asp-for="Hour" type="number" min="8" max="16" class="form-control" />
@@ -31,7 +33,7 @@
 
     <div class="mb-3">
         <label asp-for="ClassroomNumber" class="form-label"></label>
-        <input asp-for="ClassroomNumber" class="form-control" />
+        <input asp-for="ClassroomNumber" class="form-control" type="number" min="1" max="1000" title="Enter a valid room number (digits only)" />
         <span asp-validation-for="ClassroomNumber" class="text-danger"></span>
     </div>
 
@@ -41,5 +43,4 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <div asp-validation-summary="All" class="text-danger"></div>
 }

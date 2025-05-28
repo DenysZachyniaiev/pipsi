@@ -57,69 +57,7 @@ namespace WebApp.Controllers
             return View(students);
         }
 
-        public IActionResult Add()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Add(Student student)
-        {
-            if (!ModelState.IsValid)
-                return View(student);
-
-            context.Students.Add(student);
-            context.SaveChanges();
-            cache.Remove("AllStudents");
-
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult Edit(string id)
-        {
-            var student = context.Students.FirstOrDefault(s => s.Id == id);
-            if (student == null)
-                return NotFound("Student not found.");
-
-            return View(student);
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Student student)
-        {
-            if (!ModelState.IsValid)
-                return View(student);
-
-            context.Students.Update(student);
-            context.SaveChanges();
-            cache.Remove("AllStudents");
-
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult Delete(string id)
-        {
-            var student = context.Students.FirstOrDefault(s => s.Id == id);
-            if (student == null)
-                return NotFound("Student not found.");
-
-            return View(student);
-        }
-
-        [HttpPost]
-        public IActionResult DeleteConfirmed(string id)
-        {
-            var student = context.Students.FirstOrDefault(s => s.Id == id);
-            if (student == null)
-                return NotFound("Student not found.");
-
-            context.Students.Remove(student);
-            context.SaveChanges();
-            cache.Remove("AllStudents");
-
-            return RedirectToAction("Index");
-        }
-
+        [Authorize(Roles = "Admin, Teacher")]
         public async Task<IActionResult> Classes()
         {
             var isAdmin = User.IsInRole("Admin");

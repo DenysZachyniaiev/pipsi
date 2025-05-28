@@ -1613,10 +1613,7 @@ C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.R
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Admin.Index.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Home.Index.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Shared._Layout.resources
-C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Add.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Classes.resources
-C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Delete.resources
-C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Edit.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.GetClassDetails.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Index.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Account.ConfirmCode.en.resources
@@ -1637,14 +1634,8 @@ C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.R
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Home.Index.pl.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Shared._Layout.en.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Shared._Layout.pl.resources
-C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Add.en.resources
-C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Add.pl.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Classes.en.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Classes.pl.resources
-C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Delete.en.resources
-C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Delete.pl.resources
-C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Edit.en.resources
-C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Edit.pl.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.GetClassDetails.en.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.GetClassDetails.pl.resources
 C:\Users\48723\Desktop\pipsi-main\WebApp\WebApp\WebApp\obj\Debug\net8.0\WebApp.Resources.Views.Student.Index.en.resources

@@ -43,12 +43,10 @@ namespace WebApp.Controllers
 
             var weekEndDate = weekStartDate.AddDays(6);
 
-            // Pobierz tylko te przedmioty, które są z danej klasy
             var subjectsForClass = context.Subjects
                 .Where(s => s.ClassName == className)
                 .ToDictionary(s => s.Id, s => s);
 
-            // Pobierz wpisy harmonogramu tylko z pasującymi SubjectId
             var entries = context.ScheduleEntries
                 .Where(e =>
                     subjectsForClass.Keys.Contains(e.SubjectId) &&
@@ -74,14 +72,12 @@ namespace WebApp.Controllers
             return View(viewModel);
         }
 
-
         [Authorize(Roles = "Admin")]
         public IActionResult Create(string className)
         {
             if (string.IsNullOrEmpty(className))
                 return RedirectToAction(nameof(Index));
 
-            PopulateDays();
             PopulateSubjects(className);
             ViewBag.ClassName = className;
             return View();
@@ -100,6 +96,22 @@ namespace WebApp.Controllers
 
             model.Day = model.Date.DayOfWeek;
 
+            var existing = context.ScheduleEntries
+                .Where(e => e.Date == model.Date && e.Hour == model.Hour)
+                .Join(context.Subjects,
+                      entry => entry.SubjectId,
+                      subject => subject.Id,
+                      (entry, subject) => new { entry, subject })
+                .FirstOrDefault(joined => joined.subject.ClassName == className);
+
+            if (existing != null)
+            {
+                ModelState.AddModelError("", "Another lesson already exists at this time for this class.");
+                PopulateSubjects(className);
+                ViewBag.ClassName = className;
+                return View(model);
+            }
+
             context.ScheduleEntries.Add(model);
             context.SaveChanges();
 
@@ -113,7 +125,6 @@ namespace WebApp.Controllers
             if (entry == null)
                 return NotFound();
 
-            PopulateDays();
             PopulateSubjects(className);
             ViewBag.ClassName = className;
 
@@ -132,6 +143,22 @@ namespace WebApp.Controllers
             }
 
             model.Day = model.Date.DayOfWeek;
+
+            var existing = context.ScheduleEntries
+                .Where(e => e.Id != model.Id && e.Date == model.Date && e.Hour == model.Hour)
+                .Join(context.Subjects,
+                      entry => entry.SubjectId,
+                      subject => subject.Id,
+                      (entry, subject) => new { entry, subject })
+                .FirstOrDefault(joined => joined.subject.ClassName == className);
+
+            if (existing != null)
+            {
+                ModelState.AddModelError("", "Another lesson already exists at this time for this class.");
+                PopulateSubjects(className);
+                ViewBag.ClassName = className;
+                return View(model);
+            }
 
             context.ScheduleEntries.Update(model);
             context.SaveChanges();
@@ -184,17 +211,6 @@ namespace WebApp.Controllers
                 .ToList();
 
             return Json(subjects);
-        }
-
-        private void PopulateDays()
-        {
-            ViewBag.Days = Enum.GetValues(typeof(DayOfWeek))
-                .Cast<DayOfWeek>()
-                .Select(d => new SelectListItem
-                {
-                    Text = d.ToString(),
-                    Value = ((int)d).ToString()
-                }).ToList();
         }
 
         private void PopulateSubjects(string className)

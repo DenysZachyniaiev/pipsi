@@ -25,6 +25,16 @@ namespace WebApp.Controllers
                 return BadRequest("Class name is required.");
             }
 
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var isAdmin = User.IsInRole("Admin");
+
+            if (!isAdmin)
+            {
+                var isAuthorized = context.Subjects.Any(s => s.ClassName == className && s.TeacherId == userId);
+                if (!isAuthorized)
+                    return Forbid();
+            }
+
             DateTime? parsedWeekStart = null;
             if (!string.IsNullOrEmpty(weekStart) && TryParseIsoWeek(weekStart, out var ws))
             {
@@ -39,9 +49,6 @@ namespace WebApp.Controllers
             var students = context.Students
                 .Where(s => studentIds.Contains(s.Id))
                 .ToList();
-
-            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var isAdmin = User.IsInRole("Admin");
 
             var allowedSubjectNames = isAdmin
                 ? null

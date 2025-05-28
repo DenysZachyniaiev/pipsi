@@ -30,29 +30,9 @@
     </div>
 </div>
 
-<div class="mt-5">
-    <h4>@Localizer["ManageStudent"]</h4>
-
-    <form asp-controller="Student" asp-action="Edit" method="get" class="row g-2 mb-2">
-        <div class="col-sm-8 col-12">
-            <input type="text" name="id" min="1" class="form-control" placeholder="@Localizer["EditPlaceholder"]" required />
-        </div>
-        <div class="col-sm-4 col-12">
-            <button type="submit" class="btn btn-primary w-100">@Localizer["Edit"]</button>
-        </div>
-    </form>
-
-    <form asp-controller="Student" asp-action="Delete" method="get" class="row g-2 mb-2">
-        <div class="col-sm-8 col-12">
-            <input type="text" name="id" min="1" class="form-control" placeholder="@Localizer["DeletePlaceholder"]" required />
-        </div>
-        <div class="col-sm-4 col-12">
-            <button type="submit" class="btn btn-danger w-100">@Localizer["Delete"]</button>
-        </div>
-    </form>
-
-</div>
-
-<div class="mt-3">
-    <a asp-action="Classes" class="btn btn-secondary w-100 w-sm-auto">@Localizer["ManageClasses"]</a>
-</div>
+@if (!User.IsInRole("Student"))
+{
+    <div class="mt-3">
+        <a asp-action="Classes" class="btn btn-secondary w-100 w-sm-auto">@Localizer["ManageClasses"]</a>
+    </div>
+}
