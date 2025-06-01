@@ -124,21 +124,44 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult DeleteClass(string className)
         {
-            if (!UserCanEditClass(className)) return Forbid();
+            if (!UserCanEditClass(className))
+                return Forbid();
 
-            var classToDelete = context.Classes.FirstOrDefault(c => c.Name == className);
-            if (classToDelete == null)
+            var classEntity = context.Classes.FirstOrDefault(c => c.Name == className);
+            if (classEntity == null)
                 return NotFound();
 
-            var relatedEntries = context.ClassStudents.Where(cs => cs.ClassName == className);
-            context.ClassStudents.RemoveRange(relatedEntries);
+            var classStudents = context.ClassStudents.Where(cs => cs.ClassName == className);
+            context.ClassStudents.RemoveRange(classStudents);
 
-            var relatedSubjects = context.Subjects.Where(s => s.ClassName == className);
-            context.Subjects.RemoveRange(relatedSubjects);
+            var subjects = context.Subjects.Where(s => s.ClassName == className).ToList();
+            var subjectNames = subjects.Select(s => s.Name).ToList();
+            var subjectIds = subjects.Select(s => s.Id).ToList();
 
-            context.Classes.Remove(classToDelete);
+
+            var assignments = context.Assignments.Where(a => subjectNames.Contains(a.SubjectName));
+
+            foreach (var assignment in assignments)
+            {
+                var gradesToDelete = context.Grades.Where(g => g.AssignmentId == assignment.Id);
+                context.Grades.RemoveRange(gradesToDelete);
+            }
+
+            foreach (var assignment in assignments)
+            {
+                var assignmentStudentsToDelete = context.AssignmentStudents.Where(ast => ast.AssignmentId == assignment.Id);
+                context.AssignmentStudents.RemoveRange(assignmentStudentsToDelete);
+            }
+
+            context.Assignments.RemoveRange(assignments);
+
+            context.Subjects.RemoveRange(subjects);
+
+            context.Classes.Remove(classEntity);
+
             context.SaveChanges();
 
             return RedirectToAction("Classes");

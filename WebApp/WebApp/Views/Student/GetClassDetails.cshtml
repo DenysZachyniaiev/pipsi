@@ -121,5 +121,15 @@
         {
             <p>@Localizer["NoSubjectsAssigned"]</p>
         }
+
+        @if (User.IsInRole("Admin") || User.IsInRole("Director"))
+        {
+            <form asp-action="DeleteClass" method="post" onsubmit="return confirm('@Localizer["ConfirmDeleteClass"]');">
+                <input type="hidden" name="className" value="@Model.ClassName" />
+                <button type="submit" class="btn btn-danger w-100 mt-3">
+                    @Localizer["DeleteClass"]
+                </button>
+            </form>
+        }
     </div>
 </div>

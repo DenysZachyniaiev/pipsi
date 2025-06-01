@@ -55,7 +55,10 @@ namespace WebApp.Data
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<ScheduleEntry>()
-                .HasKey(se => se.Id);
+                .HasOne<Subject>()
+                .WithMany()
+                .HasForeignKey(se => se.SubjectId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<AssignmentStudent>()
                 .HasKey(x => new { x.AssignmentId, x.StudentId });
@@ -70,6 +73,12 @@ namespace WebApp.Data
                 .HasOne(x => x.Student)
                 .WithMany()
                 .HasForeignKey(x => x.StudentId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Grade>()
+                .HasOne(x => x.Assignment) 
+                .WithMany() 
+                .HasForeignKey(g => g.AssignmentId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
