@@ -11,7 +11,7 @@ RUN dotnet publish -c Release -o /app
 COPY WebApp/eDziennik.db /app/eDziennik.db
 
 # Runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
 # Set environment variables
