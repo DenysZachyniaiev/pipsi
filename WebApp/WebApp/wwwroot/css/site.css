@@ -13,9 +13,11 @@ html {
 
 }
 .nav-link.text-dark:hover {
-    background-color: gray;
+    /*    background-color: lightgray;*/
+    background-color: red;
+    border-radius: .25rem;
     color: white !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.46s ease, color 0.1s ease;
 }
 .navbar-collapse{
     margin-top: 1rem;
@@ -28,4 +30,18 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+.navbar-nav a{
+    text-align: center;
+}
+.btn.btn-primary, .btn.btn-secondary {
+    margin-top: 1rem !important;
+}
+@media(max-width: 576px){
+    .nav-link.text-dark:hover {
+        letter-spacing: .115rem;
+        transition: letter-spacing 0.46s ease;
+    
+    }
+    
 }
