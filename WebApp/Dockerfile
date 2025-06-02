@@ -8,6 +8,7 @@ RUN dotnet restore
 
 # Publish the app to the /app folder
 RUN dotnet publish -c Release -o /app
+COPY WebApp/eDziennik.db /app/eDziennik.db
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine
