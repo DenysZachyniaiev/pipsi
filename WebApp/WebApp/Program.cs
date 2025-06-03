@@ -26,6 +26,11 @@ namespace WebApp
             builder.Services.AddHttpClient<GeoLocationService>();
             builder.Services.AddScoped<GeoLocationService>();
 
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.ListenAnyIP(8080);
+            });
+
             builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = true;
