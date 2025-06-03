@@ -10,7 +10,7 @@ using WebApp.ViewModels;
 
 namespace WebApp.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin,Teacher,Director")]
     public class StudentController : Controller
     {
         private readonly AppDbContext context;

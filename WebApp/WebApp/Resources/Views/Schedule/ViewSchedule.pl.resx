@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="AddNewEntry" xml:space="preserve">
+    <value>Dodaj nowy wpis</value>
+  </data>
+  <data name="PreviousWeek" xml:space="preserve">
+    <value>Poprzedni tydzień</value>
+  </data>
+  <data name="NextWeek" xml:space="preserve">
+    <value>Następny tydzień</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>Tydzień:</value>
+  </data>
+  <data name="SelectedWeek" xml:space="preserve">
+    <value>Wybrany tydzień:</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Godzina</value>
+  </data>
+  <data name="Room" xml:space="preserve">
+    <value>Sala:</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="BackToClassSelection" xml:space="preserve">
+    <value>Wróć do wyboru klasy</value>
+  </data>
+</root>

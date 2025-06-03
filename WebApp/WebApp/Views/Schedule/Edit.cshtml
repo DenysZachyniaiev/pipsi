@@ -1,10 +1,11 @@
 ﻿@model WebApp.Models.ScheduleEntry
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Edit Schedule Entry";
+    ViewData["Title"] = Localizer["EditScheduleEntryTitle"];
 }
 
-<h2>Edit Schedule Entry for class @ViewBag.ClassName</h2>
+<h2>@Localizer["EditScheduleEntryForClass", ViewBag.ClassName]</h2>
 
 <form asp-action="Edit" asp-route-className="@ViewBag.ClassName" method="post">
     <input type="hidden" asp-for="Id" />
@@ -12,33 +13,33 @@
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="mb-3">
-        <label asp-for="Hour" class="form-label"></label>
+        <label asp-for="Hour" class="form-label">@Localizer["Hour"]</label>
         <input asp-for="Hour" type="number" min="8" max="16" class="form-control" />
         <span asp-validation-for="Hour" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="Date" class="form-label">Data</label>
+        <label asp-for="Date" class="form-label">@Localizer["Date"]</label>
         <input asp-for="Date" type="date" class="form-control" />
         <span asp-validation-for="Date" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="SubjectId" class="form-label"></label>
+        <label asp-for="SubjectId" class="form-label">@Localizer["Subject"]</label>
         <select asp-for="SubjectId" asp-items="ViewBag.Subjects" class="form-select">
-            <option value="">-- Select subject --</option>
+            <option value="">@Localizer["SelectSubject"]</option>
         </select>
         <span asp-validation-for="SubjectId" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="ClassroomNumber" class="form-label"></label>
+        <label asp-for="ClassroomNumber" class="form-label">@Localizer["ClassroomNumber"]</label>
         <input asp-for="ClassroomNumber" class="form-control" type="number" min="1" max="1000" title="Enter a valid room number (digits only)" />
         <span asp-validation-for="ClassroomNumber" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a asp-action="ViewSchedule" asp-route-className="@ViewBag.ClassName" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+    <a asp-action="ViewSchedule" asp-route-className="@ViewBag.ClassName" class="btn btn-secondary">@Localizer["Cancel"]</a>
 </form>
 
 @section Scripts {

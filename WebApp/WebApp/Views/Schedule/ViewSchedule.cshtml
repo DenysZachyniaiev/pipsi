@@ -2,7 +2,7 @@
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = $"Schedule for {Model.ClassName}";
+    ViewData["Title"] = $"{Localizer["ScheduleFor"]} {Model.ClassName}";
 
     var weekStart = Model.WeekStart.Date;
     var weekEnd = weekStart.AddDays(6);
@@ -14,39 +14,37 @@
     var nextWeekValue = $"{System.Globalization.ISOWeek.GetYear(nextWeek)}-W{System.Globalization.ISOWeek.GetWeekOfYear(nextWeek):D2}";
 }
 
-<h2>@ViewData["Title"]</h2>
-
 @if (User.IsInRole("Admin"))
 {
-    <a asp-action="Create" asp-route-className="@Model.ClassName" class="btn btn-success mb-3">Add new entry</a>
+    <a asp-action="Create" asp-route-className="@Model.ClassName" class="btn btn-success mb-3">@Localizer["AddNewEntry"]</a>
 }
 
 <div class="mb-3 d-flex align-items-center gap-2 flex-wrap">
     <form method="get" asp-action="ViewSchedule">
         <input type="hidden" name="className" value="@Model.ClassName" />
         <input type="hidden" name="weekStart" value="@prevWeekValue" />
-        <button type="submit" class="btn btn-outline-secondary">&laquo; Previous Week</button>
+        <button type="submit" class="btn btn-outline-secondary">@Localizer["PreviousWeek"]</button>
     </form>
 
     <form method="get" asp-action="ViewSchedule" class="d-flex align-items-center gap-2">
         <input type="hidden" name="className" value="@Model.ClassName" />
-        <label for="weekStart" class="form-label mb-0">Week:</label>
+        <label for="weekStart" class="form-label mb-0">@Localizer["Week"]</label>
         <input type="week" name="weekStart" class="form-control" value="@currentWeekValue" onchange="this.form.submit()" />
     </form>
 
     <form method="get" asp-action="ViewSchedule">
         <input type="hidden" name="className" value="@Model.ClassName" />
         <input type="hidden" name="weekStart" value="@nextWeekValue" />
-        <button type="submit" class="btn btn-outline-secondary">Next Week &raquo;</button>
+        <button type="submit" class="btn btn-outline-secondary">@Localizer["NextWeek"]</button>
     </form>
 </div>
 
-<p class="text-muted">Selected week: <strong>@weekStart.ToString("dd.MM.yyyy") – @weekEnd.ToString("dd.MM.yyyy")</strong></p>
+<p class="text-muted">@Localizer["SelectedWeek"] <strong>@weekStart.ToString("dd.MM.yyyy") – @weekEnd.ToString("dd.MM.yyyy")</strong></p>
 
 <table class="table table-bordered text-center align-middle">
     <thead class="table-light">
         <tr>
-            <th>Hour</th>
+            <th>@Localizer["Hour"]</th>
             @for (int i = 0; i < 7; i++)
             {
                 var day = weekStart.AddDays(i);
@@ -68,13 +66,13 @@
                     {
                         <td>
                             <div><strong>@entry.SubjectName</strong></div>
-                            <div class="text-muted">Room: @entry.ClassroomNumber</div>
+                            <div class="text-muted">@Localizer["Room"] @entry.ClassroomNumber</div>
 
                             @if (User.IsInRole("Admin"))
                             {
                                 <div class="mt-1">
-                                    <a asp-action="Edit" asp-route-id="@entry.Id" asp-route-className="@Model.ClassName" class="btn btn-sm btn-outline-primary">Edit</a>
-                                    <a asp-action="Delete" asp-route-id="@entry.Id" asp-route-className="@Model.ClassName" class="btn btn-sm btn-outline-danger">Delete</a>
+                                    <a asp-action="Edit" asp-route-id="@entry.Id" asp-route-className="@Model.ClassName" class="btn btn-sm btn-outline-primary">@Localizer["Edit"]</a>
+                                    <a asp-action="Delete" asp-route-id="@entry.Id" asp-route-className="@Model.ClassName" class="btn btn-sm btn-outline-danger">@Localizer["Delete"]</a>
                                 </div>
                             }
                         </td>
@@ -89,4 +87,4 @@
     </tbody>
 </table>
 
-<a asp-action="Index" class="btn btn-secondary">Back to class selection</a>
+<a asp-action="Index" class="btn btn-secondary">@Localizer["BackToClassSelection"]</a>

@@ -33,9 +33,13 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Index">@Localizer["Students"]</a>
-                            </li>
+
+                            @if (SignInManager.IsSignedIn(User) && (User.IsInRole("Teacher") || User.IsInRole("Admin") || User.IsInRole("Director")))
+							{
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Index">@Localizer["Students"]</a>
+                                </li>
+							}
                             @if (SignInManager.IsSignedIn(User))
                             {
                                 <li class="nav-item">
@@ -54,7 +58,7 @@
                             @if (User.Identity?.IsAuthenticated ?? false)
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="PublicHoliday" asp-action="Index">Święta</a>
+                                    <a class="nav-link text-dark" asp-controller="PublicHoliday" asp-action="Index">@Localizer["Holidays"]</a>
                                 </li>
                             }
                             <form id="langForm" asp-controller="Language" asp-action="SetLanguage" method="post" class="d-flex align-items-center ms-2">

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="EditScheduleEntryTitle" xml:space="preserve">
+    <value>Edytuj Wpis Harmonogramu</value>
+  </data>
+  <data name="EditScheduleEntryForClass" xml:space="preserve">
+    <value>Edytuj wpis harmonogramu dla klasy {0}</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Godzina</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Przedmiot</value>
+  </data>
+  <data name="SelectSubject" xml:space="preserve">
+    <value>-- Wybierz przedmiot --</value>
+  </data>
+  <data name="ClassroomNumber" xml:space="preserve">
+    <value>Numer Sali</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+</root>

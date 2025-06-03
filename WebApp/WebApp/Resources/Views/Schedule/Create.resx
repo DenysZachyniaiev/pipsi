@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="AddScheduleEntryTitle" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AddScheduleEntryForClass" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ClassroomNumber" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value></value>
+  </data>
+</root>

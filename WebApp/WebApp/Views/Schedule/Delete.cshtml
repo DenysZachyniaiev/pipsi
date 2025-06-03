@@ -1,23 +1,24 @@
 ﻿@model WebApp.Models.ScheduleEntry
 @inject WebApp.Data.AppDbContext DbContext
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Delete Schedule Entry";
+    ViewData["Title"] = Localizer["DeleteScheduleEntryTitle"];
     var subject = DbContext.Subjects.FirstOrDefault(s => s.Id == Model.SubjectId);
 }
 
 <h2>@ViewData["Title"]</h2>
 
 <table class="table table-bordered">
-    <tr><th>Day</th><td>@Model.Day</td></tr>
-    <tr><th>Date</th><td>@Model.Date.ToString("yyyy-MM-dd")</td></tr>
-    <tr><th>Hour</th><td>@Model.Hour</td></tr>
-    <tr><th>Subject</th><td>@(subject != null ? subject.Name : "Unknown")</td></tr>
-    <tr><th>Classroom</th><td>@Model.ClassroomNumber</td></tr>
+    <tr><th>@Localizer["Day"]</th><td>@Model.Day</td></tr>
+    <tr><th>@Localizer["Date"]</th><td>@Model.Date.ToString("yyyy-MM-dd")</td></tr>
+    <tr><th>@Localizer["Hour"]</th><td>@Model.Hour</td></tr>
+    <tr><th>@Localizer["Subject"]</th><td>@(subject != null ? subject.Name : Localizer["Unknown"].Value)</td></tr>
+    <tr><th>@Localizer["Classroom"]</th><td>@Model.ClassroomNumber</td></tr>
 </table>
 
 <form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <a asp-action="ViewSchedule" asp-route-className="@ViewBag.ClassName" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="btn btn-danger">@Localizer["Delete"]</button>
+    <a asp-action="ViewSchedule" asp-route-className="@ViewBag.ClassName" class="btn btn-secondary">@Localizer["Cancel"]</a>
 </form>

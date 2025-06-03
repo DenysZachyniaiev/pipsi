@@ -21,17 +21,17 @@
 
     @if (isStudent)
     {
-        <h4 class="mt-4">Oceny</h4>
+        <h4 class="mt-4">@Localizer["Grades"]</h4>
         @if (studentModel!.Assignments.Any(a => studentModel.Grades.ContainsKey(a.Id)))
         {
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Nazwa</th>
-                        <th>Przedmiot</th>
-                        <th>Typ</th>
-                        <th>Data</th>
-                        <th>Ocena</th>
+                        <th>@Localizer["Name"]</th>
+                        <th>@Localizer["Subject"]</th>
+                        <th>@Localizer["Type"]</th>
+                        <th>@Localizer["Date"]</th>
+                        <th>@Localizer["Grade"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,7 +44,7 @@
                             <td>@assignment.Type</td>
                             <td>
                                 @assignment.StartDate.ToString("dd.MM.yyyy")
-                                @if (assignment.Type == "Zadanie domowe" && assignment.DueDate.HasValue)
+                                @if (assignment.Type == Localizer["Homework"].Value && assignment.DueDate.HasValue)
                                 {
                                     @: – @assignment.DueDate.Value.ToString("dd.MM.yyyy")
                                 }
@@ -57,19 +57,19 @@
         }
         else
         {
-            <p class="text-muted">Brak ocenionych zadań.</p>
+            <p class="text-muted">@Localizer["NoGradedAssignments"]</p>
         }
 
-        <h4 class="mt-4">Zadania bez oceny</h4>
+        <h4 class="mt-4">@Localizer["AssignmentsWithoutGrades"]</h4>
         @if (studentModel.Assignments.Any(a => !studentModel.Grades.ContainsKey(a.Id)))
         {
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Nazwa</th>
-                        <th>Przedmiot</th>
-                        <th>Typ</th>
-                        <th>Data</th>
+                        <th>@Localizer["Name"]</th>
+                        <th>@Localizer["Subject"]</th>
+                        <th>@Localizer["Type"]</th>
+                        <th>@Localizer["Date"]</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -81,7 +81,7 @@
                             <td>@assignment.Type</td>
                             <td>
                                 @assignment.StartDate.ToString("dd.MM.yyyy")
-                                @if (assignment.Type == "Zadanie domowe" && assignment.DueDate.HasValue)
+                                @if (assignment.Type == Localizer["Homework"].Value && assignment.DueDate.HasValue)
                                 {
                                     @: – @assignment.DueDate.Value.ToString("dd.MM.yyyy")
                                 }
@@ -93,7 +93,7 @@
         }
         else
         {
-            <p class="text-muted">Brak zadań bez oceny.</p>
+            <p class="text-muted">@Localizer["NoUngradedAssignments"]</p>
         }
     }
 

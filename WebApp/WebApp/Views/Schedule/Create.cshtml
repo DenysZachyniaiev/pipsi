@@ -1,10 +1,11 @@
 ﻿@model WebApp.Models.ScheduleEntry
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Add Schedule Entry";
+    ViewData["Title"] = Localizer["AddScheduleEntryTitle"];
     string className = ViewBag.ClassName ?? "";
 }
 
-<h2>@ViewData["Title"] dla klasy @className</h2>
+<h2>@Localizer["AddScheduleEntryForClass", className]</h2>
 
 <form asp-action="Create" method="post">
     <input type="hidden" name="className" value="@className" />
@@ -12,31 +13,31 @@
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="mb-3">
-        <label asp-for="Hour" class="form-label"></label>
+        <label asp-for="Hour" class="form-label">@Localizer["Hour"]</label>
         <input asp-for="Hour" class="form-control" type="number" min="8" max="16" />
         <span asp-validation-for="Hour" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="Date" class="form-label">Data</label>
+        <label asp-for="Date" class="form-label">@Localizer["Date"]</label>
         <input asp-for="Date" class="form-control" type="date" />
         <span asp-validation-for="Date" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="SubjectId" class="form-label"></label>
+        <label asp-for="SubjectId" class="form-label">@Localizer["Subject"]</label>
         <select asp-for="SubjectId" class="form-select" asp-items="ViewBag.Subjects"></select>
         <span asp-validation-for="SubjectId" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="ClassroomNumber" class="form-label"></label>
+        <label asp-for="ClassroomNumber" class="form-label">@Localizer["ClassroomNumber"]</label>
         <input asp-for="ClassroomNumber" class="form-control" type="number" min="1" max="1000" title="Enter a valid room number (digits only)" />
         <span asp-validation-for="ClassroomNumber" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Zapisz</button>
-    <a asp-action="Index" asp-route-className="@className" class="btn btn-secondary ms-2">Anuluj</a>
+    <button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
+    <a asp-action="Index" asp-route-className="@className" class="btn btn-secondary ms-2">@Localizer["Cancel"]</a>
 </form>
 
 @section Scripts {
