@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<data name="Select Class to View Schedule" xml:space="preserve">
+    <value>Select Class to View Schedule</value>
+  </data>
+	<data name="Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+	<data name="-- Choose a class --" xml:space="preserve">
+    <value>-- Choose a class --</value>
+  </data>
+	<data name="Show Schedule" xml:space="preserve">
+    <value>Show Schedule</value>
+  </data>
+</root>

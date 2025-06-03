@@ -1,17 +1,18 @@
 ﻿@model List<WebApp.Models.Class>
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
-<h2>Select Class to View Schedule</h2>
+<h2>@Localizer["Select Class to View Schedule"]</h2>
 
 <form method="get" asp-controller="Schedule" asp-action="ViewSchedule">
     <div class="mb-3">
-        <label for="className" class="form-label">Class</label>
+        <label for="className" class="form-label">@Localizer["Class"]</label>
         <select id="className" name="className" class="form-select" required>
-            <option value="" disabled selected>-- Choose a class --</option>
+            <option value="" disabled selected>@Localizer["-- Choose a class --"]</option>
             @foreach (var c in Model)
             {
                 <option value="@c.Name">@c.Name</option>
             }
         </select>
     </div>
-    <button type="submit" class="btn btn-primary">Show Schedule</button>
+    <button type="submit" class="btn btn-primary">@Localizer["Show Schedule"]</button>
 </form>
